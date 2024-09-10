@@ -7,3 +7,8 @@
 
 ### Robot arm
 - Designs
+	- Supported stick tall enough for the bot to run into the wall, activating the button
+	- Ramp that raises the bot to hit the tip of the button
+	- Arm that rotates into the button (costly)
+- Arm specifications
+	- 
