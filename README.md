@@ -232,7 +232,7 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 
 **Communication between 2 Raspberry Pi:**  
 - First Raspberry Pi  
-	- First Terminal  
+	- First Terminal
 		- `roscore`  
 	- Second Terminal  
 		- `export ROS_MASTER_URI=http://<Hostname or IP Address>:11311`  
@@ -266,7 +266,7 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 
 ## Control 2 TurtleBots at the same time:  
 - Assumed Rasp1 is the master (talker) and Rasp 2, 3 are subscribers (listeners). Control TurtleBot (Rasp 2, 3) by using Rasp 1  
-- Rasp 1 (IP Address: 192.168.0.91)  
+- Rasp 1 (IP Address: 192.168.0.91)
 	- `export ROS_MASTER_URI=http://192.168.0.91:11311`  
 	- `export ROS_IP=192.168.0.91`  
 	- `roscore`  
@@ -274,15 +274,17 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 - Rasp 2 (IP Address: 192.168.0.190)  
 	- `export ROS_MASTER_URI=http://192.168.0.91:11311`  
 	- `export ROS_IP=192.168.0.190`  
-	- `roslaunch turtlebot_bringup minimal.launch __ns:=<turtlebotname>` (need this command because to control 2 TurtleBots at the same time, you need different node names)  
-- In another terminal  
-	- `rosrun topic_tools relay <original topic name> <new topic name because of namespace change>`  
+	- `roslaunch turtlebot_bringup minimal.launch __ns:=<turtlebotname>` (need this command because to control 2 TurtleBots at the same time, you need different node names)
+	- In another terminal  
+		- `rosrun topic_tools relay <original topic name> <new topic name because of namespace change>`
+		- `/cmd_vel_mux/input/teleop`  
+		- `/turtlename/cmd_vel_mux/input/teleop`
 - Rasp 3 (IP Address: 192.168.0.8)  
 	- `export ROS_MASTER_URI=http://192.168.0.91:11311`  
 	- `export ROS_IP=192.168.0.8`  
-	- `roslaunch turtlebot_bringup minimal.launch __ns:=<turtlebotname>` (need this command because to control 2 TurtleBots at the same time, you need different node names)  
-- In another terminal  
-	- `rostopic list`  
-	- `rosrun topic_tools relay <original topic name> <new topic name because of namespace change>`  
-	- `/cmd_vel_mux/input/teleop`  
-	- `/turtlename/cmd_vel_mux/input/teleop`
+	- `roslaunch turtlebot_bringup minimal.launch __ns:=<turtlebotname>` (need this command because to control 2 TurtleBots at the same time, you need different node names)
+	- In another terminal  
+		- `rostopic list`  
+		- `rosrun topic_tools relay <original topic name> <new topic name because of namespace change>`  
+		- `/cmd_vel_mux/input/teleop`  
+		- `/turtlename/cmd_vel_mux/input/teleop`

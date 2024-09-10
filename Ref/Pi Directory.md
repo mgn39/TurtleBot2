@@ -1,0 +1,12 @@
+Raspberry Pi List
+- Raspberry Pi 1 (Master)
+	- IP: 192.168.0.91
+	- Name: 
+- Raspberry Pi 2
+	- IP: 192.168.0.212
+	- Name: 
+- Raspberry Pi 3: 192.168.0.190 
+- Raspberry Pi 4: 192.168.0.8 
+- Raspberry Pi 5: 192.168.0.53 
+- Raspberry Pi 6: 192.168.0.213 
+- Raspberry Pi 7: 192.168.0.219

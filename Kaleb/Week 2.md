@@ -23,7 +23,9 @@
 - Next steps
 	- Determine what to do
 	- Look into detecting how many bots on the network
-	
+- **Doing thing**
+	- Script in `kobuki_ws/src/turtlebot/turtlebot_teleop/scripts`
+
 ### Object Detection + Sensing
 - Without purchasing extra sensors or equipment it's possible?
 	- Turtlebot isn't going backwards, so 180 deg for the back isn't necessary
