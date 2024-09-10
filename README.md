@@ -29,7 +29,6 @@ The brain of the computer/robot, this is where all the calculations and decision
 
 Link from Amazon: [Raspberry Pi](https://www.amazon.com/CanaKit-Raspberry-4GB-Starter-Kit/dp/B08956GVXN/ref=sr_1_2_sspa?crid=1G4BEMXOX5NVU&dib=eyJ2IjoiMSJ9.mP4drOfyakW9P2E6ytjWi16gj2s3LrQBGuFeMtbTEh_hMvprgoi-t-zlc_pvFQPcF8E2O6AESj6Om7ZB9CrmRyba7rYttBJ7UUUxLrY5W3aubaUiDeB1AUSutuUgoQoQpqV06pSq0PIWx2_OFJHtnuSn5FbIeruK-kpbvBaTi5gvTZ_BBcB4iG9R8Kykr_gSTNvACwM9L2azfpDbIXxaEcS_7iFzVMzvMllRlt5t2BY.OT51DETFITwREkwJcV8xwrQ18fpsFBqTiz1Cksqw4_w&dib_tag=se&keywords=raspberry%2Bpi%2B4&qid=1720193522&sprefix=rasp%2Caps%2C98&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1)
 
-  
 
 Install Ubuntu 20.04 (64-bit) and all necessary packages:
 - kobuki 
