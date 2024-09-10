@@ -23,8 +23,9 @@
 - Next steps
 	- Determine what to do
 	- Look into detecting how many bots on the network
-- **Doing thing**
+- **Implementation**
 	- Script in `kobuki_ws/src/turtlebot/turtlebot_teleop/scripts`
+	- Edited to file in 
 
 ### Object Detection + Sensing
 - Without purchasing extra sensors or equipment it's possible?
@@ -33,3 +34,4 @@
 - Basic Strategy
 	- Isolate Turtlebot4
 	- Install and experiment with the library...then see if more is needed
+- **Implementation**
