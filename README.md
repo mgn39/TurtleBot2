@@ -2,12 +2,12 @@
 
 # Turtlebot2
 
-### Background
+## Background
 TurtleBot is a low-cost, personal robot kit with open-source software. With TurtleBot, you’ll be able to build a robot that can drive around your house. This is Kobuki TurtleBot (TurtleBot 2). The TurtleBot has a mobile base that can move in any direction, a Kinect camera and sensor to see its surroundings and to measure distances and help map its environment. And we have 7 of them.
-### Goal
+## Goal
 Be able to communicate with all 7 robots at once and have them communicate with each other, enable them to move simultaneously as a swarm, then have them interact with people and measure human-robot behavior.
 
-### Turtlebot2 Overview
+## Turtlebot2 Overview
 **Components:**
 1. Kinect Camera and Sensor
 2. Speaker
@@ -40,7 +40,7 @@ Install Ubuntu 20.04 (64-bit) and all necessary packages:
 - turtlebot_apps
 - turtlebot_simulator
 
-### Getting Started
+## Getting Started
 
 Install Ubuntu Desktop on Raspberry Pi 4 8GB:
 
@@ -89,7 +89,7 @@ Install Ubuntu Desktop on Raspberry Pi 4 8GB:
   - `sudo apt install ubuntu-desktop -y`  
   - `startx` (To enter Ubuntu desktop)
 
-### Install ROS Noetic:
+## Install ROS Noetic:
 - Following this website “[ROS Noetic](http://wiki.ros.org/noetic/Installation/Ubuntu)”
 - Install ROS Noetic Desktop Full version
 - In the environment options you can use zshrc or bash, I use bash
@@ -136,7 +136,7 @@ Control TurtleBot by using the keyboard:
 	- `echo "source your_ws/devel/setup.bash" >> ~/.bashrc`
 	- `source ~/.bashrc`
 
-### Turn on the camera:  
+## Turn on the camera:  
 - Open the terminal
 	- `sudo apt update && sudo apt upgrade -y` (Recommended)  
 - Install the dependencies in your workspace
@@ -202,7 +202,7 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 - Set the topic -> /camera/depth_registered/points
 ![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXdsWZlzsUEnnLTaYFQ15p6EzN10owXgu0eOxB7GGbcdLU8TPaTNxYsUPr_A9eScc_nHrKBH4fOxCdBuyopa-SLmkIZ0Hdzk_owakUd99b5Jmv2S9Mp7tGhu20OZw1UMB1YLYS2o8w245_ufA-GZp3oIuRsE?key=s6kx8w9aAKgfuro0Mrp5kw)
 
-### Turn on camera on RTAB-MAP and Rviz:
+## Turn on camera on RTAB-MAP and Rviz:
 - Open the terminal  
 - Connect to the TurtleBot  
 - `roslaunch turtlebot_bringup minimal.launch`  
@@ -223,7 +223,7 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 - Add RobotModel  
 - Add PointCloud2 -> Set topic -> `/rtabmap/cloud_map`
 
-### Communicate between 2 terminals:  
+## Communicate between 2 terminals:  
 - First terminal  
 - `roscore`  
 - Second terminal  
@@ -252,7 +252,7 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 	- `export ROS_IP=<IP of Machine>`  
 	- `rosrun beginner_tutorials listener.py`
 
-### Control TurtleBot across Raspberry Pi:  
+## Control TurtleBot across Raspberry Pi:  
 - Assumed Rasp1 is the master (talker) and Rasp 2 is a subscriber (listener). Control TurtleBot (Rasp 2) by using Rasp 1  
 - Rasp 1 (IP Address: 192.168.0.91)  
 	- `export ROS_MASTER_URI=http://192.168.0.91:11311`  
@@ -265,7 +265,7 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 - Rasp 1  
 	- In another terminal:	`roslaunch turtlebot_teleop keyboard_teleop.launch`
 
-### Control 2 TurtleBots at the same time:  
+## Control 2 TurtleBots at the same time:  
 - Assumed Rasp1 is the master (talker) and Rasp 2, 3 are subscribers (listeners). Control TurtleBot (Rasp 2, 3) by using Rasp 1  
 - Rasp 1 (IP Address: 192.168.0.91)  
 	- `export ROS_MASTER_URI=http://192.168.0.91:11311`  
