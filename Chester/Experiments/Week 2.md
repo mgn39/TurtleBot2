@@ -15,4 +15,10 @@
 
 **Objective:** Avoiding identify name every single time when bring up (connect Raspberry Pi to TurtleBot)
 
-**Experiment:** Type this command `export ROS_NAMESPACE=<name>` into nano ~/.bashrc and save it!. But still need to relay every single time.
+**Experiment:** Type this command `export ROS_NAMESPACE="name"` into nano ~/.bashrc and save it!. But still need to relay every single time.
+
+In the command change "name" into desire name.
+
+For example: `export ROS_NAMESPACE=turtle1`
+
+**Result:** All set. All Raspberry Pi don't have to identify every single time.
