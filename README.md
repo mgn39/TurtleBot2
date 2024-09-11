@@ -55,7 +55,7 @@ Install Ubuntu Desktop on Raspberry Pi 4 8GB:
 - The hostname, username, password, etc. can be anything. We configured wireless LAN and used:
 	- Hostname: ubuntu
 	- Username: SaPHaRI
-	- Password: 7TurtleBotsX! (with X being our assigned Turtlebot numbers)
+	- Password: **7TurtleBotsX!** (with X being our assigned Turtlebot numbers)
 	- Configured wireless LAN to our own lab network
     
 
