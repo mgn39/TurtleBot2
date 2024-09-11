@@ -31,6 +31,14 @@ Make a project plan for Fall Semester.
 	- Hallway depth
 	- Robot
 		- Distance to person
+- Our Project
+	- Focusing on
+		- How does the spatial configuration of tour guide robots affect...?
+		- Following distance
+		- Number of robots
+		- Spatial distribution (180 POV vs full 360)
+	- How does robot behavior affect...?
+		- Different styles of music
 - Research
 	- General sound of movement
 	- Robotics & Sound
