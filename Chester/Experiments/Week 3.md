@@ -25,8 +25,6 @@ I discovered that if I change the name in nano ~/.bashrc they cannot communicate
 
 **Objective:** After adding a new user to the computer next to my desk. Do path planning by streaming the data to another computer.
 
-**Problem:** Cannot run teleop on Raspberry Pi 1
-
 **Experiment:** 
 Add a User via Recovery Mode
 - Reboot the System
@@ -52,3 +50,12 @@ Add a User via Recovery Mode
 
 \Username: SaPHaRI
 Password: 7TurtleBots!
+
+**Problem:** Cannot run teleop on Raspberry Pi 1, Cannot ssh to another computer (try from mac) - Connection refused
+
+**Possible Solution:** For Raspberry Pi 1 just installing a new package should be fine. For the pink computer, I will try ssh via Raspberry Pi directly if not, it might be blocked by the firewall, if so we need to fix that.
+
+
+### September 13th, 2024
+
+**Objective:** Continue from yesterday.

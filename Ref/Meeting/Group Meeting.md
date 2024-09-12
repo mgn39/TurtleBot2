@@ -61,6 +61,8 @@ Noah: just so cool and fun this week
 
 Chester: Thats mandatory! (to listen the six: The Musical)
 
+Austin: Its not mandatory but it definitely mandatory
+
 Draft -> Describe the project to Dr. Block
 
 Sign to IRB account
