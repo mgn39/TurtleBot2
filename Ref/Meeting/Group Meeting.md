@@ -32,7 +32,9 @@ We went in decreasing order of time in the lab.
 ### 2nd | September 12th, 2024
 
 **Lab Meeting:**
-Next lab meeting, meet two weeks from today, at **12.:30 p.m.** on **September 12th, 2024**
+Next lab meeting, meet two weeks from today, at **12.:30 p.m.** on **September 26th, 2024**
+
+**Ach**
 
 **Individual Updates:**
 ???
@@ -44,9 +46,25 @@ Next lab meeting, meet two weeks from today, at **12.:30 p.m.** on **September 1
 - **Goals:** 
 - **Lesson:** 
 
-**Chester** - 
+**Chester** - 2 Musical
 - **Introduction:** I'm Chester, I'm an undergrads internship student from Thailand. I'm working on a research project focusing on TurtleBot.
-- **Accomplishments:** Do research for the project; additional sensors, checking the limitation of Raspberry Pi, about the tour-guide robot or office robot to determine the focus of this research whether it will be in which direction like what would be the appropriate distance between the robot and the user or the number of the robot. For path planning still working on it. Also, Thank you to Kaleb that he fixed the computer beside my desk. After that, we cannot access to the computer due we dont know the password so I try to add new user and it work.
+- **Accomplishments:** Do research for the project; additional sensors, checking the limitation of Raspberry Pi, about the tour-guide robot or office robot to determine the focus of this research whether it will be in which direction like what would be the appropriate distance between the robot and the user or the number of the robot. For path planning still working on it. Also, Thank you to Kaleb that he fixed the computer beside my desk. After that, we cannot access to the computer due we don't know the password so I try to add new user and it work.
 - **Challenges:** Raspberry Pi has some limitations like processing power; Rviz consumed ~70% and RTAB-MAP consumed ~5% of it. So the solution is to try to stream the data to another computer it might help for doing path planning.
 - **Goals:** Finish path planning.
 - **Lesson:** We should read fundamental work/research no matter what how old they are. Recent works are good but not as always.
+
+Quote: 
+Dr. Block: "I'm not wrong" (about Susan last name), "Must be Professional!!!"
+this suck this suck this suck -> tell us how to fix instead of. pls professionalism
+
+Noah: just so cool and fun this week
+
+Chester: Thats mandatory! (to listen the six: The Musical)
+
+Draft -> Describe the project to Dr. Block
+
+Sign to IRB account
+
+IRB cwru as soon as possible (link below):
+
+https://docs.google.com/forms/d/e/1FAIpQLScjq0yVSChwDe4zktRbIpBtVlkeT5cFYW_lFNZ_qapreSlWxw/viewform

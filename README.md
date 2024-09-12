@@ -288,3 +288,5 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 		- `rosrun topic_tools relay <original topic name> <new topic name because of namespace change>`  
 		- `/cmd_vel_mux/input/teleop`  
 		- `/turtlename/cmd_vel_mux/input/teleop`
+
+## Adding the new user in ubuntu:

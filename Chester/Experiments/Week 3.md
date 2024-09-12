@@ -49,5 +49,6 @@ Add a User via Recovery Mode
 - Reboot the System
 	- `reboot`
 	- Boots up in log in with the new user
-Username: SaPHaRI
+
+\Username: SaPHaRI
 Password: 7TurtleBots!
