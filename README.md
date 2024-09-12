@@ -204,31 +204,31 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 ## Turn on camera on RTAB-MAP and Rviz:
 - Open the terminal  
 - Connect to the TurtleBot  
-- `roslaunch turtlebot_bringup minimal.launch`  
+	- `roslaunch turtlebot_bringup minimal.launch`  
 - Connect to the camera  
-- `roslaunch freenect_launch freenect.launch depth_registration:=true`  
+	- `roslaunch freenect_launch freenect.launch depth_registration:=true`  
 - Install RTAB-MAP package  
-- `sudo apt install ros-noetic-rtabmap-ros -y`  
+	- `sudo apt install ros-noetic-rtabmap-ros -y`  
 - Open the RTAB-MAP  
-- `roslaunch rtabmap_ros rtabmap.launch rtabmap_args:="--delete_db_on_start"`  
+	- `roslaunch rtabmap_ros rtabmap.launch rtabmap_args:="--delete_db_on_start"`  
 - If facing any error on running the RTAB-MAP try this command  
-- `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/ros/noetic/lib`  
-- `echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/ros/noetic/lib' >> ~/.bashrc`  
-- `source ~/.bashrc`  
+	- `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/ros/noetic/lib`  
+	- `echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/ros/noetic/lib' >> ~/.bashrc`  
+	- `source ~/.bashrc`  
 - Open the Rviz  
-- `rosrun rviz rviz`  
+	- `rosrun rviz rviz`  
 - Add option on Rviz  
-- Global options -> Set fixed frame -> `map`  
-- Add RobotModel  
-- Add PointCloud2 -> Set topic -> `/rtabmap/cloud_map`
+	- Global options -> Set fixed frame -> `map`  
+	- Add RobotModel  
+	- Add PointCloud2 -> Set topic -> `/rtabmap/cloud_map`
 
 ## Communicate between 2 terminals:  
 - First terminal  
-- `roscore`  
+	- `roscore`  
 - Second terminal  
-- `rostopic pub /test std_msgs/String "data: 'Hello from master'"`  
+	- `rostopic pub /test std_msgs/String "data: 'Hello from master'"`  
 - Third terminal  
-- `rostopic echo /test`
+	- `rostopic echo /test`
 
 **Communication between 2 Raspberry Pi:**  
 - First Raspberry Pi  
