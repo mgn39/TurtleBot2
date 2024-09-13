@@ -55,7 +55,21 @@ Password: 7TurtleBots!
 
 **Possible Solution:** For Raspberry Pi 1 just installing a new package should be fine. For the pink computer, I will try ssh via Raspberry Pi directly if not, it might be blocked by the firewall, if so we need to fix that.
 
+PS. pink computer ->  computer that next to my desk.
+
 
 ### September 13th, 2024
 
 **Objective:** Continue from yesterday.
+
+**Experiment:** In Raspberry Pi 1 install new package and update source file in `nano ~/.bashrc` 
+I found out that I need to enable ssh first. To enable ssh follow the command below.
+- Install OpenSSH Server
+	- `sudo apt update && sudo apt upgrade -y`
+	- `sudo apt install openssh-server -y`
+- Enable SSH Service
+	- `sudo systemctl enable ssh`
+
+And in the pink computer, I set up and installed all the necessary packages to be ready for path planning.
+
+**Result:** Raspberry Pi 1 can connect to Kobuki TurtleBot and can run teleop as usual. And at this time, I can ssh into pink computer.

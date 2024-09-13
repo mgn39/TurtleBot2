@@ -1,37 +1,39 @@
  **![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXcaUwHYFXEhbpmRKNrs-rXpKaGHXryAO5pWwI0KPXQLf8ZRtAFBG4KbLanLjZCD1Y8Nc-D5kFyhZKBfeRNSerG6eZFb7FVuGOkFQI4rZeSYTbf_icit9P8G553bO5lqjwXBgcHPJrQ7J-258zmAfjyJPk4d?key=s6kx8w9aAKgfuro0Mrp5kw)
 
-# Turtlebot2
+# TurtleBot2
 
 ## Background
-TurtleBot is a low-cost, personal robot kit with open-source software. With TurtleBot, you’ll be able to build a robot that can drive around your house. This is Kobuki TurtleBot (TurtleBot 2). The TurtleBot has a mobile base that can move in any direction, a Kinect camera and sensor to see its surroundings and to measure distances and help map its environment. And we have 7 of them.
-## Goal
+
+TurtleBot is a low-cost, personal robot kit with open-source software. With TurtleBot, you’ll be able to build a robot that can drive around your house. This is Kobuki TurtleBot (TurtleBot 2). The TurtleBot has a mobile base that can move in any direction, a Kinect camera, and a sensor to see its surroundings to measure distances and help map its environment. And we have 7 of them.
+
+### Goal
 Be able to communicate with all 7 robots at once and have them communicate with each other, enable them to move simultaneously as a swarm, then have them interact with people and measure human-robot behavior.
 
-## Turtlebot2 Overview
-**Components:**
+### Components:
 1. Kinect Camera and Sensor
 2. Speaker
-3. Rapsberry Pi (replaces default Jetson TK1)
+3. Raspberry Pi (replaces default Jetson TK1)
 4. Wheels
 5. Body
 6. Battery
 
   
-**Kinect Camera**
+### Kinect Camera
+
 The Kinect provides depth information and forms a 3-dimensional. Have 3 inbuilt cameras, an RGB, an Infrared, and Depth sensor. And have 4 microphones to receive a sound.
 
 ![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXeskm3ebEl5Yl-tMTF7yQx7VJ5V2nBzQb6SV3CYEpYzkWu9CrLgay0EUHtTr3C8g-TcgNBDZvpiNUoQYFrktiGONYxdIWC2FxQk1zEDC86M5TkFA0bh562Q2ldybVhwQ3KvOgbigHGavhhUOBKvD7CQv0G_?key=s6kx8w9aAKgfuro0Mrp5kw)
 
   
 
-**Raspberry Pi**
+### Raspberry Pi
+
 The brain of the computer/robot, this is where all the calculations and decisions are made. In this research I use Raspberry Pi 4 Model B 8GB with Starter Kit (including case, fan, heat sync, charger, etc.).
 
-Link from Amazon: [Raspberry Pi](https://www.amazon.com/CanaKit-Raspberry-4GB-Starter-Kit/dp/B08956GVXN/ref=sr_1_2_sspa?crid=1G4BEMXOX5NVU&dib=eyJ2IjoiMSJ9.mP4drOfyakW9P2E6ytjWi16gj2s3LrQBGuFeMtbTEh_hMvprgoi-t-zlc_pvFQPcF8E2O6AESj6Om7ZB9CrmRyba7rYttBJ7UUUxLrY5W3aubaUiDeB1AUSutuUgoQoQpqV06pSq0PIWx2_OFJHtnuSn5FbIeruK-kpbvBaTi5gvTZ_BBcB4iG9R8Kykr_gSTNvACwM9L2azfpDbIXxaEcS_7iFzVMzvMllRlt5t2BY.OT51DETFITwREkwJcV8xwrQ18fpsFBqTiz1Cksqw4_w&dib_tag=se&keywords=raspberry%2Bpi%2B4&qid=1720193522&sprefix=rasp%2Caps%2C98&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1)
-
+Link from Amazon: [Raspberry Pi](https://www.amazon.com/CanaKit-Raspberry-4GB-Starter-Kit/dp/B08956GVXN/ref=sr_1_2_sspa?crid=1G4BEMXOX5NVU&dib=eyJ2IjoiMSJ9.mP4drOfyakW9P2E6ytjWi16gj2s3LrQBGuFeMtbTEh_hMvprgoi-t-zlc_pvFQPcF8E2O6AESj6Om7ZB9CrmRyba7rYttBJ7UUUxLrY5W3aubaUiDeB1AUSutuUgoQoQpqV06pSq0PIWx2_OFJHtnuSn5FbIeruK-kpbvBaTi5gvTZ_BBcB4iG9R8Kykr_gSTNvACwM9L2azfpDbIXxaEcS_7iFzVMzvMllRlt5t2BY.OT51DETFITwREkwJcV8xwrQ18fpsFBqTiz1Cksqw4_w&dib_tag=se&keywords=raspberry%2Bpi%2B4&qid=1720193522&sprefix=rasp%2Caps%2C98&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1) 
 
 Install Ubuntu 20.04 (64-bit) and all necessary packages:
-- kobuki 
+- Kobuki 
 - turtlebot
 - yujin_ocs
 - libfreenect
@@ -41,7 +43,7 @@ Install Ubuntu 20.04 (64-bit) and all necessary packages:
 
 ## Getting Started
 
-Install Ubuntu Desktop on Raspberry Pi 4 8GB:
+### Install Ubuntu Desktop on Raspberry Pi 4 8GB:
 
 - Install Ubuntu Desktop on Raspberry Pi on Micro SD Card (32 GB preferred ____)
 - Download the [Raspberry Pi Imager](https://www.raspberrypi.com/software/)
@@ -55,7 +57,7 @@ Install Ubuntu Desktop on Raspberry Pi 4 8GB:
 - The hostname, username, password, etc. can be anything. We configured wireless LAN and used:
 	- Hostname: ubuntu
 	- Username: SaPHaRI
-	- Password: **7TurtleBotsX!** (with X being our assigned Turtlebot numbers)
+	- Password: **7TurtleBotsX!** (with X being our assigned TurtleBot numbers)
 	- Configured wireless LAN to our own lab network
     
 
@@ -88,12 +90,29 @@ Install Ubuntu Desktop on Raspberry Pi 4 8GB:
   - `sudo apt install ubuntu-desktop -y`  
   - `startx` (To enter Ubuntu desktop)
 
-## Install ROS Noetic:
-- Following this website “[ROS Noetic](http://wiki.ros.org/noetic/Installation/Ubuntu)”
+### Install ROS Noetic:
+- Links “[ROS Noetic](http://wiki.ros.org/noetic/Installation/Ubuntu)”
 - Install ROS Noetic Desktop Full version
-- In the environment options you can use zshrc or bash, I use bash
+	- Setup your sources.list
+		- `sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'`
+	- Setup your keys
+		- `sudo apt install curl`
+		- `curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -`
+	- Installation
+		- `sudo apt update && sudo apt upgrade -y`
+		- `sudo apt install ros-noetic-desktop-full -y`
+	- Environment setup
+		- `echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc`
+		- `source ~/.bashrc`
+		- In the environment options you can use zshrc or bash, I use bash
+	- Dependencies for building packages
+		- `sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential`
+	- Initialize rosdep
+		- `sudo apt install python3-rosdep`
+		- `sudo rosdep init`
+		- `rosdep update`
   
-Control TurtleBot by using the keyboard:
+### Control TurtleBot by using the keyboard:
 - Open your terminal
 	- Make your workspace with `mkdir kobuki_ws`
 	- `cd kobuki_ws/`
@@ -134,7 +153,7 @@ Control TurtleBot by using the keyboard:
 	- `echo "source your_ws/devel/setup.bash" >> ~/.bashrc`
 	- `source ~/.bashrc`
 
-## Turn on the camera:  
+### Turn on the camera:  
 - Open the terminal
 	- `sudo apt update && sudo apt upgrade -y` (Recommended)  
 - Install the dependencies in your workspace
@@ -181,7 +200,7 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 - `freenect-glview` (Open the camera)
 - `freenect-camtest` (To test camera)
 
-**Turn on the camera on Rviz:**
+### Turn on the camera on Rviz:
 - `cd kobuki_ws/src`
 - `git clone https://github.com/ros-drivers/freenect_stack.git`
 - Get back to workspace
@@ -200,7 +219,7 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 - Set the topic -> /camera/depth_registered/points
 ![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXdsWZlzsUEnnLTaYFQ15p6EzN10owXgu0eOxB7GGbcdLU8TPaTNxYsUPr_A9eScc_nHrKBH4fOxCdBuyopa-SLmkIZ0Hdzk_owakUd99b5Jmv2S9Mp7tGhu20OZw1UMB1YLYS2o8w245_ufA-GZp3oIuRsE?key=s6kx8w9aAKgfuro0Mrp5kw)
 
-## Turn on camera on RTAB-MAP and Rviz:
+### Turn on camera on RTAB-MAP and Rviz:
 - Open the terminal  
 - Connect to the TurtleBot  
 	- `roslaunch turtlebot_bringup minimal.launch`  
@@ -221,7 +240,7 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 	- Add RobotModel  
 	- Add PointCloud2 -> Set topic -> `/rtabmap/cloud_map`
 
-## Communicate between 2 terminals:  
+### Communicate between 2 terminals:  
 - First terminal  
 	- `roscore`  
 - Second terminal  
@@ -243,14 +262,14 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 		- `export ROS_IP=<IP of Machine>`  
 		- `rosrun beginner_tutorials listener.py`
 
-**Communication between 2+ Raspberry Pis:**  
+### Communication between 2 + Raspberry Pis:
 - Do the same as 2 Raspberry Pi  
 - Add more devices  
 	- `export ROS_MASTER_URI=http://<Hostname or IP Address>:11311`  
 	- `export ROS_IP=<IP of Machine>`  
 	- `rosrun beginner_tutorials listener.py`
 
-## Control TurtleBot across Raspberry Pi:  
+### Control TurtleBot across Raspberry Pi:  
 - Assumed Rasp1 is the master (talker) and Rasp 2 is a subscriber (listener). Control TurtleBot (Rasp 2) by using Rasp 1  
 - Rasp 1 (IP Address: 192.168.0.91)  
 	- `export ROS_MASTER_URI=http://192.168.0.91:11311`  
@@ -263,7 +282,7 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 - Rasp 1  
 	- In another terminal:	`roslaunch turtlebot_teleop keyboard_teleop.launch`
 
-## Control 2 TurtleBots at the same time:  
+### Control 2 TurtleBots at the same time:  
 - Assumed Rasp1 is the master (talker) and Rasp 2, 3 are subscribers (listeners). Control TurtleBot (Rasp 2, 3) by using Rasp 1  
 - Rasp 1 (IP Address: 192.168.0.91)
 	- `export ROS_MASTER_URI=http://192.168.0.91:11311`  
@@ -288,7 +307,7 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 		- `/cmd_vel_mux/input/teleop`  
 		- `/turtlename/cmd_vel_mux/input/teleop`
 
-## Adding the new user in ubuntu:
+### Adding the new user in ubuntu:
 Add a User via Recovery Mode
 - Reboot the System
 	- Reboot the system, and as it boots up, hold the **Shift** key to access the **GRUB** boot menu
