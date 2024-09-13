@@ -97,8 +97,7 @@ Control TurtleBot by using the keyboard:
 - Open your terminal
 	- Make your workspace with `mkdir kobuki_ws`
 	- `cd kobuki_ws/`
-	- `mkdir src`
-	- `make`
+	- `mkdir src` 
 	- `catkin_make`
 - Run `cd src/` then clone these repositories in the src:
 	- `git clone https://github.com/yujinrobot/kobuki.git`
