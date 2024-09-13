@@ -98,7 +98,7 @@ Control TurtleBot by using the keyboard:
 	- Make your workspace with `mkdir kobuki_ws`
 	- `cd kobuki_ws/`
 	- `mkdir src`
-	- `make` `
+	- `make`
 	- `catkin_make`
 - Run `cd src/` then clone these repositories in the src:
 	- `git clone https://github.com/yujinrobot/kobuki.git`
@@ -313,3 +313,4 @@ Add a User via Recovery Mode
 	- Boots up in log in with the new user
 **Username: SaPHaRI** 
 **Password: 7TurtleBots!**
+
