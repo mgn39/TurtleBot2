@@ -189,16 +189,16 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02be", MODE="0666"
 SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 ```
 
-**Need to generate audio drivers for support in freenect folder**
-- `cd libfreenect`
-- `python3 src/fwfetcher.py`
+- Need to generate audio drivers for support in freenect folder
+	- `cd libfreenect`
+	- `python3 src/fwfetcher.py`
 - Copy to a specific location (without this command still work)
-- `sudo cp src/audios.bin /usr/local/share/libfreenect`
+	- `sudo cp src/audios.bin /usr/local/share/libfreenect`
 - Open the Kinect camera (Run command in libfreenect folder)
-- `freenect-micview` (Checking the audio)
-- `Ctrl + c`
-- `freenect-glview` (Open the camera)
-- `freenect-camtest` (To test camera)
+	- `freenect-micview` (Checking the audio)
+	- `Ctrl + c`
+	- `freenect-glview` (Open the camera)
+	- `freenect-camtest` (To test camera)
 
 ### Turn on the camera on Rviz:
 - `cd kobuki_ws/src`
