@@ -21,5 +21,5 @@
 	- Hack into the Ubuntu/Windows 10 dual boot, might need to format the drive...
 	- Research data transmission between Raspberry Pi and Server
 
-## <u>9/12/24</u>
+## <u>9/16/24</u>
 aaaaaaa
