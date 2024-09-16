@@ -34,39 +34,45 @@ We went in decreasing order of time in the lab.
 **Lab Meeting:**
 Next lab meeting, meet two weeks from today, at **12.:30 p.m.** on **September 26th, 2024**
 
-**Ach**
+**Quotes by Chester:**
+"I was NOT wrong" - Dr. Block, re: Susan's last name
+"Tell us how to fix it instead of ... this suck, this suck, this suck: Professionalism please" - Dr. Block
+"I'm just so cool and fun this week!" - Noah
+"That's mandatory!" - Chester, re: listening to the Six: The Musical (because the TurtleBots are named after the characters)
+"It's not mandatory, but it's definitely mandatory" - Austin, re: Lab lunch
+
+**Discussion Items:**
+Website update? (People, equipment/robots, projects?) -> Can everyone please share their project photos with Noah so he can put a thumbnail image up with a **short research description for each project?** (Please run the description by me first for editing)
+Project description point people:
+Affect-sensing: Noah
+**TurtleBots: Chester** 
+AstroPsych: Austin
+Compliant: Jacob
+Baxter Greeting: Andrew
+
+Documentation, documentation, documentation! This is **so** important for knowledge transfer and retention.
+
+If you are planning to conduct a user study, please sign up for an IRB account:
+[IRB account](https://case.edu/research/compliance/human-research-protection-program/cwru-institutional-review-board) 
+Click the link that says "SpartaIRB New User Request"
+Please do not wait, do this as soon as possible so we don't encounter a delay in our study being processed. 
 
 **Individual Updates:**
-???
+We went in increasing order of the number of musicals you've seen.
 
-**Kaleb** - 
-- **Introduction:** 
-- **Accomplishments:** 
-- **Challenges:** 
-- **Goals:** 
-- **Lesson:** 
-
-**Chester** - 2 Musical
+**Chester** - 2 Musicals (The Lion King, Frozen)
 - **Introduction:** I'm Chester, I'm an undergrads internship student from Thailand. I'm working on a research project focusing on TurtleBot.
-- **Accomplishments:** Do research for the project; additional sensors, checking the limitation of Raspberry Pi, about the tour-guide robot or office robot to determine the focus of this research whether it will be in which direction like what would be the appropriate distance between the robot and the user or the number of the robot. For path planning still working on it. Also, Thank you to Kaleb that he fixed the computer beside my desk. After that, we cannot access to the computer due we don't know the password so I try to add new user and it work.
-- **Challenges:** Raspberry Pi has some limitations like processing power; Rviz consumed ~70% and RTAB-MAP consumed ~5% of it. So the solution is to try to stream the data to another computer it might help for doing path planning.
-- **Goals:** Finish path planning.
+- **Accomplishments:** Did a lot of research for his project: investigated additional sensors, checked the limitations of the Raspberry Pi, read relevant research papers (tour guide, office robot). We are now interested in investigating whether the distance a robot should stay to a person scales with number of robots and perhaps the hallway width. Thank you Kaleb for fixing the computer. I did not know the password - so I added a new user, which works.
+- **Challenges:** I still facing problems with path planning. The Raspberry pi has limitation processing power, so the plan is to stream the data to another computer.
+- **Goals:** Finish path planning using an external computer.
 - **Lesson:** We should read fundamental work/research no matter what how old they are. Recent works are good but not as always.
 
-Quote: 
-Dr. Block: "I'm not wrong" (about Susan last name), "Must be Professional!!!"
-this suck this suck this suck -> tell us how to fix instead of. pls professionalism
+**Kaleb** - unknown # of musicals
+- **Introduction:** Kaleb is a second-year studying CS who works on the TurtleBots with Chester.
+- **Accomplishments:** He caught up to speed with the new lab (he was out for the summer), and is experimenting with TurtleBot scripts, and repaired a computer.
+- **Challenges:** Though not necessarily technical, he.s been struggling a bit with time management to spend more time experimenting with the bots.
+- **Goals:** He (and Chester) hopes to move the TurtleBots with basic pathfinding autonomously.
+- **Lesson:** He advises to take good rest.
 
-Noah: just so cool and fun this week
 
-Chester: Thats mandatory! (to listen the six: The Musical)
-
-Austin: Its not mandatory but it definitely mandatory
-
-Draft -> Describe the project to Dr. Block
-
-Sign to IRB account
-
-IRB cwru as soon as possible (link below):
-
-https://docs.google.com/forms/d/e/1FAIpQLScjq0yVSChwDe4zktRbIpBtVlkeT5cFYW_lFNZ_qapreSlWxw/viewform
+### 3rd | September 26th, 2024
