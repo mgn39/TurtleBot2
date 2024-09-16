@@ -196,7 +196,7 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 	- `sudo cp src/audios.bin /usr/local/share/libfreenect`
 - Open the Kinect camera (Run command in libfreenect folder)
 	- `freenect-micview` (Checking the audio)
-	- `Ctrl + c`
+	- `Ctrl + c` 
 	- `freenect-glview` (Open the camera)
 	- `freenect-camtest` (To test camera)
 
@@ -248,7 +248,7 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 - Third terminal  
 	- `rostopic echo /test`
 
-**Communication between 2 Raspberry Pi:**  
+### Communication between 2 Raspberry Pi:
 - First Raspberry Pi  
 	- First Terminal
 		- `roscore`  
