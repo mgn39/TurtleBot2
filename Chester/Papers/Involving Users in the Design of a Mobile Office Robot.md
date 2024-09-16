@@ -1,6 +1,6 @@
 Huttenrach, Eklundh, IEEE 2004 | September 6th, 2024
 
-**Links:** [Mobile Office Robot]([Mobile Office Robot](https://ieeexplore.ieee.org/abstract/document/1291660/authors#authors))
+**Links:** [Mobile Office Robot](https://ieeexplore.ieee.org/abstract/document/1291660/authors#authors)
 
 **Conclusion:** 
 
