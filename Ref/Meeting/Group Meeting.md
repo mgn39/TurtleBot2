@@ -2,7 +2,7 @@
 ### 1st | September 30th, 2024
 
 **Lab Meeting:**
-Next lab meeting, meet two weeks from today, at **12.:30 p.m.** on **September 12th, 2024**
+Next lab meeting, meet two weeks from today, at **12:30 p.m.** on **September 12th, 2024**
 
 **Discussion Items:**
 September 5th, 2024 at 1 p.m., we are having a visit from Michael Dolsak. **Austin, Noah, Chester, and Jacob** volunteered to demo their work or talk about their project.
@@ -32,7 +32,7 @@ We went in decreasing order of time in the lab.
 ### 2nd | September 12th, 2024
 
 **Lab Meeting:**
-Next lab meeting, meet two weeks from today, at **12.:30 p.m.** on **September 26th, 2024**
+Next lab meeting, meet two weeks from today, at **12:30 p.m.** on **September 26th, 2024**
 
 **Quotes by Chester:**
 "I was NOT wrong" - Dr. Block, re: Susan's last name
