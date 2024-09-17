@@ -1,4 +1,4 @@
-
+o
 ### 00 | August 27th, 2024
 
 Make a project plan for Fall Semester.
@@ -42,5 +42,10 @@ Make a project plan for Fall Semester.
 - Research
 	- General sound of movement
 	- Robotics & Sound
+
+
+### 3rd | September 17th, 2024
+
+[3rd | Fall | Path Planning & Communication & Object detection](https://docs.google.com/presentation/d/1A3duBmiX7N_WEsW9-zB4yRWIrXyZTolwiHceXCRLpRA/edit?usp=sharing)
 
 
