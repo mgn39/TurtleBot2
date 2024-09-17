@@ -18,8 +18,10 @@
 	- Removed GPU and using integrated graphics instead
 	- Remove CMOS battery for a hot minute, then put it back in
 - **TODO**:
-	- Hack into the Ubuntu/Windows 10 dual boot, might need to format the drive...
-	- Research data transmission between Raspberry Pi and Server
+	- Hack into the Ubuntu/Windows 10 dual boot, might need to format the drive... (completed by Chester)
+	- Research data transmission between Raspberry Pi and Server (completed by...Chester?)
+	- Install GPU and get it working on desktop (for later)
 
-## <u>9/12/24</u>
-aaaaaaa
+## <u>9/16/24</u>
+- **GOAL**: Autonomous movement
+	- 
