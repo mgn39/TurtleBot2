@@ -1,4 +1,4 @@
-o
+
 ### 00 | August 27th, 2024
 
 Make a project plan for Fall Semester.
@@ -47,5 +47,14 @@ Make a project plan for Fall Semester.
 ### 3rd | September 17th, 2024
 
 [3rd | Fall | Path Planning & Communication & Object detection](https://docs.google.com/presentation/d/1A3duBmiX7N_WEsW9-zB4yRWIrXyZTolwiHceXCRLpRA/edit?usp=sharing)
+
+**A bit behind the plan** 
+- Path Planning
+	- Try to do ROS publish and subscribe instead
+	- Neuro Reality
+		- To stream data
+	- Checking the speed of sending data (use ROS command)
+- Other updates
+	- If we can do path planning before next meeting; the meeting can be skip!
 
 

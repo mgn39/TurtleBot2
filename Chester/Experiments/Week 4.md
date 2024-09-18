@@ -10,3 +10,13 @@
 On the pink computer use `ssh -Y SaPHaRI@192.168.0.213` (adding -Y).
 
 **Result:** 
+
+
+### September 17th, 2024
+
+**Objective:** Continue from yesterday.
+
+**Experiment:** 
+
+**Result:** 
+
