@@ -90,7 +90,9 @@ global_costmap:
 
 **Fix:** I run the Rviz in the pink computer (not ssh into Raspberry Pi).
 
-**Result:**
+**Result:** I can run the move_base file but still have an error.
+![[Screenshot 2024-09-18 at 11.24.53 AM.png]]
+And mapping the lab area is a lot faster if compared to when open Rviz via ssh. 
 
 
 ### September 18th, 2024
