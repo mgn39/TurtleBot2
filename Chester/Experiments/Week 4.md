@@ -23,6 +23,7 @@ To create **move_base** file
 	- `cd kobuki_ws/src/`
 	- `catkin_create_pkg my_navigation` (my_navigation just the name can be change)
 - Create a config directory
+	- `cd my_navigation`
 	- `mkdir config`
 - Create a configuration file (cost map)
 	- `cd config`
