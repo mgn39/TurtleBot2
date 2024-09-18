@@ -22,21 +22,65 @@ To create **move_base** file
 - Create a package for the navigation configuration
 	- `cd kobuki_ws/src/`
 	- `catkin_create_pkg my_navigation` (my_navigation just the name can be change)
-- Create configuration files
-	- Create a config directory
-		- `mkdir config`
-		- `nano costmap_common_params.yaml`
-			- 
-		- `nano local_costmap_params.yaml`
-			- 
-		- `nano global_costmap_params.yaml` 
-			- 
-	- Create a launch directory
-		- `mkdir launch`
-		- `cd launch`
-		- `nano move_base.launch`
+- Create a config directory
+	- `mkdir config`
+- Create a configuration file (cost map)
+	- `cd config`
+	- `nano costmap_common_params.yaml`
+```
+obstacle_range: 2.5
+raytrace_range: 3.0
+footprint: [[-0.35, -0.35], [-0.35, 0.35], [0.35, 0.35], [0.35, -0.35]]
+inflation_radius: 0.55
+```
+- Create more configuration file (local cost map)
+	- `nano local_costmap_params.yaml`
+```
+local_costmap:
+  global_frame: odom
+  robot_base_frame: base_link
+  update_frequency: 5.0
+  publish_frequency: 2.0
+  rolling_window: true
+  width: 2.5
+  height: 2.5
+  resolution: 0.05
+  static_map: false
+  
+  plugins:
+    - {name: obstacle_layer, type: "costmap_2d::ObstacleLayer"}
+    - {name: inflation_layer, type: "costmap_2d::InflationLayer"}
+```
+- Create last configuration file (global cost map)
+	- `nano global_costmap_params.yaml`
+```
+global_costmap:
+  global_frame: map
+  robot_base_frame: base_link
+  update_frequency: 5.0
+  publish_frequency: 2.0
+  static_map: true
+  
+  plugins:
+    - {name: obstacle_layer, type: "costmap_2d::ObstacleLayer"}
+    - {name: inflation_layer, type: "costmap_2d::InflationLayer"}
+```
+- Create a lunch directory
+	- `mkdir launch`
+- Create a launch file (move_base)
+	- `nano move_base.launch`
+```
+<launch>
+  <node pkg="move_base" type="move_base" name="move_base" output="screen">
+    <param name="base_global_planner" value="navfn/NavfnROS"/>
+    <rosparam file="$(find my_navigation)/config/costmap_common_params.yaml" co>
+    <rosparam file="$(find my_navigation)/config/global_costmap_params.yaml" co>
+    <rosparam file="$(find my_navigation)/config/local_costmap_params.yaml" com>
+  </node>
+</launch>
+```
 - Build the workspace
-	- `cd ~/kobuki_ws`
+	- `cd ~/kuboki_ws`
 	- `catkin_make`
 	- `source devel/setup.bash`
 - Then try launch the file
@@ -46,5 +90,13 @@ To create **move_base** file
 
 **Fix:** I run the Rviz in the pink computer (not ssh into Raspberry Pi).
 
-**Result:** 
+**Result:**
 
+
+### September 18th, 2024
+
+**Objective:**
+
+**Experiment:**
+
+**Result:** 
