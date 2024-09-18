@@ -67,6 +67,7 @@ global_costmap:
     - {name: inflation_layer, type: "costmap_2d::InflationLayer"}
 ```
 - Create a lunch directory
+	- `cd ..`
 	- `mkdir launch`
 - Create a launch file (move_base)
 	- `nano move_base.launch`
