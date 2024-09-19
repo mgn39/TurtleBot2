@@ -97,10 +97,34 @@ global_costmap:
 And mapping the lab area is a lot faster if compared to when open Rviz via ssh. 
 
 
-### September 18th, 2024
+### September 19th, 2024
 
-**Objective:**
+**Objective:** Path Planning
 
-**Experiment:**
+**Experiment:** efe
 
-**Result:** 
+Streaming data:
+
+**Problem:** When run the command `roslaunch turtlebot_bringup minimal.launch` I got some warning; disk usage in log directory is over 1 GB recommended to use "rosclean" command. After that I checking all Raspberry Pi and found out in Raspberry Pi 1 have changed the IP Address.
+
+**Fix:** running `rosclean check` to see the amount of usage. I copy the all files just in case.
+- Locate the Log Files: ROS log files are usually stored in here
+	- `cd ~/.ros/log`
+- Create a Backup Directory
+	- `mkdif ~/ros_logs_backup`
+- Copy the Log Files: this command will copy all the files without deleting them from the original location
+	- `cp -r ~/.ros/log/* ~/ros_logs_backup/`
+- Verify Backup
+	- `ls ~/ros_logs_backup`
+- Then clean it up
+	- `rosclean purge`
+
+**Result:** rgr
+
+Raspberry Pi 1: 192.168.0.92 | 101M ROS node logs.
+Raspberry Pi 2: Same | 45M ROS node logs.
+Raspberry Pi 3: Same | 28M ROS node logs.
+Raspberry Pi 4: Same | 25M ROS node logs.
+Raspberry Pi 5: Same | 8.3M ROS node logs.
+Raspberry Pi 6: Same | 1.1GB ROS node logs. -> **Raspberry Pi 6: Same | 0GB ROS node logs.**
+Raspberry Pi 7: Same | 1.3M ROS node logs.
