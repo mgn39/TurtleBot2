@@ -5,3 +5,8 @@ Stream data to another computer. Can try to use ssh into it. But the thing is Iâ
 
 IP Address of the pink computer
 	192.168.0.41
+
+
+### September 16th, 2024
+
+To do ssh don't forget to check the WiFi is that the same one or not.
