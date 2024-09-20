@@ -1,4 +1,4 @@
-demai
+Huang, Sugie, IEEE 1997 | September 13th, 2024
 
 **Links:** [Mobile Robot and Sound Localization](https://ieeexplore.ieee.org/abstract/document/655085/authors#authors)
 
