@@ -128,7 +128,7 @@ Install Ubuntu 20.04 (64-bit) and all necessary packages:
 - Configuration 
 	- Head to `kobuki_ws/src/yujin_ocs` then delete the folder except for `yocs_cmd_vel_mux`, `yocs_controllers`, and `yocs_velocity_smoother`
 - Further installation	
-	- `cd` _____
+	- `cd`
 	- `sudo apt install liborocos-kdl-dev`
 - Run rosdep command  
 	- `cd kobuki_ws/`
