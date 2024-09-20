@@ -190,7 +190,7 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 ```
 
 - Need to generate audio drivers for support in freenect folder
-	- `cd libfreenect`
+	- `cd ..`
 	- `python3 src/fwfetcher.py`
 - Copy to a specific location (without this command still work)
 	- `sudo cp src/audios.bin /usr/local/share/libfreenect`
