@@ -76,9 +76,9 @@ global_costmap:
 <launch>
   <node pkg="move_base" type="move_base" name="move_base" output="screen">
     <param name="base_global_planner" value="navfn/NavfnROS"/>
-    <rosparam file="$(find my_navigation)/config/costmap_common_params.yaml" co>
-    <rosparam file="$(find my_navigation)/config/global_costmap_params.yaml" co>
-    <rosparam file="$(find my_navigation)/config/local_costmap_params.yaml" com>
+    <rosparam file="$(find my_navigation)/config/costmap_common_params.yaml" command="load" />
+    <rosparam file="$(find my_navigation)/config/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find my_navigation)/config/local_costmap_params.yaml" command="load" />
   </node>
 </launch>
 ```
