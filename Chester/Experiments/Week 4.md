@@ -70,6 +70,7 @@ global_costmap:
 	- `cd ..`
 	- `mkdir launch`
 - Create a launch file (move_base)
+	- `cd launch` 
 	- `nano move_base.launch`
 ```
 <launch>
