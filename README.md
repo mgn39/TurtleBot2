@@ -138,7 +138,7 @@ Install Ubuntu 20.04 (64-bit) and all necessary packages:
 	- `rosdep install --from-paths src --ignore-src -r -y`
 	- `rosdep update`
 	- `catkin_make`
-- Source the workspace  
+- Source the workspace
 	- `source devel/setup.bash`
 - Run the command to connect to the TurtleBot  
 	- `lsusb` (to check if the TurtleBot is connected or not)  

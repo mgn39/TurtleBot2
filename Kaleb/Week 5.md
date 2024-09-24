@@ -30,5 +30,36 @@
 			- `export ROS_HOSTNAME=<workstation ip address>`
 		- Then as usual, run `source $CONDA_PREFIX/setup.bash`
 		- To test, just ping each other's IPs
-	- **TODO**: Rebuild all Turtlebot2 packages...
-		- aaaaaa
+	- Rebuild all Turtlebot2 packages...
+		- Follow [README](./../README.md) instructions, then use the following script for all the required packages in `/kobuki_ws/src:
+       ```
+		# standard Turtlebot packages with some pizza
+		conda install python-orocos-kdl
+		git clone https://github.com/yujinrobot/kobuki.git
+		git clone https://github.com/yujinrobot/kobuki_description.git
+		git clone https://github.com/yujinrobot/yocs_virtual_sensor.git
+		git clone https://github.com/yujinrobot/yujin_ocs.git
+		git clone https://github.com/turtlebot/turtlebot.git
+		git clone https://github.com/turtlebot/turtlebot_msgs.git
+		git clone https://github.com/turtlebot/turtlebot_apps.git
+		git clone https://github.com/turtlebot/turtlebot_simulator.git
+		
+		# for Robostack specifically
+		git clone https://github.com/osrf/capabilities
+		git clone https://github.com/AutonomyLab/create_robot/tree/noetic
+		git clone https://github.com/ros-perception/depthimage_to_laserscan
+		git clone https://github.com/stonier/ecl_core/tree/release/0.62-noetic
+		git clone https://github.com/ros-drivers/linux_peripheral_interfaces
+		git clone https://github.com/ros-drivers/openni_camera
+		git clone https://github.com/ros-planning/robot_pose_ekf
+		
+		rosdep install --from-paths . --ignore-src -r -y # produces errors
+		```
+	- **SIKE** this sucks we're moving to Docker, deleting conda env with:
+		- `conda remove -n ros_env --all`
+### Docker Side Quest
+- No more headaches trying to rebuild every single thing from source. Screw Robostack.
+	- Downloading [Docker Desktop](https://docs.docker.com/desktop/)
+### Door Opening Side Quest
+- Remote-controlled lever that actuates the disability button
+	- 
