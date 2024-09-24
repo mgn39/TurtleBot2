@@ -24,4 +24,5 @@
 
 ## <u>9/16/24</u>
 - **GOAL**: Autonomous movement
-	- 
+	- Trivial, [here's the quick tutorial](https://learn.turtlebot.com/2015/02/01/10/) to create a script and launch it
+	- We need to complete mapping to move forward with true autonomous movement
