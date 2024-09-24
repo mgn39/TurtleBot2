@@ -54,7 +54,28 @@ Make a project plan for Fall Semester.
 	- Neuro Reality
 		- To stream data
 	- Checking the speed of sending data (use ROS command)
-- Other updates
+- Other update
 	- If we can do path planning before next meeting; the meeting can be skip!
+
+
+### 4th | September 24th, 2024
+
+[4th | Fall | Path Planning & Communication & Object detection](https://docs.google.com/presentation/d/1gl0PDvwv_8z4YSAAstxr5Q-XXCOAMZjoCHSpwODfhQE/edit?usp=share_link)
+
+- Path Planning
+	- [The robot's start position is off. Planing will always fail](https://robotics.stackexchange.com/questions/102710/noetic-rtabmap-move-basei-cannot-resolve-the-error-the-robots-start-positi)
+	- [Unable to get starting pose of robot, unable to create global plan]([https://answers.ros.org/question/58796/move_base-warning-unable-to-get-starting-pose-of-robot-unable-to-create-global-plan/](https://answers.ros.org/question/58796/move_base-warning-unable-to-get-starting-pose-of-robot-unable-to-create-global-plan/ "https://answers.ros.org/question/58796/move_base-warning-unable-to-get-starting-pose-of-robot-unable-to-create-global-plan/"))
+- Communication
+	- [RGB and Depth images out of sync](https://answers.ros.org/question/46280/reg-subscribing-to-depth-and-rgb-image-at-the-same-time/)
+- Research
+	- LiDAR sensor and buy it (1 piece)
+	- Kaleb's
+		- Designing door opening mechanism
+	- Chester's
+		- Door bell (to sending the signal)
+		- Office beacons
+- Other update
+	- Dr. Block connect us to last author
+
 
 

@@ -131,12 +131,3 @@ Raspberry Pi 4: Same | 25M ROS node logs.
 Raspberry Pi 5: Same | 8.3M ROS node logs.
 Raspberry Pi 6: Same | 1.1GB ROS node logs. -> **Raspberry Pi 6: Same | 0GB ROS node logs.**
 Raspberry Pi 7: Same | 1.3M ROS node logs.
-
-
-### September 20th, 2024
-
-**Objective:**
-
-**Experiment:**
-
-**Result:** 
