@@ -102,9 +102,11 @@ And mapping the lab area is a lot faster if compared to when open Rviz via ssh.
 
 **Objective:** Path Planning
 
-**Experiment:** efe
-
-Streaming data:
+**Experiment:** To streaming data
+- Install image_transport for efficient image transfer
+	- `sudo apt install ros-noetic-image-transport`
+- Use compressed_image_transport to minimize bandwidth usage
+	- `rosrun image_transport republish raw in:=/kinect/rgb/image_raw compressed out:=/kinect/rgb/image_compressed` 
 
 **Problem:** When run the command `roslaunch turtlebot_bringup minimal.launch` I got some warning; disk usage in log directory is over 1 GB recommended to use "rosclean" command. After that I checking all Raspberry Pi and found out in Raspberry Pi 1 have changed the IP Address.
 
@@ -120,7 +122,7 @@ Streaming data:
 - Then clean it up
 	- `rosclean purge`
 
-**Result:** rgr
+**Result:** Error. I cannot streaming efficient data.
 
 Raspberry Pi 1: 192.168.0.92 | 101M ROS node logs.
 Raspberry Pi 2: Same | 45M ROS node logs.

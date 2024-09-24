@@ -1,9 +1,9 @@
 
 ### September 23th, 2024
 
-**Objective:** 
+**Objective:** Path Planing
 
-**Experiment:** 
+**Experiment:** Try to do path planning.
 
 **Problem:** I cannot bringup after ran `sudo apt autoremove`
 
@@ -19,5 +19,14 @@
 - Install angles package
 	- `sudo apt-get install ros-noetic-angles -y`
 
+
+**Result:** Can work again.
+
+
+### September 24th, 2024
+
+**Objective:** Path Planing (Configuration)
+
+**Experiment:**
 
 **Result:** 
