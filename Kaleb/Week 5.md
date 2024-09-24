@@ -60,6 +60,7 @@
 ### Docker Side Quest
 - No more headaches trying to rebuild every single thing from source. Screw Robostack.
 	- Downloading [Docker Desktop](https://docs.docker.com/desktop/)
+	- Created a new repository
 ### Door Opening Side Quest
 - Remote-controlled lever that actuates the disability button
 	- 
