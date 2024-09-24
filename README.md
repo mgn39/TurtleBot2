@@ -126,7 +126,10 @@ Install Ubuntu 20.04 (64-bit) and all necessary packages:
 	- `git clone https://github.com/turtlebot/turtlebot_apps.git`
 	- `git clone https://github.com/turtlebot/turtlebot_simulator.git`
 - Configuration 
-	- Head to `kobuki_ws/src/yujin_ocs` then delete the folder except for `yocs_cmd_vel_mux`, `yocs_controllers`, and `yocs_velocity_smoother`
+	- Head to `kobuki_ws/src/yujin_ocs` then delete the all files except for
+		- `yocs_cmd_vel_mux`
+		- `yocs_controllers`
+		- `yocs_velocity_smoother`
 - Further installation	
 	- `cd`
 	- `sudo apt install liborocos-kdl-dev`
