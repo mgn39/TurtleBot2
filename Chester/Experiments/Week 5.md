@@ -113,9 +113,22 @@ laser_scan: {
 
 **Result:** Still got 2 warnings
 `[ WARN] [1727194190.269365876]: The robot's start position is off the global costmap. Planning will always fail, are you sure the robot has been properly localized?`
+
 `[ WARN] [1727201530.070138681]: Unable to get starting pose of robot, unable to create global plan`
 
 
 ### September 25th, 2024
 
 **Objective:** Path Planning
+
+**Experiment:** Trying on new command for rtabmap
+`roslaunch rtabmap_ros rtabmap.launch rtabmap_args:="--delete_db_on_start" depth_topic:=/camera/depth_registered/image_raw rgb_topic:=/camera/rgb/image_raw camera_info_topic:=/camera/rgb/camera_info`
+
+Trying on new move_base file (include in the turtlebot_navigation = move_base_laser.launch)
+`roslaunch turtlebot_navigation move_base_laser.launch` still got same error "The robot's start position is off the global costmap. Planning will always fail"
+
+Use this `rosrun map_server map_saver -f /kobuki_ws/src/hfi_map` still cannot save the map either in the pink computer or ssh to Raspberry Pi.
+
+The robot might not be publishing the correct transform (TFs) between frames. Try run this command `rosrun tf view_frames` and got some error. After some configuration nothing different. And use `rostopic echo /tf` to check they are publish or not -> can ping.
+
+**Result:** All failed. But in rtabmap command still got some warning but less.
