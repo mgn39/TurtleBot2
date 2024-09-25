@@ -57,7 +57,7 @@
 		```
 	- **SIKE** this sucks we're moving to Docker, deleting conda env with:
 		- `conda remove -n ros_env --all`
-### Docker Side Quest
+### Docker Side Quest (Day 1)
 - No more headaches trying to rebuild every single thing from source. Screw Robostack.
 	- Downloading [Docker Desktop](https://docs.docker.com/desktop/)
 - Created a custom [Dockerfile](./../src/Dockerfile) to create our Turtlebot2-ready image `ros-noetic-desktop-arm64`:
@@ -134,5 +134,6 @@ CMD ["/bin/bash"]
 - To build the Dockerfile container, navigate to it in the terminal and run `docker build -n ros-noetic-desktop-arm64 .`
 - To run the container, run `docker run -it ros-noetic-desktop-arm64`, then I lost braincells for 3 hours!
 - **ISSUE:** Keyboard Teleop file works, but pressing buttons don't make the Turtlebot move, odd...
+- For later: https://wiki.ros.org/docker/Tutorials/GUI
 ### Door Opening Side Quest
 - Remote-controlled lever that actuates the disability button
