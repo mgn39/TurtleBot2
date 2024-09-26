@@ -76,3 +76,13 @@ We went in increasing order of the number of musicals you've seen.
 
 
 ### 3rd | September 26th, 2024
+
+**Lab Meeting:**
+Next lab meeting, meet two weeks from today, at **12:30 p.m.** on **October 10th, 2024**
+
+**Chester** - 
+- **Introduction:** I'm Chester, I'm an undergrads internship student from Thailand. I'm working on a research project focusing on TurtleBot.
+- **Accomplishments:** After accessing the computer beside my desk, I could map lab areas much faster and configure the move_base file. To stream data from Raspberry Pi into the computer, I also changed the ROS command of rtab-map. So I got less warning of RGB and Depth images out of sync.
+- **Challenges:** Even though I can map lab areas from the computer. I still can't save the map. To launch the move_base file after I got rid of all errors I still got some warnings like "The robot's start position is off the global costmap. Planning will always fail". If I can initialize the position of the robot it might help.
+- **Goals:** Get path planning done. Fill out the IRB Google Form, and finish research on doorbell and office beacons
+- **Lesson:** Never stop looking for answers, even if it like looking for a needle in the ocean.

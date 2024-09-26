@@ -72,7 +72,7 @@ Make a project plan for Fall Semester.
 	- Kaleb's
 		- Designing door opening mechanism
 	- Chester's
-		- Door bell (to sending the signal)
+		- Doorbell (to sending the signal)
 		- Office beacons
 - Other update
 	- Dr. Block connect us to last author
