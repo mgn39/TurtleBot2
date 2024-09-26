@@ -231,7 +231,7 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 - Install RTAB-MAP package  
 	- `sudo apt install ros-noetic-rtabmap-ros -y`  
 - Open the RTAB-MAP  
-	- `roslaunch rtabmap_ros rtabmap.launch rtabmap_args:="--delete_db_on_start"`  
+	- `roslaunch rtabmap_ros rtabmap.launch rtabmap_args:="--delete_db_on_start" depth_topic:=/camera/depth_registered/image_raw rgb_topic:=/camera/rgb/image_raw camera_info_topic:=/camera/rgb/camera_info`  
 - If facing any error on running the RTAB-MAP try this command  
 	- `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/ros/noetic/lib`  
 	- `echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/ros/noetic/lib' >> ~/.bashrc`  
