@@ -80,6 +80,17 @@ We went in increasing order of the number of musicals you've seen.
 **Lab Meeting:**
 Next lab meeting, meet two weeks from today, at **12:30 p.m.** on **October 10th, 2024**
 
+**Publications:** Wearable team submit IRB
+
+**Discuss:** 
+
+**Kaleb** - unknown # of musicals
+- **Introduction:** Kaleb is a second-year studying CS who works on the TurtleBots with Chester.
+- **Accomplishments:** He caught up to speed with the new lab (he was out for the summer), and is experimenting with TurtleBot scripts, and repaired a computer.
+- **Challenges:** Though not necessarily technical, he.s been struggling a bit with time management to spend more time experimenting with the bots.
+- **Goals:** He (and Chester) hopes to move the TurtleBots with basic pathfinding autonomously.
+- **Lesson:** He advises to take good rest.
+
 **Chester** - 
 - **Introduction:** I'm Chester, I'm an undergrads internship student from Thailand. I'm working on a research project focusing on TurtleBot.
 - **Accomplishments:** After accessing the computer beside my desk, I could map lab areas much faster and configure the move_base file. To stream data from Raspberry Pi into the computer, I also changed the ROS command of rtab-map. So I got less warning of RGB and Depth images out of sync.

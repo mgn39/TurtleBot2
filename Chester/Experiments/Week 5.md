@@ -132,3 +132,47 @@ Use this `rosrun map_server map_saver -f /kobuki_ws/src/hfi_map` still cannot sa
 The robot might not be publishing the correct transform (TFs) between frames. Try run this command `rosrun tf view_frames` and got some error. After some configuration nothing different. And use `rostopic echo /tf` to check they are publish or not -> can ping.
 
 **Result:** All failed. But in rtabmap command still got some warning but less.
+
+
+### September 26th, 2024
+
+**Objective:** Path Planning
+
+**Experiment:** Config the move_base and global_costmap file.
+- global_costmap
+	- Change from `update_frequency: 5.0` into `update_frequency: 1`
+	- Change from `publish_frequency: 2.0` into `publish_frequency: 1`
+	- Add `- {name: static_layer, type: "rtabmap_ros::StaticLayer"}` under plugins:
+- move_base
+```
+  <arg name="odom_frame_id"   default="t265_odom_frame"/>
+  <arg name="base_frame_id"   default="robot_center"/>
+  <arg name="global_frame_id" default="map"/>
+  <arg name="odom_topic" default="t265/odom/sample" />
+
+  <arg name="laser_topic" default="scan" />
+
+<!--Added statement-->
+  <remap from="map" to="/rtabmap/grid_map"/>
+    
+    
+      <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+        <rosparam file="$(find realsense_controls)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
+        <rosparam file="$(find realsense_controls)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />   
+        <rosparam file="$(find realsense_controls)/config/local_costmap_params_3d.yaml" command="load" />   
+        <rosparam file="$(find realsense_controls)/config/global_costmap_params.yaml" command="load" />
+        <rosparam file="$(find realsense_controls)/config/base_local_planner_params.yaml" command="load" />
+
+        <!-- reset frame_id parameters using user input data -->
+        <param name="global_costmap/global_frame" value="$(arg global_frame_id)"/>
+        <param name="global_costmap/robot_base_frame" value="$(arg base_frame_id)"/>
+        <param name="local_costmap/global_frame" value="$(arg odom_frame_id)"/>
+        <param name="local_costmap/robot_base_frame" value="$(arg base_frame_id)"/>
+        <param name="DWAPlannerROS/global_frame_id" value="$(arg odom_frame_id)"/>
+       
+       
+        <remap from="odom" to="$(arg odom_topic)"/>
+        <remap from="scan" to="$(arg laser_topic)"/>
+      </node>
+    </launch>
+```
