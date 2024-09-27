@@ -182,6 +182,10 @@ The robot might not be publishing the correct transform (TFs) between frames. Tr
 
 ### September 27th, 2024
 
-**Objective:** Path Planning
+**Objective:** Path Planning + Saving map
 
-**Experiment:** 
+**Experiment:** To Ensure that the map topic is being correctly published `rostopic list` . Also echo the topic `rostopic echo/map` 
+
+**Result:**
+
+**Research:** 
