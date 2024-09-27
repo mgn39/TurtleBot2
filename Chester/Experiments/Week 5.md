@@ -176,3 +176,12 @@ The robot might not be publishing the correct transform (TFs) between frames. Tr
       </node>
     </launch>
 ```
+
+**Result:** Not help. I cannot launch the move_base file. But still can launch move_base_laser file (in turtlebot_navigation).
+
+
+### September 27th, 2024
+
+**Objective:** Path Planning
+
+**Experiment:** 
