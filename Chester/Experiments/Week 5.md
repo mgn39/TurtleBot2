@@ -186,6 +186,12 @@ The robot might not be publishing the correct transform (TFs) between frames. Tr
 
 **Experiment:** To Ensure that the map topic is being correctly published `rostopic list` . Also echo the topic `rostopic echo/map` 
 
-**Result:**
+`rostopic echo /move_base/goal` and `rostopic echo /move_base/status` to check that I can send the command. In the `rostopic echo /move_base/status` some I got "This goal has been accepted by the simple action server" and "This goal was canceled because another goal was received by the simple action server". But both command I got the result that they received the command. Also in Rviz, I can get the result that they get the commad.
+
+I try to use move_base_laser from the package not build the new one. But after that, I got some errors. After I configured the global_costmap_params.yaml and local_costmap_params.yaml by deleting the `/` in the files. I launched the move_base_laser and there is no error but it is stuck in requesting the map.
+
+**Result:** Cannot save the map and TurtleBot doesn't move.
+![[IMG_1778.heic]]
+![[IMG_1777.heic]]
 
 **Research:** 
