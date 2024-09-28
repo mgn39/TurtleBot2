@@ -69,6 +69,7 @@ Make a project plan for Fall Semester.
 	- [RGB and Depth images out of sync](https://answers.ros.org/question/46280/reg-subscribing-to-depth-and-rgb-image-at-the-same-time/)
 - Research
 	- LiDAR sensor and buy it (1 piece)
+	- Charging Station (Additional)
 	- Kaleb's
 		- Designing door opening mechanism
 	- Chester's

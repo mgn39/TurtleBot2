@@ -194,4 +194,28 @@ I try to use move_base_laser from the package not build the new one. But after t
 ![[IMG_1778.heic]]
 ![[IMG_1777.heic]]
 
-**Research:** 
+**Research:** Doorbell & Office beacons
+- Doorbell
+	- Doorbell Integration
+		- Equip the doorbell with a sensor or a smart device to sending the signal (Wi-Fi)
+		- When doorbell is pressed, send a signal via MQTT to Raspberry Pi
+			- **MQTT (Message Queuing Telemetry Transport):** lightweight protocol. It's commonly used in IoT applications to facilitate communication between devices, sensors, and servers
+	- Signal Processing on TurtleBot
+		- On Raspberry Pi create a ROS node that subscribes to the doorbell signal
+	- Navigation
+		- Once TurtleBot receives the signal, TurtleBot will autonomously navigate to the door location
+	- Return to start
+		- After reaching the door, the TurtleBot could wait for the person to follow it or escort them back to a designated location
+	- User Interaction
+		- Consider adding display on the TurtleBot to guide or greet the visitor after it reaches the door
+- Office beacons
+	- Beacon Positioning
+		- Beacons placed at key locations (door). These beacons broadcast their location or unique identifiers
+		- Raspberry Pi can have a Bluetooth receiver to detect nearby beacons and determine its relative position
+		- Enhanced localization if the office has Wi-Fi dead zones
+	- Beacon-assisted Navigation
+		- When TurtleBot receives a signal form the doorbell, it can detect beacon is closest to the door
+		- TurtleBot moves through the office, it can use beacon signals to confirm its location and refine its path planning. This could be useful when obstacles or dynamic environments affect localization accuracy
+	- Visitor Identification with Beacons
+	- Enhanced Interaction
+	- Integration with Doorbell System
