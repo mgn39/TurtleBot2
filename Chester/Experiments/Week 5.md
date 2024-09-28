@@ -217,5 +217,10 @@ I try to use move_base_laser from the package not build the new one. But after t
 		- When TurtleBot receives a signal form the doorbell, it can detect beacon is closest to the door
 		- TurtleBot moves through the office, it can use beacon signals to confirm its location and refine its path planning. This could be useful when obstacles or dynamic environments affect localization accuracy
 	- Visitor Identification with Beacons
+		- If visitor carry beacons, the TurtleBot could recognize when a specific person is near it and provide personalized instructions or guidance
+		- Can assign unique beacon IDs to frequent visitors, and the TurtleBot could adapt its behavior or navigation routes based on who it detects
 	- Enhanced Interaction
+		- Beacons near rooms or landmarks could trigger specific actions in the TurtleBot. For instance, when the TurtleBot detects a beacon near a meeting room, it could announce “You have reached the meeting room” or offer guidance for the next location
 	- Integration with Doorbell System
+		- The doorbell system could be enhanced with a beacon to help the TurtleBot precisely identify the location of the entrance and ensure that it navigates directly to the door when the bell is pressed
+		- The TurtleBot can also detect beacons placed in frequently visited areas, helping it to optimize routes and provide quicker assistance
