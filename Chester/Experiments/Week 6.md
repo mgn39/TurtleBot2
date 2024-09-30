@@ -23,3 +23,7 @@
 - Slamtec RPLIDAR S1
 	- Ideal for larger spaces, range up to **40 meters**
 	- Well with ROS for mapping and path planning
+
+Charging Station for TurtleBot 2
+- Battery life of TurtleBot **~2-3 hours**, battery life can vary based of factors (sensors)
+- If we can reach our goal, it will be more helpful if we have a charging station
