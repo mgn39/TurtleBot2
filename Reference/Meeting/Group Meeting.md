@@ -12,7 +12,7 @@ Dr. Block purchased a subscription to the Noun Project, a great website that cre
 Google Groups for all the equipment. [Instruction](https://docs.google.com/document/d/1lnYLSR1WywN3m4WGoWTwu7-t9PPTkB5m6vJlNpMBOR4/edit?usp=sharing)
 
 **Individual Updates:**
-We went in decreasing order of time in the lab.
+We went in *decreasing* order of time in the lab.
 
 **Kaleb** - April/May 2024
 - **Introduction:** Kaleb is a second-year studying computer science with a math minor. He collaborates with Chester on the TurtleBot.
@@ -58,7 +58,7 @@ Click the link that says "SpartaIRB New User Request"
 Please do not wait, do this as soon as possible so we don't encounter a delay in our study being processed. 
 
 **Individual Updates:**
-We went in increasing order of the number of musicals you've seen.
+We went in *increasing* order of the number of musicals you've seen.
 
 **Chester** - 2 Musicals (The Lion King, Frozen)
 - **Introduction:** I'm Chester, I'm an undergrads internship student from Thailand. I'm working on a research project focusing on TurtleBot.
@@ -80,18 +80,29 @@ We went in increasing order of the number of musicals you've seen.
 **Lab Meeting:**
 Next lab meeting, meet two weeks from today, at **12:30 p.m.** on **October 10th, 2024**
 
-**Publications:** Wearable team submit IRB
+*Anything almost ready to submit or waiting for edits:*
+Chester sent Dr. Block description of research for Noah; Dr. Block will edit it soon.
 
-**Discuss:** 
+**Discussion Items:**
+There will be a visitor on Tuesday, 8 October 2024, 1:30-2:30 p.m. Dr. Block needs to test the demos ahead of time and check the oral presentation.
 
-**Kaleb** - unknown # of musicals
+Austin recommends using Projects and Teams in GitHub to help us stay organized as our lab grows. Austin gave a quick run-down on how to separate things: 
+- Click projects, create a project, and it turns into a project management tool that links with the repository 
+- Click teams —> create a team (do team visibility, visible) —> add members (Dr. Block **must** be a member of your team) —> go to repositories —> click add repository, search the name, and assign it to your team- you can assign repositories to a team, then you can filter all the repositories by team
+
+**On October 2** (Wednesday next week), a potential donor is visiting HFI to tour the facility to learn more about our work. He is bringing his daughter, who is considering coming to CWRU for medical school. Dr. Tyler would like some students to be involved with this meeting at 3 p.m. Would anyone be available to meet at that time? If so, I will put you in touch with Simone. **She is looking for 1-2 students.** Thank you, Chester, for offering.
+
+**Individual Updates:**
+We went in *increasing* order of number of items on your to-do list.
+
+**Kaleb** - Activity
 - **Introduction:** Kaleb is a second-year studying CS who works on the TurtleBots with Chester.
-- **Accomplishments:** He caught up to speed with the new lab (he was out for the summer), and is experimenting with TurtleBot scripts, and repaired a computer.
-- **Challenges:** Though not necessarily technical, he.s been struggling a bit with time management to spend more time experimenting with the bots.
-- **Goals:** He (and Chester) hopes to move the TurtleBots with basic pathfinding autonomously.
-- **Lesson:** He advises to take good rest.
+- **Accomplishments:** He investigated Robostack and can communicate with the TurtleBots through Docker.
+- **Challenges:** He's been having trouble with Rviz loading with the TurtleBot, and he and Chester struggle with effectively streaming the mapping data.
+- **Goals:** He hopes to successfully work with Docker + TurtleBot 2, designing a remote-controlled lever, and successfully mapping environment.
+- **Lesson:** If you spend 3 hours fixing a bug, take a break! Please.
 
-**Chester** - 
+**Chester** - 3 things (sending documentation to home institution)
 - **Introduction:** I'm Chester, I'm an undergrads internship student from Thailand. I'm working on a research project focusing on TurtleBot.
 - **Accomplishments:** After accessing the computer beside my desk, I could map lab areas much faster and configure the move_base file. To stream data from Raspberry Pi into the computer, I also changed the ROS command of rtab-map. So I got less warning of RGB and Depth images out of sync.
 - **Challenges:** Even though I can map lab areas from the computer. I still can't save the map. To launch the move_base file after I got rid of all errors I still got some warnings like "The robot's start position is off the global costmap. Planning will always fail". If I can initialize the position of the robot it might help.
