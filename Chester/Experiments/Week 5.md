@@ -213,7 +213,7 @@ I try to use move_base_laser from the package not build the new one. But after t
 		- Raspberry Pi can have a Bluetooth receiver to detect nearby beacons and determine its relative position
 		- Enhanced localization if the office has Wi-Fi dead zones
 	- Beacon-assisted Navigation
-		- When TurtleBot receives a signal form the doorbell, it can detect beacon is closest to the door
+		- When TurtleBot receives a signal from the doorbell, it can detect beacon is closest to the door
 		- TurtleBot moves through the office, it can use beacon signals to confirm its location and refine its path planning. This could be useful when obstacles or dynamic environments affect localization accuracy
 	- Visitor Identification with Beacons
 		- If visitor carry beacons, the TurtleBot could recognize when a specific person is near it and provide personalized instructions or guidance
