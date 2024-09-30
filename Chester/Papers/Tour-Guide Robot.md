@@ -10,4 +10,4 @@ This paper implements a tour-guide robot using Kinect Technology to ease the pro
 
 To improve this work adding more colors to detect to differentiate between multiple users, using RFID readers with higher detection ranges, playing audio files in more than 1 language, and adding human-interaction capability in which the robot can greet or give suggestions to users.
 
-![[Pasted image 20240911113259.png]]
+![[Tour-Guide Robot.Figure 8.png]]

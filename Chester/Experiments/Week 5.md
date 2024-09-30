@@ -191,14 +191,13 @@ The robot might not be publishing the correct transform (TFs) between frames. Tr
 I try to use move_base_laser from the package not build the new one. But after that, I got some errors. After I configured the global_costmap_params.yaml and local_costmap_params.yaml by deleting the `/` in the files. I launched the move_base_laser and there is no error but it is stuck in requesting the map.
 
 **Result:** Cannot save the map and TurtleBot doesn't move.
-![[IMG_1778.heic]]
-![[IMG_1777.heic]]
+![[Rvis Requesting the map.png]]![[Set Goal (Command received).png]]
 
 **Research:** Doorbell & Office beacons
 - Doorbell
 	- Doorbell Integration
 		- Equip the doorbell with a sensor or a smart device to sending the signal (Wi-Fi)
-		- When doorbell is pressed, send a signal via MQTT to Raspberry Pi
+		- When doorbell is pressed, send a signal via **MQTT** to Raspberry Pi
 			- **MQTT (Message Queuing Telemetry Transport):** lightweight protocol. It's commonly used in IoT applications to facilitate communication between devices, sensors, and servers
 	- Signal Processing on TurtleBot
 		- On Raspberry Pi create a ROS node that subscribes to the doorbell signal

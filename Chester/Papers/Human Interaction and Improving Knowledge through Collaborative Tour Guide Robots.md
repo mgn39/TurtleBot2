@@ -8,4 +8,4 @@ It is important to identify how these new museum guides can optimally interact w
 
 Personality/Behavior of the robot affects the human learning process; this experiment has shown that people remember significantly more information when they are guided by a cheerful robot than a serious one. Moreover, another important outcome of this study is users are more likely to two robots than a single robot.
 
-![[Pasted image 20240911113332.png]]
+![[Human Interaction and Improving.Figure 2.png]]

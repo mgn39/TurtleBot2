@@ -10,4 +10,4 @@ These trials have also revealed that interaction design for robots should not fo
 
 Furthermore, we observed that there was a need for a "near-navigation" control function to adjust the robot's preprogrammed positions. This might be generalized to provide for both an automated, supervisory type of control and a direct, manual control means for users. For service robots, it seems that both states and a transition between them are typical and need to be addressed.
 
-![[Pasted image 20240911113318.png]]
+![[Involving Users in the Design.Figure 5.png]]

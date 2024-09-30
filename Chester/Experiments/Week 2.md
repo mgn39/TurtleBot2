@@ -9,7 +9,7 @@
 `export ROS_IP=192.168.0.213
 
 **Result:** 6 are controlled!!!
-![[Pasted image 20240911113349.png]]
+![[Control 6 TurtleBot at once.png]]
 
 ### September 5th, 2024
 
