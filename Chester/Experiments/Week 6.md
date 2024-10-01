@@ -6,10 +6,13 @@
 **Experiment:** I save the configuration first (I don't know if it's related or not).
 And I try many attempts by using the command `rosrun map_sever map_saver -f /path to map/map name`. So, `rosrun map_server map_saver -f /home/SaPHaRI/kobuki_ws/src/1stmap` this map will be saved under kobuki_ws/src folder. It takes more than 30 minutes.
 
-I changed to this command instead `rosrun map_server map_saver map:=/rtabmap/grid_prob_map -f /home/SaPHaRI/kobuki_ws/src/1stmap` because due to I use rtabmap for mapping. In Global Options I chose /map. But in Map I chose /rtabmap/grid_prob_map so the topic does not match.
+I changed to this command instead `rosrun map_server map_saver map:=/rtabmap/grid_prob_map -f /home/SaPHaRI/kobuki_ws/src/1stmap`. After I change the command, I can save the map within **second!**.
+
+Need to **ensure correct topic:** If map_saver doesn't automatically save from the correct topic, you can specific the topic manually. Since you're using RTAB-MAP and your map topic is /rtabmap/grid_prob_map and in Global Options is /map so the topic does not match.
 
 **Result:** Be able to save the map now
-
+![[Successfully save the map.png]]
+![[Open saved map.png]]
 
 **Research:** LiDAR Sensor
 - Hokuyo UTM-30LX
