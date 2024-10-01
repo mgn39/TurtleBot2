@@ -17,20 +17,20 @@ RUN if [ ! -f /etc/ros/rosdep/sources.list.d/20-default.list ]; then \
     fi
 
 # Set up ROS environment variables, change 192.168.0.8 to Turtlebot's
-RUN echo ". /opt/ros/noetic/setup.bash" >> ~/.bashrc && \
-    echo "export ROS_MASTER_URI=http://192.168.0.8:11311" >> ~/.bashrc && \
-	echo "export ROS_IP=$(hostname -I)" >> ~/.bashrc && \
-	echo "export ROS_HOSTNAME=$(hostname -I)" >> ~/.bashrc && \
-    source ~/.bashrc
+RUN echo ". /opt/ros/noetic/setup.bash" >> /root/.bashrc && \
+    echo "export ROS_MASTER_URI=http://192.168.0.8:11311" >> /root/.bashrc && \
+	echo "export ROS_IP=$(hostname -I)" >> /root/.bashrc && \
+	echo "export ROS_HOSTNAME=$(hostname -I)" >> /root/.bashrc && \
+    source /root/.bashrc
 ENV CMAKE_PREFIX_PATH=/opt/ros/noetic
 
 # stinky catkin
 # following commands are from https://gist.github.com/jeremyfix/0c5973aba508ee8b6e8d3c3077c6db1e
-RUN mkdir -p ~/catkin_ws/src && \
+RUN mkdir -p /root/catkin_ws/src && \
     . /opt/ros/noetic/setup.bash && \
-    cd ~/catkin_ws && \
+    cd /root/catkin_ws && \
     catkin_make
-RUN apt-get update && apt-get install -y git vim
+RUN apt-get update && apt-get install -y git vim iputils-ping
 
 WORKDIR /root/catkin_ws/src
 
