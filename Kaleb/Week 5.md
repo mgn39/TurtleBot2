@@ -131,7 +131,7 @@ RUN catkin_make
 # Set default shell to bash
 CMD ["/bin/bash"]
 ```
-- To build the Dockerfile container, navigate to it in the terminal and run `docker build -n ros-noetic-desktop-arm64 .`
+- To build the Dockerfile container, navigate to it in the terminal and run `docker build -t ros-noetic-desktop-arm64 .`
 - To run the container, run `docker run -it ros-noetic-desktop-arm64`, then I lost braincells for 3 hours!
 - **ISSUE:** Keyboard Teleop file works, but pressing buttons don't make the Turtlebot move, odd...
 - For later: https://wiki.ros.org/docker/Tutorials/GUI
@@ -160,7 +160,3 @@ CMD ["/bin/bash"]
 	- Requires a strong servo motor that provides enough force to push the metal button.
 		- The MG996R is rated for a starting torque of up to 11 kg cm ([source](https://www.rajguruelectronics.com/ProductView?tokDatRef=MTA1MA==&tokenId=NjY=&product=MG996%20SERVO%20MOTOR%20(180%20DEGREE)#:~:text=Servo%20Motor%20-%20MG996R%20servo%20motor%20(180%20DEGREE),-Add%20to%20Cart&text=It%20can%20generate%20a%20torque,handle%20demanding%20tasks%20with%20ease.))
 		- Need to test, not entirely sure how much this means for the button
-
-## <u>10/1/24</u>
-### Docker Side Quest (Day 2)
-- Recreated Docker container using the Dockerfile in Day 1
