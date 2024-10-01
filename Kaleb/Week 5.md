@@ -138,7 +138,29 @@ CMD ["/bin/bash"]
 
 ## <u>9/29/24</u>
 ### Door Opening Side Quest
-- Remote-controlled lever that actuates the disability button, thinking of two methods:
-	- Arduino + servo + transmitter setup
-	- Sending a signal on ~390 MHz
-- 
+- Remote-controlled lever that actuates the disability button ([push plate actuator](https://www.constructionspecifier.com/understanding-new-accessibility-requirements-for-doors/)), thinking of two methods:
+	- Method 1: Sending a signal (preferred)
+	- Method 2: Arduino + servo + transmitter setup
+- Method 1
+	- Technology required:
+		- Radio Frequency (RF) Reader ($40) or FlipperZero ($170) -- standard EMF reader might be too sensitive to receive signals of 390 MHz?
+		- USB transmitter, should connect to Pi or the FlipperZero
+	- Spoke w/ friend (Shashank) from Amateur Radio Club who has RF detection equipment
+		- Garage door openers usually range 300-390 MHz, this [disability door opening system](https://www.amazon.com/Handicap-Opener-Disabled-People-Operator/dp/B00XHN3QT4/ref=asc_df_B00XHN3QT4/?tag=hyprod-20&linkCode=df0&hvadid=692875362841&hvpos=&hvnetw=g&hvrand=13777473852223583244&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9015305&hvtargid=pla-2281435183818&psc=1&mcid=0352452fadc43f1ca9075d633446a027&hvocijid=13777473852223583244-B00XHN3QT4-&hvexpln=73)'s remote is 315 MHz
+		- Highly recommends FlipperZero to avoid hassle and for quick, simple testing
+	- **PROBLEM**: Likely needs to bypass rolling codes to send proper signal, [source](https://www.reddit.com/r/flipperzero/comments/v2sfha/handicap_push_doors/)
+		- FlipperZero would help with this task, but this blog to [hack car doors](https://hackaday.io/project/164566-how-to-hack-a-car) is useful
+	- This legal? Probably if it's for research...
+- Method 2
+	- Technology required:
+		- ESP32 (microcontroller)
+		- MG996R (servo motor)
+		- 3D printed lever with some styrofoam
+		- Power source...(**problem**)
+	- Requires a strong servo motor that provides enough force to push the metal button.
+		- The MG996R is rated for a starting torque of up to 11 kg cm ([source](https://www.rajguruelectronics.com/ProductView?tokDatRef=MTA1MA==&tokenId=NjY=&product=MG996%20SERVO%20MOTOR%20(180%20DEGREE)#:~:text=Servo%20Motor%20-%20MG996R%20servo%20motor%20(180%20DEGREE),-Add%20to%20Cart&text=It%20can%20generate%20a%20torque,handle%20demanding%20tasks%20with%20ease.))
+		- Need to test, not entirely sure how much this means for the button
+
+## <u>10/1/24</u>
+### Docker Side Quest (Day 2)
+- Recreated Docker container using the Dockerfile in Day 1
