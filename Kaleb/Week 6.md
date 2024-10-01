@@ -32,6 +32,7 @@
 - Networking:
 	- Redoing the networking setup since I couldn't figure out how to ping right. The goal right now is to ping from my host machine (Macbook) to the container IP
 	- The [Docker documentation](https://docs.docker.com/engine/network/) is a great resource, but appears it's mainly for container-to-container networking?
+	- HOW IN THE WORLD DO YOU DO THIS IT DOESN'T MAKE SENSE AM I STUPID
 - GUI:
 	- Trying to run `rviz` and other GUI components. It's kinda broken and I need to figure out X11 forward and such
 	- Will be using the simple way (method 1) listed in the [ROS + Docker Wiki](https://wiki.ros.org/es/docker/Tutorials/GUI) and [XQuartz](https://www.xquartz.org/) (for MacOS)
