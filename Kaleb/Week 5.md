@@ -135,5 +135,10 @@ CMD ["/bin/bash"]
 - To run the container, run `docker run -it ros-noetic-desktop-arm64`, then I lost braincells for 3 hours!
 - **ISSUE:** Keyboard Teleop file works, but pressing buttons don't make the Turtlebot move, odd...
 - For later: https://wiki.ros.org/docker/Tutorials/GUI
+
+## <u>9/29/24</u>
 ### Door Opening Side Quest
-- Remote-controlled lever that actuates the disability button
+- Remote-controlled lever that actuates the disability button, thinking of two methods:
+	- Arduino + servo + transmitter setup
+	- Sending a signal on ~390 MHz
+- 
