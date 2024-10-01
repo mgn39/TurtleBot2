@@ -1,11 +1,15 @@
 
 ### September 30th, 2024
 
-**Objective:**
+**Objective:** Save the map for path planning
 
-**Experiment:**
+**Experiment:** I save the configuration first (I don't know if it's related or not).
+And I try many attempts by using the command `rosrun map_sever map_saver -f /path to map/map name`. So, `rosrun map_server map_saver -f /home/SaPHaRI/kobuki_ws/src/1stmap` this map will be saved under kobuki_ws/src folder. It takes more than 30 minutes.
 
-**Result:** 
+I changed to this command instead `rosrun map_server map_saver map:=/rtabmap/grid_prob_map -f /home/SaPHaRI/kobuki_ws/src/1stmap` because due to I use rtabmap for mapping. In Global Options I chose /map. But in Map I chose /rtabmap/grid_prob_map so the topic does not match.
+
+**Result:** Be able to save the map now
+
 
 **Research:** LiDAR Sensor
 - Hokuyo UTM-30LX
