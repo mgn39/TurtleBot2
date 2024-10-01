@@ -1,33 +1,33 @@
-FROM arm64v8/ubuntu:focal
+# Use the official ROS Noetic desktop image
+FROM tiryoh/ros-desktop-vnc:noetic-arm64-20240526T0237
 
-# Set up your ROS environment
-RUN apt update && apt install -y curl gnupg2 lsb-release
+# Ensure the environment is set up whenever a new shell is started
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
-# Add the ROS repository
-RUN curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | apt-key add - \
-  && echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list \
-  && apt update
-
-# Install the desktop-full version of ROS Noetic
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
-RUN apt install -y ros-noetic-desktop-full
+RUN apt update && apt install -y curl gnupg2 lsb-release \
+    python3-catkin-tools ros-noetic-desktop-full python3-rosdep \
+    ros-noetic-openslam-gmapping ros-noetic-base-local-planner ros-noetic-clear-costmap-recovery ros-noetic-move-base-msgs ros-noetic-navfn ros-noetic-rotate-recovery xsltproc ros-noetic-map-server ros-noetic-amcl ros-noetic-dwa-local-planner ros-noetic-rosbridge-* ros-noetic-ecl-console ros-noetic-ecl-command-line ros-noetic-ecl-converters ros-noetic-ecl-devices ros-noetic-ecl-geometry ros-noetic-ecl-mobile-robot ros-noetic-ecl-sigslots ros-noetic-ecl-time python3-empy ros-noetic-ddynamic-reconfigure ros-noetic-teb-local-planner \
+    && rm -rf /var/lib/apt/lists/*
 
-# Initialize rosdep
-RUN apt-get install -y python3-rosdep
-RUN rosdep init && rosdep update
+# Initialize rosdep if it hasn't been alr
+RUN if [ ! -f /etc/ros/rosdep/sources.list.d/20-default.list ]; then \
+        rosdep init && rosdep update; \
+    fi
 
 # Set up ROS environment variables, change 192.168.0.8 to Turtlebot's
-RUN echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
-RUN echo "export ROS_MASTER_URI=http://192.168.0.8:11311" >> ~/.bashrc && \
+RUN echo ". /opt/ros/noetic/setup.bash" >> ~/.bashrc && \
+    echo "export ROS_MASTER_URI=http://192.168.0.8:11311" >> ~/.bashrc && \
 	echo "export ROS_IP=$(hostname -I)" >> ~/.bashrc && \
-	echo "export ROS_HOSTNAME=$(hostname -I)" >> ~/.bashrc
-RUN source ~/.bashrc
+	echo "export ROS_HOSTNAME=$(hostname -I)" >> ~/.bashrc && \
+    source ~/.bashrc
+ENV CMAKE_PREFIX_PATH=/opt/ros/noetic
 
-## TURTLEBOT STUFF AAAAAAAAAAAAHHHHHHHHHH
-
-# https://gist.github.com/jeremyfix/0c5973aba508ee8b6e8d3c3077c6db1e
+# stinky catkin
+# following commands are from https://gist.github.com/jeremyfix/0c5973aba508ee8b6e8d3c3077c6db1e
 RUN mkdir -p ~/catkin_ws/src && \
+    . /opt/ros/noetic/setup.bash && \
     cd ~/catkin_ws && \
     catkin_make
 RUN apt-get update && apt-get install -y git vim
@@ -51,19 +51,16 @@ RUN git clone https://github.com/ros-drivers/linux_peripheral_interfaces \
     && mv linux_peripheral_interfaces/laptop_battery_monitor ./ \
     && rm -rf linux_peripheral_interfaces
 
-# Clone the MELODIC branch of the kobuki git
-RUN git clone -b melodic https://github.com/yujinrobot/kobuki.git
-
 # Install necessary packages
-RUN apt-get update && \
+RUN . /opt/ros/noetic/setup.bash && \
+    apt-get update && rosdep update && \
     apt-get install -y liborocos-kdl-dev ros-noetic-joy && \
-    rosdep init && \
-    rosdep update && \
     rosdep install --from-paths . --ignore-src -r -y
 
 # Build the Catkin workspace
 WORKDIR /root/catkin_ws
-RUN catkin_make
+RUN . /opt/ros/noetic/setup.bash && \
+    catkin_make
 
 # Set default shell to bash
-CMD ["/bin/bash"]
+# CMD ["/bin/bash"]
