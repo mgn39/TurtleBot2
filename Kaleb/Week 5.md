@@ -62,6 +62,7 @@
 	- Downloading [Docker Desktop](https://docs.docker.com/desktop/)
 - Created a custom [Dockerfile](./../src/Dockerfile) to create our Turtlebot2-ready image `ros-noetic-desktop-arm64`:
 ```Dockerfile
+# NOTE: THIS EXCERPT IS OUTDATED. USE THE LINKED DOCKERFILE INSTEAD.
 FROM arm64v8/ubuntu:focal
 
 # Set up your ROS environment
