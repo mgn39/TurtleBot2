@@ -28,8 +28,8 @@
 **2nd Draft**
 - Lab
 	- We develop empathetic robotics companion to address **mental health** concern and provide emotional support
-	- Mental Health: Autism, Post-traumatic Stress Disorder (PTSD), Depression, Grief
-		- Autism: A neurological and developmental disorder that affects how people interact with others, communicate, learn, and behave
+	- Mental Health: Autism Spectrum Disorder, Post-traumatic Stress Disorder (PTSD), Depression, Grief
+		- Autism spectrum disorder: A neurological and developmental disorder that affects how people interact with others, communicate, learn, and behave
 		- PTSD: A disorder that develops in some people who have experienced a shocking, scary, or dangerous event
 		- Depression: A constant feeling of sadness, which stops you doing your norma activities
 		- Grief: A natural response to loss
