@@ -51,7 +51,7 @@ Charging Station for TurtleBot 2
 
 **Objective:** Launch the amcl and move_base files to do path planning.
 
-**Experiment:**
+**Experiment:** After I can save the map from yesterday. I fix 
 
 **Result:** Get errors from amcl file.
 
