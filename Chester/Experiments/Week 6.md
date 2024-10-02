@@ -31,6 +31,17 @@ Need to **ensure correct topic:** If map_saver doesn't automatically save from t
 	- Ideal for larger spaces, range up to **40 meters**
 	- Well with ROS for mapping and path planning
 
+LiDAR Sensor (~100$)
+- YDLIDAR Tmini
+	- Price under 100$
+	- Range up to **8 meters**
+	- Supported by ROS. Good entry for simple indoor navigation tasks
+- RPLIDAR A1M8 (Recommend)
+	- Price ~100$
+	- Range up to **12 meters**
+	- Provides 360-degree scanning
+	- Well with ROS Noetic and TurtleBot 2
+
 Charging Station for TurtleBot 2
 - Battery life of TurtleBot **~2-3 hours**, battery life can vary based of factors (sensors)
 - If we can reach our goal, it will be more helpful if we have a charging station
