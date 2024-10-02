@@ -34,3 +34,14 @@ Need to **ensure correct topic:** If map_saver doesn't automatically save from t
 Charging Station for TurtleBot 2
 - Battery life of TurtleBot **~2-3 hours**, battery life can vary based of factors (sensors)
 - If we can reach our goal, it will be more helpful if we have a charging station
+
+
+### October 1st, 2024
+
+**Objective:** Launch the amcl and move_base files to do path planning.
+
+**Experiment:**
+
+**Result:** Get errors from amcl file.
+
+
