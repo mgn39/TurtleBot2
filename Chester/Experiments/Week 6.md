@@ -190,3 +190,57 @@ To fix the error
 - Add `.decode('utf.8')` after `m = r.search(vstr)` 
 - Should be like this `m = r.search(vstr.decode('utf.8'))`
 Reference: [TypeError: string pattern on a bytes-like object](https://github.com/ros/geometry/pull/193)
+
+**Problem:** No laser scan received
+
+**Experiment:** I add this `<arg name="scan_topic" default="/scan"/>`  into amcl file.
+This is my amcl file by now.
+```
+<launch>
+  <!-- Convert PointCloud to LaserScan -->
+  <node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" name="pointcloud_to_laserscan">
+    <!-- Remap input from the Kinect's point cloud -->
+    <remap from="cloud_in" to="/camera/depth/points"/>
+    <param name="scan_time" value="0.033"/>  
+    <param name="range_min" value="0.5"/>    
+    <param name="range_max" value="5.0"/>    
+    <param name="use_inf" value="true"/>     
+    <param name="angle_min" value="-1.57"/>  
+    <param name="angle_max" value="1.57"/>   
+    <param name="target_frame" value="base_link"/>  
+  </node>
+
+  <!-- Map server -->
+  <arg name="map_file" default="$(env TURTLEBOT_MAP_FILE)"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
+  <!-- AMCL -->
+  <arg name="custom_amcl_launch_file" default="$(find turtlebot_navigation)/launch/includes/amcl/kinect_amcl.launch.xml"/>
+  <arg name="initial_pose_x" default="0.0"/> 
+  <arg name="initial_pose_y" default="0.0"/> 
+  <arg name="initial_pose_a" default="0.0"/>
+  <include file="$(arg custom_amcl_launch_file)">
+    <arg name="initial_pose_x" value="$(arg initial_pose_x)"/>
+    <arg name="initial_pose_y" value="$(arg initial_pose_y)"/>
+    <arg name="initial_pose_a" value="$(arg initial_pose_a)"/>
+    
+    <!-- Add scan topic remapping here -->
+    <arg name="scan_topic" default="/scan"/>
+  </include>
+  
+  <!-- Move base -->
+  <arg name="custom_param_file" default="$(find turtlebot_navigation)/param/kinect_costmap_params.yaml"/>
+  <include file="$(find turtlebot_navigation)/launch/includes/move_base.launch.xml">
+    <arg name="custom_param_file" value="$(arg custom_param_file)"/>
+  </include>
+
+</launch>
+```
+
+**Result:**
+WARN 1727995162.007876729: No laser scan received (and thus no pose updates have been published) for 1727995162.007561 seconds.  Verify that data is being published on the /scan topic
+
+
+### October 4th, 2024
+
+**Objective:** 
