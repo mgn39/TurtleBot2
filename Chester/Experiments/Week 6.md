@@ -132,3 +132,61 @@ To avoid launching freenect twice I will delete the freenct section in amcl file
 ```
 
 After I configured the amcl file, I found important warning that make me cannot set the initial pose of the robot is **No laser scan received** but when I run `rostopiclist`, the /scan is exist. Then I run `rostopic echo /scan`. So, if **don't see any data**, it means the topic exists but isn't publishing scan messages. And Yes, I did not see any data lol.
+
+Kinect: It doesn't produce a LaserScan directly; instead, it produces a point cloud. So, need to convert the point cloud to LaserScan.
+
+Install pointcloud_to_laserscan
+- `sudo apt-get install ros-noetic-pointcloud-to-laserscan -y`
+
+Modify the amcl file.
+```
+<launch>
+<!-- Convert PointCloud to LaserScan -->
+  <node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" name="pointcloud_to_laserscan">
+    <!-- Remap input from the Kinect's point cloud -->
+    <remap from="cloud_in" to="/camera/depth/points"/>
+    <param name="scan_time" value="0.033"/>  <!-- Adjust based on desired scan frequency -->
+    <param name="range_min" value="0.5"/>    <!-- Minimum range for laser scan -->
+    <param name="range_max" value="5.0"/>    <!-- Maximum range (based on Kinect's range) -->
+    <param name="use_inf" value="true"/>     <!-- Use infinity for out-of-range values -->
+    <param name="angle_min" value="-1.57"/>  <!-- Start angle for scan (in radians) -->
+    <param name="angle_max" value="1.57"/>   <!-- End angle for scan (in radians) -->
+    <param name="target_frame" value="base_link"/>  <!-- Target frame for the scan -->
+  </node>
+
+  <!-- Map server -->
+  <arg name="map_file" default="$(env TURTLEBOT_MAP_FILE)"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
+  <!-- AMCL -->
+  <arg name="custom_amcl_launch_file" default="$(find turtlebot_navigation)/launch/includes/amcl/kinect_amcl.launch.xml"/>
+  <arg name="initial_pose_x" default="0.0"/> <!-- Use 17.0 for willow's map in simulation -->
+  <arg name="initial_pose_y" default="0.0"/> <!-- Use 17.0 for willow's map in simulation -->
+  <arg name="initial_pose_a" default="0.0"/>
+  <include file="$(arg custom_amcl_launch_file)">
+    <arg name="initial_pose_x" value="$(arg initial_pose_x)"/>
+    <arg name="initial_pose_y" value="$(arg initial_pose_y)"/>
+    <arg name="initial_pose_a" value="$(arg initial_pose_a)"/>
+  </include>
+  
+  <!-- Move base -->
+  <arg name="custom_param_file" default="$(find turtlebot_navigation)/param/kinect_costmap_params.yaml"/>
+  <include file="$(find turtlebot_navigation)/launch/includes/move_base.launch.xml">
+    <arg name="custom_param_file" value="$(arg custom_param_file)"/>
+  </include>
+
+</launch>
+```
+
+But I still get the same warning **No laser scan received**.
+
+I also check the frame transformation (TF) is correctly set up by running.
+- `rosrun tf view_frames`
+
+I get error an incompatibility in Python versions, where the data being passed is in bytes format but is expected to be a string. This issue is related to the TF package in ROS Noetic.
+
+To fix the error
+- `sudo nano /opt/ros/noetic/lib/tf/view_frames`
+- Add `.decode('utf.8')` after `m = r.search(vstr)` 
+- Should be like this `m = r.search(vstr).decode('utf.8')`
+Reference: [TypeError: string pattern on a bytes-like object](https://github.com/ros/geometry/pull/193)
