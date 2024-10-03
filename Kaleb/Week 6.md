@@ -5,14 +5,12 @@
 		- If on an M1 or ARM-based machine, no change is necessary
 		- If not on an M1 or ARM-based machine i.e. amd64 systems, change the first line of the Dockerfile to `FROM osrf/ros:noetic-desktop-focal`
 	- Revamped [Dockerfile](../src/Dockerfile) from Day 1
-		- Navigate to the directory with the Dockerfile
-		- Build with `docker build -t ros-noetic-desktop-full .`
-		- Note: Had to debug at least 10 errors, here's a few:
-			- Removed the zsh shell and created a soft link to ince `source` doesn't come natively
-			- Source `setup.bash` for each `RUN` command is called in a different subshell
-			- `root` and `~` are the same when called as the root user, else `~` refers to the home directory $-->$ use `root` whenever possible, not `~`
-			- `rosdep update` should be called right before `catkin_make` to resolve deps, not need to `rosdep init` though...don't delete the list either
-			- Adding the `ping` command
+		- Removed the zsh shell and created a soft link to ince `source` doesn't come natively
+		- Source `setup.bash` for each `RUN` command is called in a different subshell
+		- `root` and `~` are the same when called as the root user, else `~` refers to the home directory $-->$ use `root` whenever possible, not `~`
+		- `rosdep update` should be called right before `catkin_make` to resolve deps, not need to `rosdep init` though...don't delete the list either
+		- Adding the `ping` command with `iputils`
+	- Navigate to the directory with the Dockerfile, then build with `docker build -t ros-noetic-desktop-full .`
 - Running (networking + rviz):
 	- In one terminal, launch: 
 	  ```bash
@@ -20,7 +18,7 @@
 			--env="DISPLAY=host.docker.internal:0" \
 			--env="QT_X11_NO_MITSHM=1" \
 			--volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
-			-p 11311:8080 -p 11312:9990 \
+			-p 25565:80 -p 11311:11311 \
 			ros-noetic-desktop-full \
 		    rviz
 		```
@@ -36,3 +34,17 @@
 - GUI:
 	- Trying to run `rviz` and other GUI components. It's kinda broken and I need to figure out X11 forward and such
 	- Will be using the simple way (method 1) listed in the [ROS + Docker Wiki](https://wiki.ros.org/es/docker/Tutorials/GUI) and [XQuartz](https://www.xquartz.org/) (for MacOS)
+
+## <u>10/3/24</u>
+### Docker Side Quest (Day 3)
+- Networking:
+	- Again, updated [Dockerfile](../src/Dockerfile)
+	- There are issues with MacOS that prevent a direct pinging of the container from host
+	- When running a container on Docker Desktop, port forward for `25565:80` and `11311:11311`.
+		- If running from CLI, this is done through the flag `-p 25565:80 -p 11311:11311`
+		- Planning to use `25565` as a web server for port forwarding
+		- Planning to use `11311` for internal ROS communication
+	- The Pi should connect to the host over a port that bridges to the container; where the MASTER_URI should point to
+	- Pinging uses the Internet Communication Messaging Protocol (ICMP) instead of Transmission Control Protocol (TCP), which doesn't matter cause ROS will be communicating with its own thing whatever
+### TODO: Web Server
+- Figure out how to do web server stuff

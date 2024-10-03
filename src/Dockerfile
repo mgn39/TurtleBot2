@@ -16,11 +16,12 @@ RUN if [ ! -f /etc/ros/rosdep/sources.list.d/20-default.list ]; then \
         rosdep init && rosdep update; \
     fi
 
-# Set up ROS environment variables, change 192.168.0.8 to Turtlebot's
+# Set up ROS environment variables, change 192.168.0.8 to whichever Turtlebot's
+# IMPORTANT: Avoid using the internal IP of the container. It's meant to be accessed by other containers
 RUN echo ". /opt/ros/noetic/setup.bash" >> /root/.bashrc && \
-    echo "export ROS_MASTER_URI=http://192.168.0.8:11311" >> /root/.bashrc && \
-	echo "export ROS_IP=$(hostname -I)" >> /root/.bashrc && \
-	echo "export ROS_HOSTNAME=$(hostname -I)" >> /root/.bashrc && \
+    echo "export ROS_MASTER_URI=http://192.168.0.8:25565" >> /root/.bashrc && \
+	echo "export ROS_IP=192.168.0.190" >> /root/.bashrc && \
+	echo "export ROS_HOSTNAME=192.168.0.190" >> /root/.bashrc && \
     source /root/.bashrc
 ENV CMAKE_PREFIX_PATH=/opt/ros/noetic
 
