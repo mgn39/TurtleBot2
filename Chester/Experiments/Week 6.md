@@ -188,5 +188,5 @@ I get error an incompatibility in Python versions, where the data being passed i
 To fix the error
 - `sudo nano /opt/ros/noetic/lib/tf/view_frames`
 - Add `.decode('utf.8')` after `m = r.search(vstr)` 
-- Should be like this `m = r.search(vstr).decode('utf.8')`
+- Should be like this `m = r.search(vstr.decode('utf.8'))`
 Reference: [TypeError: string pattern on a bytes-like object](https://github.com/ros/geometry/pull/193)
