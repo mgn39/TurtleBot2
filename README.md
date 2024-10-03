@@ -243,6 +243,19 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 	- Add RobotModel  
 	- Add PointCloud2 -> Set topic -> `/rtabmap/cloud_map`
 
+
+### Save the Map
+- After turn on the camera on RTAB-MAP and Rviz
+- Mapping the lab area
+- Save the map
+	- Need to ensure correct topic: If map_saver doesn’t automatically save from the correct topic, need to specific the topic manually
+		- Global Options: /map
+		- Map: /rtabmap/grid_prob_map
+	- Save map command
+		- `rosrun map_server map_saver map:=/rtabmap/grid_prob_map -f /home/SaPHaRI/kobuki_ws/src/1stmap`
+		- `map_saver map:=/rtabmap/grid_prob_map` is specific the topic manually
+		- `/home/SaPHaRI/kobuki_ws/src/1stmap` is the path of the map
+
 ### Communicate between 2 terminals:  
 - First terminal  
 	- `roscore`  
