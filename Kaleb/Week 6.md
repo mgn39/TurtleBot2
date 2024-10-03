@@ -45,4 +45,6 @@
 		- Planning to use `25565` as a web server for port forwarding
 		- Planning to use `11311` for internal ROS communication
 	- The Pi should connect to the host over a port that bridges to the container; where the MASTER_URI should point to
-	- Pinging uses the Internet Communication Messaging Protocol (ICMP) instead of Transmission Control Protocol (TCP), which doesn't matter cause ROS will be communicating with 
+	- Pinging uses the Internet Communication Messaging Protocol (ICMP) instead of Transmission Control Protocol (TCP), which doesn't matter cause ROS will be communicating with its own thing whatever
+### TODO: Web Server
+- Figure out how to do web server stuff
