@@ -93,7 +93,42 @@ You can find this file by `cd kobuki_ws/src/turtlebot_apps/turtlebot_navigation/
 
 **Result:** I got big error after I launched the amcl file, it kill freenect.
 
+**Notes:** Most errors from amcl file are in the original file setting the path different from yours. Thus, you need to set a new path to make sure that when you launch the amcl file, the file can indicate another relative file correctly.
+
 
 ### October 3rd, 2024
 
 **Objective:** Fix the errors.
+
+**Problem:** After I launch the amcl file it will kill the freenect launch file.
+
+**Solution:** I found out that I lunching the freenect twice. One is in the freenect launch and another one is in the amcl file.
+
+To avoid launching freenect twice I will delete the freenct section in amcl file.
+```
+<launch>
+  <!-- Map server -->
+  <arg name="map_file" default="$(env TURTLEBOT_MAP_FILE)"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
+  <!-- AMCL -->
+  <arg name="custom_amcl_launch_file" default="$(find turtlebot_navigation)/launch/includes/amcl/kinect_amcl.launch.xml"/>
+  <arg name="initial_pose_x" default="0.0"/> <!-- Use 17.0 for willow's map in simulation -->
+  <arg name="initial_pose_y" default="0.0"/> <!-- Use 17.0 for willow's map in simulation -->
+  <arg name="initial_pose_a" default="0.0"/>
+  <include file="$(arg custom_amcl_launch_file)">
+    <arg name="initial_pose_x" value="$(arg initial_pose_x)"/>
+    <arg name="initial_pose_y" value="$(arg initial_pose_y)"/>
+    <arg name="initial_pose_a" value="$(arg initial_pose_a)"/>
+  </include>
+
+  <!-- Move base -->
+  <arg name="custom_param_file" default="$(find turtlebot_navigation)/param/kinect_costmap_params.yaml"/>
+  <include file="$(find turtlebot_navigation)/launch/includes/move_base.launch.xml">
+    <arg name="custom_param_file" value="$(arg custom_param_file)"/>
+  </include>
+
+</launch>
+```
+
+After I configured the amcl file, I found important warning that make me cannot set the initial pose of the robot is **No laser scan received** but when I run `rostopiclist`, the /scan is exist. Then I run `rostopic echo /scan`. So, if **don't see any data**, it means the topic exists but isn't publishing scan messages. And Yes, I did not see any data lol.
