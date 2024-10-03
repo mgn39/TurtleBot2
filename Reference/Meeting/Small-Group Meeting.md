@@ -79,4 +79,30 @@ Make a project plan for Fall Semester.
 	- Dr. Block connect us to last author
 
 
+### 5th | October 1st, 2024
+
+[5th | Fall | Path Planning & Research](https://docs.google.com/presentation/d/1R9HKMAPdzUN7GNVBjQcfk2W7qSU73n1ck9ft6LzE6Oc/edit?usp=sharing)
+
+- Path Planning
+	- Should done configuration before next meeting
+- Research: Doorbell and Beacons should be in the same platform? Wi-Fi or Bluetooth
+	- Doorbell
+		- Looking for Smart Doorbell (including speaker and screen)
+	- Beacons
+		- To set goal locations
+		- Might needs physical
+	- Mechanism door openning
+		- Method 1
+	- LiDAR Sensor
+		- Looking for RPLIDAR A1M8
+	- Charging Station
+		- We should by it
+	- Additional Security
+		- Set the hours?
+- Other updates
+	- Meeting
+		- Donor Meeting on October 2nd, 2024
+	- Demos
+		- 3 Demos in this month - October 8, 28, 30th, 2024
+
 
