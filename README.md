@@ -239,14 +239,14 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 - Open the Rviz  
 	- `rosrun rviz rviz`  
 - Add option on Rviz  
-	- Global options -> Set fixed frame -> `map`  
+	- Global options -> Set fixed frame -> map
 	- Add RobotModel
 	- Add TF
 	- Add LaserScan
-	- Map -> 
-	- Odometry ->
-	- Path -> 
-	- Add PointCloud2 -> Set topic -> `/rtabmap/cloud_map`
+	- Map -> Topic -> /rtabmap/cloud_map
+	- Odometry -> Topic -> /rtabmap/odom
+	- Path -> Topic -> /rtabmap/mapPath
+	- Add PointCloud2 -> Set topic -> /rtabmap/cloud_map
 
 
 ### Save the Map
@@ -367,8 +367,29 @@ Add a User via Recovery Mode
 - Computer
 	- Turn on
 	- Open Terminal
-	- Terminal 1
-	- Terminal 2
-	- Terminal 3
+	- Terminal 1 (Connect to TurtleBot)
+		- `ssh SaPHaRI@192.168.0.53`
+		- `roslaunch turtlebot_bringup minimal.launch`
+	- Terminal 2 (Freenect)
+		- `ssh SaPHaRI@192.168.0.53`
+		- `roslaunch freenect_launch freenect.launch depth_registration:=true`
+	- Terminal 3 (RTABMAP)
+		- `ssh SaPHaRI@192.168.0.53`
+		- `roslaunch rtabmap_ros rtabmap.launch rtabmap_args:="--delete_db_on_start" depth_topic:=/camera/depth_registered/image_raw rgb_topic:=/camera/rgb/image_raw camera_info_topic:=/camera/rgb/camera_info`
+	- Terminal 4 (AMCL file to initialize pose of TurtleBot)
+		- `ssh SaPHaRI@192.168.0.53`
+		- `roslaunch turtlebot_navigation amcl_demo.launch map_file:=/home/SaPHaRI/kobuki_ws/src/4thmap.yaml`
+	- Terminal 5 (Rviz to do path planning)
+		- `rviz`
+		- Add option on Rviz
+			- RobotModel
+			- LaserScan -> Topic -> /scan
+			- Map -> Topic -> /map
+	- In Rviz
+		- Click 2D Pose Estimate
+			- To set initialize position on the robot
+			- Set arrows go in the **same direction** with TurtleBot
+		- Click 2D Nav Goal
+			- Choose your Goal on the map
 
 
