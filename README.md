@@ -260,6 +260,7 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 		- `rosrun map_server map_saver map:=/rtabmap/grid_prob_map -f /home/SaPHaRI/kobuki_ws/src/1stmap`
 		- `map_saver map:=/rtabmap/grid_prob_map` is specific the topic manually
 		- `/home/SaPHaRI/kobuki_ws/src/1stmap` is the path of the map
+		- `1stmap` is name of the map
 
 ### Communicate between 2 terminals:  
 - First terminal  
@@ -369,6 +370,7 @@ Add a User via Recovery Mode
 	- Open Terminal
 	- Terminal 1 (Connect to TurtleBot)
 		- `ssh SaPHaRI@192.168.0.53`
+		- IP Address depends on what Raspberry Pi you use, in this case I use Raspberry Pi 5
 		- `roslaunch turtlebot_bringup minimal.launch`
 	- Terminal 2 (Freenect)
 		- `ssh SaPHaRI@192.168.0.53`
@@ -379,6 +381,7 @@ Add a User via Recovery Mode
 	- Terminal 4 (AMCL file to initialize pose of TurtleBot)
 		- `ssh SaPHaRI@192.168.0.53`
 		- `roslaunch turtlebot_navigation amcl_demo.launch map_file:=/home/SaPHaRI/kobuki_ws/src/4thmap.yaml`
+		- Don't forget to choose the map, in this case I chose `4thmap`
 	- Terminal 5 (Rviz to do path planning)
 		- `rviz`
 		- Add option on Rviz
@@ -392,4 +395,57 @@ Add a User via Recovery Mode
 		- Click 2D Nav Goal
 			- Choose your Goal on the map
 
+
+### Configuration file for AMCL
+- Go to AMCL file
+	- `cd kobuki_ws/src/turtlebot_apps/turtlebot_navigation/launch/`
+	- `nano amcl_demo.launch`
+	- Use this instead
+```
+<launch>
+  <!-- Convert PointCloud to LaserScan -->
+  <node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" name="pointcloud_to_laserscan">
+    <!-- Remap input from the Kinect's point cloud -->
+    <remap from="cloud_in" to="/rtabmap/cloud_map"/>
+    <param name="scan_time" value="0.033"/>  
+    <param name="range_min" value="0.5"/>    
+    <param name="range_max" value="5.0"/>    
+    <param name="use_inf" value="true"/>     
+    <param name="angle_min" value="-1.57"/>  
+    <param name="angle_max" value="1.57"/>   
+    <param name="target_frame" value="base_link"/>  
+  </node>
+
+  <!-- Map server -->
+  <arg name="map_file" default="$(env TURTLEBOT_MAP_FILE)"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
+  <!-- AMCL -->
+  <arg name="custom_amcl_launch_file" default="$(find turtlebot_navigation)/launch/includes/amcl/kinect_amcl.launch.xml"/>
+  <arg name="initial_pose_x" default="0.0"/> 
+  <arg name="initial_pose_y" default="0.0"/> 
+  <arg name="initial_pose_a" default="0.0"/>
+  <include file="$(arg custom_amcl_launch_file)">
+    <arg name="initial_pose_x" value="$(arg initial_pose_x)"/>
+    <arg name="initial_pose_y" value="$(arg initial_pose_y)"/>
+    <arg name="initial_pose_a" value="$(arg initial_pose_a)"/>
+
+    <!-- Add scan topic remapping here -->
+    <arg name="scan_topic" default="/scan"/>
+  </include>
+
+  <!-- Move base -->
+  <arg name="custom_param_file" default="$(find turtlebot_navigation)/param/kinect_costmap_params.yaml"/>
+  <include file="$(find turtlebot_navigation)/launch/includes/move_base.launch.xml">
+    <arg name="custom_param_file" value="$(arg custom_param_file)"/>
+  </include>
+
+</launch>
+```
+ - Before launch this file you need to install pointcloud_to_laserscan
+	 - `sudo apt-get install ros-noetic-pointcloud-to-laserscan -y`
+- Then make sure the frame transformation (TF)
+	- `sudo nano /opt/ros/noetic/lib/tf/view_frames`
+	- Add `.decode('utf.8')` after `m = r.search(vstr)`
+	- Should be like this `m = r.search(vstr.decode('utf.8'))`
 
