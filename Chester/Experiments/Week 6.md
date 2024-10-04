@@ -243,4 +243,8 @@ WARN 1727995162.007876729: No laser scan received (and thus no pose updates have
 
 ### October 4th, 2024
 
-**Objective:** 
+**Objective:** Fix the error (No laser scan).
+
+**Experiment:** Suspected that I did not add PointCloud2 when I mapping the lab area.
+
+/rtabmap/cloud_map
