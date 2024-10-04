@@ -245,6 +245,6 @@ WARN 1727995162.007876729: No laser scan received (and thus no pose updates have
 
 **Objective:** Fix the error (No laser scan).
 
-**Experiment:** Suspected that I did not add PointCloud2 when I mapping the lab area.
+**Assumption:** It is suspected that I did not add PointCloud2 when I mapped the lab area and another suspect is after I added the PointCloud2 I chose `/rtabmap/cloud_map` instead of `/camera/depth/points`
 
-/rtabmap/cloud_map
+**Experiment:** I config the amcl file by put `/rtabmap/cloud_map`
