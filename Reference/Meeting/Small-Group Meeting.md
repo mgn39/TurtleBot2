@@ -106,3 +106,8 @@ Make a project plan for Fall Semester.
 		- 3 Demos in this month - October 8, 28, 30th, 2024
 
 
+### 6th | October 8th, 2024
+
+[Fall | 6th | Path Planning & Research]()
+
+
