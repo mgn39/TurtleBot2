@@ -6,7 +6,7 @@ Make a project plan for Fall Semester.
 
 ### 1st | September 3rd, 2024
 
-[1st | Fall | Path Planning & ROS 2](https://docs.google.com/presentation/d/1tCsQanxvls6BLPP_sbjQ3Q1yQnOed9yRa5Zvo4SLzBg/edit?usp=sharing)
+[Fall | 1st | Path Planning & ROS 2](https://docs.google.com/presentation/d/1tCsQanxvls6BLPP_sbjQ3Q1yQnOed9yRa5Zvo4SLzBg/edit?usp=sharing)
 
 - Expand the limitation of the Raspberry Pi
 - Research
@@ -20,7 +20,7 @@ Make a project plan for Fall Semester.
 
 ### 2nd | September 10th, 2024
 
-[2nd | Fall | Path Planning & Communication & Object detection](https://docs.google.com/presentation/d/1vddYcBRm07Pz5tnCfKBQbD0pOc2AUjzkZXdTrmfxIQo/edit?usp=sharing)
+[Fall | 2nd | Path Planning & Communication & Object detection](https://docs.google.com/presentation/d/1vddYcBRm07Pz5tnCfKBQbD0pOc2AUjzkZXdTrmfxIQo/edit?usp=sharing)
 
 - Path Planning
 	- Use other computer to improve processing power
@@ -46,7 +46,7 @@ Make a project plan for Fall Semester.
 
 ### 3rd | September 17th, 2024
 
-[3rd | Fall | Path Planning & Communication & Object detection](https://docs.google.com/presentation/d/1A3duBmiX7N_WEsW9-zB4yRWIrXyZTolwiHceXCRLpRA/edit?usp=sharing)
+[Fall | 3rd | Path Planning & Communication & Object detection](https://docs.google.com/presentation/d/1A3duBmiX7N_WEsW9-zB4yRWIrXyZTolwiHceXCRLpRA/edit?usp=sharing)
 
 **A bit behind the plan** 
 - Path Planning
@@ -60,7 +60,7 @@ Make a project plan for Fall Semester.
 
 ### 4th | September 24th, 2024
 
-[4th | Fall | Path Planning & Communication & Object detection](https://docs.google.com/presentation/d/1gl0PDvwv_8z4YSAAstxr5Q-XXCOAMZjoCHSpwODfhQE/edit?usp=share_link)
+[Fall | 4th | Path Planning & Communication & Object detection](https://docs.google.com/presentation/d/1gl0PDvwv_8z4YSAAstxr5Q-XXCOAMZjoCHSpwODfhQE/edit?usp=share_link)
 
 - Path Planning
 	- [The robot's start position is off. Planing will always fail](https://robotics.stackexchange.com/questions/102710/noetic-rtabmap-move-basei-cannot-resolve-the-error-the-robots-start-positi)
@@ -81,7 +81,7 @@ Make a project plan for Fall Semester.
 
 ### 5th | October 1st, 2024
 
-[5th | Fall | Path Planning & Research](https://docs.google.com/presentation/d/1R9HKMAPdzUN7GNVBjQcfk2W7qSU73n1ck9ft6LzE6Oc/edit?usp=sharing)
+[Fall | 5th | Path Planning & Research](https://docs.google.com/presentation/d/1R9HKMAPdzUN7GNVBjQcfk2W7qSU73n1ck9ft6LzE6Oc/edit?usp=sharing)
 
 - Path Planning
 	- Should done configuration before next meeting
