@@ -19,7 +19,8 @@ RUN if [ ! -f /etc/ros/rosdep/sources.list.d/20-default.list ]; then \
 # Set up ROS environment variables, change 192.168.0.8 to whichever Turtlebot's
 # IMPORTANT: Avoid using the internal IP of the container. It's meant to be accessed by other containers
 RUN echo ". /opt/ros/noetic/setup.bash" >> /root/.bashrc && \
-    echo "export ROS_MASTER_URI=http://192.168.0.8:25565" >> /root/.bashrc && \
+    echo ". catkin_ws/devel/setup.bash" >> /root/.bashrc && \
+    echo "export ROS_MASTER_URI=http://192.168.0.8:11311" >> /root/.bashrc && \
 	echo "export ROS_IP=192.168.0.190" >> /root/.bashrc && \
 	echo "export ROS_HOSTNAME=192.168.0.190" >> /root/.bashrc && \
     source /root/.bashrc
@@ -62,6 +63,3 @@ RUN . /opt/ros/noetic/setup.bash && \
 WORKDIR /root/catkin_ws
 RUN . /opt/ros/noetic/setup.bash && \
     catkin_make
-
-# Set default shell to bash
-# CMD ["/bin/bash"]

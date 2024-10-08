@@ -12,18 +12,16 @@
 ## Docker Side Quest (Day 4)
 - Using same commands as Day 2/3, now updating for the following:
 	- Switching from bridge to host network to use host IP (`192.168.0.x`) instead of `172.17.0.x` IP
-- In one terminal, launch: 
-	  ```bash
-	    docker run -t \
+	- Updated DockerFile since it didn't call `setup.bash` in the catkin_ws w/ all the turtlebot modules
+		- Rebuild with `docker build -t ros-noetic-desktop-arm64 .`
+	- Updated run command (for **Terminal 1**):
+	```bash
+	  docker run -t \
 			--env="DISPLAY=host.docker.internal:0" \
 			--env="QT_X11_NO_MITSHM=1" \
 			--volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
-			-p 25565:80 -p 11311:11311 \
-			ros-noetic-desktop-full \
-		    rviz
+			-p 11311:11311 \
+			ros-noetic-desktop-arm64
 		```
-	- In another terminal, run `docker exec -it $(docker ps -l -q) /bin/bash`. Breakdown:
-		- `docker exec` executes a container
-		- `-i` enables interaction and `-t` for pseudo-TTY
-		- `$docker ps -l -q` extracts the latest (`-l`) container ID `-q`
-		- `/bin/bash` ensures we're using the bash shell _(though not fully necessary since we deleted zsh and hard linked it to /bin/bash already)
+	- **Terminal 2**: `docker exec -it $(docker ps -l -q) /bin/bash`
+- Ok quitting Docker, it's not worth it. From 11am-6pm, my 7 hours are gone.
