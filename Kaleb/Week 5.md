@@ -55,7 +55,7 @@
 		
 		rosdep install --from-paths . --ignore-src -r -y # produces errors
 		```
-	- **SIKE** this sucks we're moving to Docker, deleting conda env with:
+	- **SIKE** this sucks since too many packages (9) are incompatible and must be rebuilt almost from scratch. so, we're moving to Docker. deleting conda env with:
 		- `conda remove -n ros_env --all`
 ### Docker Side Quest (Day 1)
 - No more headaches trying to rebuild every single thing from source. Screw Robostack.

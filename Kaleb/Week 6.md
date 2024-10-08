@@ -37,6 +37,7 @@
 
 ## <u>10/3/24</u>
 ### Docker Side Quest (Day 3)
+- To run, use the same procedure as Day 2
 - Networking:
 	- Again, updated [Dockerfile](../src/Dockerfile)
 	- There are issues with MacOS that prevent a direct pinging of the container from host
@@ -46,5 +47,6 @@
 		- Planning to use `11311` for internal ROS communication
 	- The Pi should connect to the host over a port that bridges to the container; where the MASTER_URI should point to
 	- Pinging uses the Internet Communication Messaging Protocol (ICMP) instead of Transmission Control Protocol (TCP), which doesn't matter cause ROS will be communicating with its own thing whatever
+- Abandoning Docker for the time being, will prioritize mapping using the master Desktop
 ### TODO: Web Server
 - Figure out how to do web server stuff
