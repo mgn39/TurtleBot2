@@ -108,6 +108,29 @@ Make a project plan for Fall Semester.
 
 ### 6th | October 8th, 2024
 
-[Fall | 6th | Path Planning & Research]()
+[Fall | 6th | Path Planning & Research](https://docs.google.com/presentation/d/1KN8HEZ7Km-To96Fq2wMu-KL5QfT2asIITFljo7vklZU/edit?usp=sharing)
+
+- Path Planning
+	- Done!
+	- Map larger area
+- Research
+	- Doorbell
+		- 2 Doorbell
+			- TurtleBot
+			- Human
+		- Record data
+			- When the visitor arrives at HFI, how many times the visitor rings the doorbell? For humans or robots also record the date and time
+			- Example: record 1 as robot, 2 as human
+	- Mechanism door openning
+		- Order Flipper Zero
+	- LiDAR Sensor
+		- Confirm RPLIDAR A1M8
+	- Security
+		- Set hours
+			- 10am-4pm
+- Other updates
+	- IRB Google form
+		- Kaleb should do too!
+	- Return the controller and order the new one
 
 
