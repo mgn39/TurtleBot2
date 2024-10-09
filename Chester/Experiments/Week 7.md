@@ -28,4 +28,14 @@ For my feeling I like `/rtabmap/grid_prob_map` more because the map is more reli
 
 Have some limit due to have many people walk by so my map collapse. I need to wait until night because less people.
 
-**Result:** 
+I tried to map a larger area from the previous one **but** even though I can map it, it does not work well. TurtleBot does not move to the goal that I set.
+
+![[2nd larger map.png]]
+As I mentioned in the green circle I don’t know what is that because I set the environment the same as the previous one just added the movable board. And 1 suspect is the red line because to do the larger map it over the square area.
+
+**Result:** Not successful!
+
+
+### October 10th, 2024
+
+**Objective:**
