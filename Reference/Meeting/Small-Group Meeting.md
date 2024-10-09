@@ -91,7 +91,7 @@ Make a project plan for Fall Semester.
 	- Beacons
 		- To set goal locations
 		- Might needs physical
-	- Mechanism door openning
+	- Mechanism door opening
 		- Method 1
 	- LiDAR Sensor
 		- Looking for RPLIDAR A1M8
@@ -121,7 +121,7 @@ Make a project plan for Fall Semester.
 		- Record data
 			- When the visitor arrives at HFI, how many times the visitor rings the doorbell? For humans or robots also record the date and time
 			- Example: record 1 as robot, 2 as human
-	- Mechanism door openning
+	- Mechanism door opening
 		- Order Flipper Zero
 	- LiDAR Sensor
 		- Confirm RPLIDAR A1M8
