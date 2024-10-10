@@ -1,5 +1,5 @@
 
-### September 23th, 2024
+### September 23rd, 2024
 
 **Objective:** Path Planing
 

@@ -108,3 +108,29 @@ We went in *increasing* order of number of items on your to-do list.
 - **Challenges:** Even though I can map lab areas from the computer. I still can't save the map. To launch the move_base file after I got rid of all errors I still got some warnings like "The robot's start position is off the global costmap. Planning will always fail". If I can initialize the position of the robot it might help.
 - **Goals:** Get path planning done. Fill out the IRB Google Form, and finish research on doorbell and office beacons
 - **Lesson:** Never stop looking for answers, even if it like looking for a needle in the ocean.
+
+
+### 4th | October 10th, 2024
+
+**Lab Meeting:**
+Next lab meeting, meet two weeks from today, at **12:30 p.m.** on **October 24th, 2024**
+
+**Discussion Items:**
+Waiting
+
+**Individual Updates:**
+We went in *increasing* order of number of 
+
+**Chester** - 
+- **Introduction:** I'm Chester, I'm an undergrads internship student from Thailand. I'm working on a research project focusing on TurtleBot.
+- **Accomplishments:** Finally, I can save the map and after that I am able to do path planning. So, that means I can set a position goal then enable the TurtleBot to navigate there autonomously.
+- **Challenges:** Setting the initial pose of the robot definitely helps but before I can initialize the pose of the robot I need to config the amcl file. The main things that I am facing are the topic name that I did not set correctly for the first time that why I cannot save the map or even facing some error in the amcl file. Next step is to map the larger area. So, the challenge is at this time I can map only stationary obstacles so when people walk by while mapping my map will collapse so I need to map in the evening.
+- **Goals:** Map the larger area especially to Dr. Block room.
+- **Lesson:** Fix the errors one by one. No rush!
+
+**Kaleb** - Activity
+- **Introduction:** Kaleb is a second-year studying CS who works on the TurtleBots with Chester.
+- **Accomplishments:** He investigated Robostack and can communicate with the TurtleBots through Docker.
+- **Challenges:** He's been having trouble with Rviz loading with the TurtleBot, and he and Chester struggle with effectively streaming the mapping data.
+- **Goals:** He hopes to successfully work with Docker + TurtleBot 2, designing a remote-controlled lever, and successfully mapping environment.
+- **Lesson:** If you spend 3 hours fixing a bug, take a break! Please.
