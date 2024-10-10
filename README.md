@@ -252,12 +252,12 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 	- Add PointCloud2 -> Set topic -> `/rtabmap/cloud_map`
 
 ### Save the Map
-- After turn on the camera on RTAB-MAP and Rviz
+- After you can mapping
 - Mapping the lab area
 - Save the map
 	- Need to ensure correct topic: If map_saver doesn’t automatically save from the correct topic, need to specific the topic manually
 		- Global Options: /map
-		- Map: /rtabmap/grid_prob_map
+		- Map: `/rtabmap/grid_prob_map`
 	- Save map command
 		- `rosrun map_server map_saver map:=/rtabmap/grid_prob_map -f /home/SaPHaRI/kobuki_ws/src/1stmap`
 		- `map_saver map:=/rtabmap/grid_prob_map` is specific the topic manually
@@ -358,6 +358,8 @@ Add a User via Recovery Mode
 
 
 ### Path Planning via SSH
+- If you care for do the path planning on Raspberry Pi itself
+	- Follow below steps just without ssh and run on the Raspberry Pi
 - Assumed you have map
 	- If no, go to Section: Save the Map above
 - TurteBot
