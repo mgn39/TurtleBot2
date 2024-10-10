@@ -29,8 +29,20 @@ Where to find the form in our lab drive.
 	- Put the link direct to your order
 - Table
 	- Quantity
+		- Put the number of quantity that you desired
 	- Catalog/item#
+		- ASIN (Amazon Standard Identification Number)
+		- How to find on Amazon
+			- Scroll down to see the item details
+			 ![[ASIN in the item details.png]]
+			- In the link
+			 ![[ASIN in the link.png]]
 	- Description
+		- Put the entire name of the product
+		- Example: put "RPLIDAR A1M8 2D 360 Degree 12 Meters Scanning Radius LIDAR Sensor Scanner for Obstacle Avoidance and Navigation of Robots" not just "RPLIDAR A1M8"
 	- Unit price
+		- Put the price that including tax (8%) per unit
 	- Total price
+		- Quantity x unit price
 	- Total amount
+		- Plus all total price
