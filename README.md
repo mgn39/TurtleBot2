@@ -445,7 +445,7 @@ Add a User via Recovery Mode
 </launch>
 ```
  - This AMCL file included move_base
-	 - No need to launch `move_base.launch`
+	 - No need to launch `move_base.launch` anymore
  - Before launch this file you need to install pointcloud_to_laserscan
 	 - `sudo apt-get install ros-noetic-pointcloud-to-laserscan -y`
 - Then make sure the frame transformation (TF)
