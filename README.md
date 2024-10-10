@@ -225,7 +225,7 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 - Set the topic -> /camera/depth_registered/points
 ![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXdsWZlzsUEnnLTaYFQ15p6EzN10owXgu0eOxB7GGbcdLU8TPaTNxYsUPr_A9eScc_nHrKBH4fOxCdBuyopa-SLmkIZ0Hdzk_owakUd99b5Jmv2S9Mp7tGhu20OZw1UMB1YLYS2o8w245_ufA-GZp3oIuRsE?key=s6kx8w9aAKgfuro0Mrp5kw)
 
-### Turn on camera on RTAB-MAP and Rviz:
+### Mapping (Turn on camera on RTAB-MAP and Rviz):
 - Open the terminal  
 - Connect to the TurtleBot  
 	- `roslaunch turtlebot_bringup minimal.launch`  
@@ -454,7 +454,13 @@ Add a User via Recovery Mode
 	- Should be like this `m = r.search(vstr.decode('utf.8'))`
 - Explanation
 	- Convert PointCloud to LaserScan
+		- Due to Kinect, it doesn't produce a LaserScan directly; Instead, it produces a PointCloud2 like `/camera/depth/points`. You can convert the PointCloud2 to a LaserScan
+		- But in this case I can `/rtabmap/cloud_map` because I use RTAB-MAP to help me map environment
 	- Map server
+		- To open the map file in the Rviz
 	- AMCL
+		- To initialize the pose of the robot
 	- Move base
+		- To enable the TurtleBot to move autonomously
+- Tips: Make sure you set the topic in the Rviz same as in the AMCL file
 
