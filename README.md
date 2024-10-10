@@ -452,4 +452,9 @@ Add a User via Recovery Mode
 	- `sudo nano /opt/ros/noetic/lib/tf/view_frames`
 	- Add `.decode('utf.8')` after `m = r.search(vstr)`
 	- Should be like this `m = r.search(vstr.decode('utf.8'))`
+- Explanation
+	- Convert PointCloud to LaserScan
+	- Map server
+	- AMCL
+	- Move base
 
