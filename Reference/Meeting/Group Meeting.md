@@ -128,7 +128,7 @@ We went in *increasing* order of number of
 - **Goals:** Map the larger area especially to Dr. Block room.
 - **Lesson:** Fix the errors one by one. No rush!
 
-**Kaleb** - Activity
+**Kaleb** - 
 - **Introduction:** Kaleb is a second-year studying CS who works on the TurtleBots with Chester.
 - **Accomplishments:** He investigated Robostack and can communicate with the TurtleBots through Docker.
 - **Challenges:** He's been having trouble with Rviz loading with the TurtleBot, and he and Chester struggle with effectively streaming the mapping data.
