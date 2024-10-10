@@ -33,6 +33,14 @@ I tried to map a larger area from the previous one **but** even though I can map
 ![[2nd larger map.png]]
 As I mentioned in the green circle I don’t know what is that because I set the environment the same as the previous one just added the movable board. And 1 suspect is the red line because to do the larger map it over the square area.
 
+**Research:** For `/rtabmap_grid_prob_map` and `/rtab_grid_map`
+- `/rtabmap_grid_prob_map`
+	- Probability grid map
+	- Useful for **navigation algorithms** that require a probabilistic representation of the environment.
+- `/rtabmap_grid_map`
+	- Occupancy grid map
+	- Used for **navigation** and **path planning**, as it provides a clear binary view of the environment without probability, making it easier for path planning algorithms to decide where the robot can or cannot move
+
 **Result:** Not successful!
 
 
