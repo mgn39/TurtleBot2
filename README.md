@@ -109,7 +109,7 @@ Install Ubuntu 20.04 (64-bit) and all necessary packages:
 		- `source ~/.bashrc`
 		- In the environment options you can use zshrc or bash, I use bash
 	- Dependencies for building packages
-		- `sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential`
+		- `sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential -y`
 	- Initialize rosdep
 		- `sudo apt install python3-rosdep`
 		- `sudo rosdep init`

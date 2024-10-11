@@ -46,4 +46,33 @@ As I mentioned in the green circle I don’t know what is that because I set the
 
 ### October 10th, 2024
 
-**Objective:**
+**Objective:** Config the AMCL file in the rest of the Raspberry Pi and import the map to test it on.
+
+**Experiment:** Transfer 4th map into the rest of the Raspberry Pi. Transfer the data via ssh by running this command `scp /path/to/local/file Username@IP Address:/path/to/destination /folder/`. For example: `scp /home/SaPHaRI/kobuki_ws/src/map/4thmap.yaml SaPHaRI@192.168.0.213:/home/SaPHaRI/kobuki_ws/src/turtlebot_apps/turtlebot_navigation/maps/`
+
+Testing the path planning. 1st Raspberry Pi that I config is Raspberry Pi 6th.
+- Config the AMCL file
+- Checking the TF
+- Transfer data from Raspberry Pi 5th
+- Install PointCloud to LaserScan
+
+And I accidentally delete file in the Raspberry Pi 2nd, So, need to reinstall.
+
+**Result:** Not working and not finish reinstall yet but I got something new. I can get fid off the warning when we launch bring up to connect to TurtleBot. The warning is about battery warning so if you're using a Raspberry Pi without a laptop battery this warning can be ignored or remove the node from the launch file.
+- Remove the node from launch file
+	- `cd kobuki_ws/src/turtlebot/turtlebot_bringup/launch`
+	- `nano minimal.launch`
+	- Remove
+```
+<include unless="$(eval arg('battery') == 'None')" file="$(find turtlebot_bringup)/launch/includes/netbook.launch.xml">
+    <arg name="battery" value="$(arg battery)" />
+</include>
+```
+After remove the node. Try to launch the bring up again to see there still have warning or not.
+
+
+### October 11th, 2024
+
+**Objective:** 
+
+**Experiment:** 
