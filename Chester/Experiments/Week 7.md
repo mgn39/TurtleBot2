@@ -50,6 +50,10 @@ As I mentioned in the green circle I don’t know what is that because I set the
 
 **Experiment:** Transfer 4th map into the rest of the Raspberry Pi. Transfer the data via ssh by running this command `scp /path/to/local/file Username@IP Address:/path/to/destination /folder/`. For example: `scp /home/SaPHaRI/kobuki_ws/src/map/4thmap.yaml SaPHaRI@192.168.0.213:/home/SaPHaRI/kobuki_ws/src/turtlebot_apps/turtlebot_navigation/maps/`
 
+If you want to transfer file with same prefix like I have `4thmap.pgm` and `4thmap.yaml` files you need to use this command `scp /home/SaPHaRI/kobuki_ws/src/map/4thmap.* SaPHaRI@192.168.0.213:/home/SaPHaRI/kobuki_ws/src/turtlebot_apps/turtlebot_navigation/maps/` instead.
+
+Tips: If transfer file into different path to need to config the path in the `yaml` file as well. And this transfer file, transfer via ssh. So, the another Raspberry Pi must turn on as well.
+
 Testing the path planning. 1st Raspberry Pi that I config is Raspberry Pi 6th.
 - Config the AMCL file
 - Checking the TF
@@ -73,6 +77,8 @@ After remove the node. Try to launch the bring up again to see there still have 
 
 ### October 11th, 2024
 
-**Objective:** 
+**Objective:** Test RPLIDAR A1.
 
-**Experiment:** 
+**Experiment:** Connect LiDAR sensor to Raspberry Pi.
+
+**Result:** Not yet finish.
