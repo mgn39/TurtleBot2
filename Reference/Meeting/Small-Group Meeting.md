@@ -134,3 +134,16 @@ Make a project plan for Fall Semester.
 	- Return the controller and order the new one
 
 
+### 7th | October 15th, 2024
+
+[7th | Path Planning & Collision Detection & System Testing](https://docs.google.com/presentation/d/1ynyPxwtDAZy80TCe4hGs6_5UdjVs8oTyw3MkEsDYJY4/edit?usp=sharing)
+
+- Path Planning
+	- Integrate with LiDAR Sensor
+- Test new Devices
+	- Doorbell
+		- Web Server
+- Miscellaneous
+	- Photo make as GIF
+	- Moleskine Pro
+

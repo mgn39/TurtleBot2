@@ -1,4 +1,6 @@
 
 ### October 15th, 2024
 
-**Objective:** 
+**Objective:** Testing on LiDAR Sensor
+
+**Experiment:** 
