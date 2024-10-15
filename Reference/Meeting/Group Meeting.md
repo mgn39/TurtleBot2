@@ -116,20 +116,46 @@ We went in *increasing* order of number of items on your to-do list.
 Next lab meeting, meet two weeks from today, at **1:30 p.m.** on **October 29th, 2024**
 
 **Discussion Items:**
-Waiting
+We are having a **Halloween party at Dr. Block’s house**. It will be Saturday evening, 26 October from 6-9 p.m. **Costumes are “semi-mandatory”** meaning not required, but highly encouraged. You may also bring your significant other, please just let Dr. Block so she prepares enough food!
+
+We have so many demos this month. I do apologize for the burden this puts on you guys. Unfortunately, these are arranged by HFI, and we need to support the institute. We have three “innovation days” demos. Who is available at each time?
+**28 October at 2:00 p.m.** -AstroPsych (maybe), **TurtleBots (Chesterinat)**, ASW (Noah)
+**30 October at 11:00 a.m.** - AstroPsych (Austin), **TurtleBots (Chesterinat)**
+**31 October at 4:00 p.m.** - Baxter group (Andrew and Ashraf), AstroPsych (Austin), **TurtleBots (Chesterinat)**, ASW (Alice)
+
+We also have the demos for the Chagrin Falls students on:
+**30 October at 9:30 a.m.** 
+AstroPsych (Austin), **TurtleBots (Chesterinat)**, ASW (Alice)
+
+Our meeting/demo with Michael Dolsak has been moved a third time. He will now be visiting **29 October at 12:30 p.m.** Who is available to demo? He is particularly interested in projects with medical applications.
+ASW (Alice)
+AstroPsych (Austin), **TurtleBots (Chesterinat)**
+
+Per discussion, Dr. Block will create a DoodlePool for future lab visits. 
+
+Dr. Block has to go to Germany from 2 November - 10 November to meet with some collaborators and demo my old robot (and work on purchasing it back). Would you rather:
+A) Have Zoom meetings that week
+B) Cancel meetings that week
+**C) Email updates**
+Lab decided: Dr. Block will set a date by which she wants an email update with links to a slide, she will review and email a response. If needed, we can schedule a Zoom. 
+Also - I would like to bring the lab a sweet lil treat from Germany - what would you guys like? RitterSport.
 
 **Individual Updates:**
-We went in *increasing* order of number of 
-
-**Chester** - 0
-- **Introduction:** I'm Chesturinat, I'm an undergrads internship student from Thailand. I'm working on a research project focusing on TurtleBot.
-- **Accomplishments:** Finally, I can save the map and after that I am able to do path planning. So, that means I can set a position goal then enable the TurtleBot to navigate there autonomously.
-- **Challenges:** Setting the initial pose of the robot definitely helps but before I can initialize the pose of the robot I need to config the amcl file. The main things that I am facing are the topic name that I did not set correctly for the first time that why I cannot save the map or even facing some error in the amcl file. Next step is to map the larger area. So, the challenge is at this time I can map only stationary obstacles so when people walk by while mapping my map will collapse so I need to map in the evening.
-- **Goals:** Map the larger area especially to Dr. Block room.
-- **Lesson:** Fix the errors one by one. No rush!
+We went in *decreasing* order of number of items in your Halloween costume.
 
 **Kaleb** - 
 - **Introduction:** Kaleb is a second-year studying CS who works on the TurtleBots with Chester.
-- **Accomplishments:** He 
-- **Challenges:** He's 
-- **Lesson:** If 
+- **Accomplishments:** He experimented with containerizing the TurtleBot runtime environment and developed door-hacking techniques. He praises Chester for saving a map successfully.
+- **Challenges:** He's had trouble connecting to the Turtlebot through Docker on MacOS. After researching and trying different methods, he sadly has to abandon the ship.
+- **Goals:** He plans to create a web server to communicate better between doorbells and multiple Turtlebots.
+- **Lesson:** When forced to choose between two problems, take the more time-efficient one. However, it's hard to gauge that without fully trying for a solution first.
+
+**Chester** - 0
+- **Introduction:** I'm Chesturinat, I'm an undergrads internship student from Thailand. I'm working on a research project focusing on TurtleBot.
+- **Accomplishments:** Can save the map and can do autonomous path planning. Set a goal and have it autonomously navigate to the goal.
+- **Challenges:** Setting the robot’s initial pose helps, but he needs to configure the AMCL file before he can do that. Next step is to map the larger area. So, the challenge is at this time I can map only stationary obstacles so when people walk by while mapping my map will collapse so I need to map in the evening. Still figuring out how to detect non-stationary objects.
+- **Goals:** Map the larger area especially to Dr. Block room.
+- **Lesson:** Fix the errors one by one. No rush!
+
+
+### 5th | 
