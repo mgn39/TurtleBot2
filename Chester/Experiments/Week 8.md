@@ -16,4 +16,11 @@
 ![[Raspberry Pi 4 Pins.jpg]]
 But its turn out not working! Dr. Block suggest me try to use micro usb instead. I borrow the micro usb to usb from the HFI lab, its work!
 ![[Connect LiDAR into Raspberry Pi by micro usb.png]]
-Checking the sensor on rviz.
+Checking the sensor on rviz by sunning this `roslaunch rplidar_ros view_rplidar_a1.launch` on both pink computer and Raspberry Pi then get both error! (different error).
+
+**Result:** Cannot use in the rviz yet.
+
+
+### October 16th, 2024
+
+**Objective:** 
