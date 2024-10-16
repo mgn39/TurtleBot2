@@ -24,4 +24,25 @@
 			ros-noetic-desktop-arm64
 		```
 	- **Terminal 2**: `docker exec -it $(docker ps -l -q) /bin/bash`
-- Ok quitting Docker, it's not worth it. From 11am-6pm, my 7 hours are gone.
+- Ok quitting Docker, it's not worth it. My 7 hours are gone.
+
+## <u>10/15/24</u>
+
+### Controller Side Quest (Day 2)
+- Pairing the pink [Xbox One S controller](https://www.amazon.com/Xbox-Core-Wireless-Controller-Deep-Controllers/dp/B09VV5LJS1/ref=sr_1_3?crid=WRHIS5YGVSQJ&dib=eyJ2IjoiMSJ9.esGG7pafXCEk_c9mSITHVcBlrZYuOm3xS4oFy_YYwoGmMOfyrE4rAzS9ZDX1dwrBgxneSjdiEvMoHCTkugBokpJbbrazNr7NgUStsEDX5OJZdLL83LrRADo4327KV-TBLhTweCbSpkpB_2SFOnkOgUGIrIbLQR7ozhDolmtQAWO6LyOpOrUsCpLlW79fBA4A0u8L53py4xlT4YrD4Ycj6bOefVGDzH04NlYc6l7-dP4.QCs3oWDtY4wYO0JLsHYXcujmf8vWqxxl57cJtEEkgTs&dib_tag=se&keywords=xbox%2Bone%2Bcontroller&qid=1728407453&s=videogames&sprefix=xbox%2Bone%2Bcontroller%2Cvideogames%2C89&sr=1-3&th=1)
+- On a separate device (Mac)
+	- Connected via Bluetooth and ran `system_profiler SPBluetoothDataType` to get the MAC address of the controller
+	- Unpair and forget the controller so we can connect it to the desktop
+- On the desktop (our Ubuntu 20.04 ROS master)
+	- Since the Xbox One S is a newer controller, run `sudo apt remove xboxdrv` (legacy driver)
+	- On the desktop, after running `bluetoothctl`, use:
+		- `scan on` – ensure the same MAC address pops up
+		- `pair <MAC address>` – might not work, which is fine
+		- `connect <MAC address` – should work
+		- `trust <MAC address>` – should work
+	- To verify the controller input config, `sudo apt-get install jstest-gtk` and run the program
+		- Run `sudo apt-get install evtest && sudo evtest`, then select the controller from the list to test inputs
+- Turtlebot2 testing
+	- After running `minimal.launch`, 
+### Web Server Setup
+- Setup with Apache and launch 
