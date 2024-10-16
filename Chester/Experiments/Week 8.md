@@ -122,3 +122,10 @@ rfdevice.cleanup()
 ![[Received RF signal.png]]
 Including the date and time to record; need to figure it out how to record this!
 
+**Result:** Can received the signal.
+
+
+### October 17th, 2024
+
+**Objective:** 
+
