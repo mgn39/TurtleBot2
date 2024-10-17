@@ -238,3 +238,24 @@ if __name__ == '__main__':
     except rospy.ROSInterruptException:
         pass
 ```
+
+Cannot even launch this file, I get the error that no module geometry but I already installed.
+- Install again
+	- `sudo apt-get install ros-noetic-geometry-msgs`
+	- `source /opt/ros/noetic/setup.bash`
+	- `source ~/kobuki_ws/devel/setup.bash`
+- Rebuild the workspace
+	- `cd ~/kobuki_ws`
+	- `catkin_make`
+	- `source devel/setup.bash`
+- Check the ROS python package path
+	- `python3 -c "import geometry_msgs.msg; print(geometry_msgs.__file__)"`
+	- Result should shown as below (Something like this)
+		- `geometry_msgs under /opt/ros/noetic/lib/python3/dist-packages`
+
+**Result:** FAIL!!!!
+
+
+### October 18th, 2024
+
+**Objective:** 
