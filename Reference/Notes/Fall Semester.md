@@ -10,3 +10,11 @@ IP Address of the pink computer
 ### September 16th, 2024
 
 To do ssh don't forget to check the WiFi is that the same one or not.
+
+
+### October 17th, 2024
+
+Normally I use `nano` to config the file in the terminal but if you wanna see the text in the file you can use `cat` instead.
+- Example
+	- `cat file_name`
+	- `cat rpi-rf_receive`
