@@ -466,3 +466,180 @@ Add a User via Recovery Mode
 		- To enable the TurtleBot to move autonomously
 - Tips: Make sure you set the topic in the Rviz same as in the AMCL file
 
+
+### Receive the signal from Doorbell
+- Connection
+![[RF Receiver MX-RM-5V Close up.png]]
+- RF Receiver pins (Start from left) | Picture on the above
+	- 1st: GND - Connect to a ground in Raspberry Pi pin 6th
+	- 2nd: DATA (Signal) - Connect to a GPIO in Raspberry Pi pin 11th/13th
+	- 3rd: ANT (Antenna) - Skip
+	- 4th: 5V power - Connect to a 5V in Raspberry Pi pin 4th
+-  Open terminal
+	- `sudo apt-get install python3-pip`
+	- `sudp pip3 install rpi-rf`
+	- `nano rpi-rf_receive.py`
+```
+#!/usr/bin/env python3
+
+import argparse
+import signal
+import sys
+import time
+import logging
+
+from rpi_rf import RFDevice
+
+rfdevice = None
+
+# pylint: disable=unused-argument
+def exithandler(signal, frame):
+    rfdevice.cleanup()
+    sys.exit(0)
+
+logging.basicConfig(level=logging.INFO, datefmt='%Y-%m-%d %H:%M:%S',
+                    format='%(asctime)-15s - [%(levelname)s] %(module)s: %(message)s', )
+  
+parser = argparse.ArgumentParser(description='Receives a decimal code via a 433/315MHz GPIO device')
+parser.add_argument('-g', dest='gpio', type=int, default=27,
+                    help="GPIO pin (Default: 27)")
+args = parser.parse_args()
+ 
+signal.signal(signal.SIGINT, exithandler)
+rfdevice = RFDevice(args.gpio)
+rfdevice.enable_rx()
+timestamp = None
+logging.info("Listening for codes on GPIO " + str(args.gpio))
+while True:
+    if rfdevice.rx_code_timestamp != timestamp:
+        timestamp = rfdevice.rx_code_timestamp
+        logging.info(str(rfdevice.rx_code) +
+                     " [pulselength " + str(rfdevice.rx_pulselength) +
+                     ", protocol " + str(rfdevice.rx_proto) + "]")
+    time.sleep(0.01)
+rfdevice.cleanup()
+```
+- After finished the setup try the code
+	- `sudo python3 rpi-rf_receive.py`
+- Press the doorbell button
+	- receive the signal
+![[Received RF signal.png]]
+
+### Enable the TurtleBot to move autonomously by Doorbell
+- Create necessary files
+	- `cd kobuki_ws/src`
+- Send goal file
+	- `nano send_goal.py`
+```
+#!/usr/bin/env python3
+
+import rospy
+from geometry_msgs.msg import PoseStamped
+
+def send_goal():
+    rospy.init_node('send_goal')
+
+    pub = rospy.Publisher('/move_base_simple/goal', PoseStamped, queue_size=10)
+    rospy.sleep(1)  # Allow time for the node to initialize
+
+    goal = PoseStamped()
+
+    # Set header information
+    goal.header.frame_id = "map"
+    goal.header.stamp = rospy.Time.now()
+
+    # Set goal position (example values)
+    goal.pose.position.x = 0.655
+    goal.pose.position.y = -0.862
+    goal.pose.position.z = 0.000
+
+    # Set goal orientation (example quaternion)
+    goal.pose.orientation.x = 0.0
+    goal.pose.orientation.y = 0.0
+    goal.pose.orientation.z = -0.0753
+    goal.pose.orientation.w = 0.658
+    
+    pub.publish(goal)
+    rospy.loginfo("Goal sent to TurtleBot!")
+
+if __name__ == '__main__':
+    try:
+        send_goal()
+    except rospy.ROSInterruptException:
+        pass
+```
+- Need to find the exact coordinate to config in the file (send_goal.py)
+	- Find by do path planning, using 2D pose and 2D navigate
+	- It will show in the 5th terminal that you lunched rviz
+		- This coordinate is just to test the system
+		- Setting Pose
+			- Frame: map
+			- -0.087 -0.152 0.181
+		- Setting Goal
+			- Frame: map
+			- Position: 0.655 -0.862 0.000
+			- Orientation: 0.000 0.000 -0.753 0.658
+			- Angle: -1.704
+- Combined send goal file and receive the signal file
+	- `nano rpi-rd_receive+launch.py` (Just a file name, you can use other)
+```
+#!/usr/bin/env python3
+
+import argparse
+import signal
+import sys
+import time
+import logging
+import os  
+
+from rpi_rf import RFDevice
+
+rfdevice = None
+
+# Handle exit signal
+def exithandler(signal, frame):
+    rfdevice.cleanup()
+    sys.exit(0)
+
+logging.basicConfig(level=logging.INFO, datefmt='%Y-%m-%d %H:%M:%S',
+                    format='%(asctime)-15s - [%(levelname)s] %(module)s: %(message)s', )
+
+# Argument parser for GPIO pin
+parser = argparse.ArgumentParser(description='Receives a decimal code via a 433/315MHz GPIO device')
+parser.add_argument('-g', dest='gpio', type=int, default=27,
+                    help="GPIO pin (Default: 27)")
+args = parser.parse_args()
+
+# Setup exit handler
+signal.signal(signal.SIGINT, exithandler)
+rfdevice = RFDevice(args.gpio)
+rfdevice.enable_rx()
+
+timestamp = None
+logging.info("Listening for codes on GPIO " + str(args.gpio))
+
+# Main loop to listen for RF codes
+while True:
+    if rfdevice.rx_code_timestamp != timestamp:
+        timestamp = rfdevice.rx_code_timestamp
+        logging.info(str(rfdevice.rx_code) +
+                     " [pulselength " + str(rfdevice.rx_pulselength) +
+                     ", protocol " + str(rfdevice.rx_proto) + "]")
+    time.sleep(0.01)
+
+    # Trigger TurtleBot to move when an RF code is received
+    if rfdevice.rx_code:
+        os.system("bash -c 'source /opt/ros/noetic/setup.bash && source /home/SaPHaRI/kobuki_ws/devel/setup.bash && python3 /home/SaPHaRI/kobuki_ws/src/send_goal.py'")
+
+rfdevice.cleanup()
+```
+- Test the system
+	- Terminal 1:`roslaunch turtlebot_bringup minimal.launch`
+	- Terminal 2: `roslaunch freenect_launch freenect.launch depth_registration:=true`
+	- Terminal 3: `roslaunch rtabmap_ros rtabmap.launch rtabmap_args:="--delete_db_on_start" depth_topic:=/camera/depth_registered/image_raw rgb_topic:=/camera/rgb/image_raw camera_info_topic:=/camera/rgb/camera_info`
+	- Terminal 4: `roslaunch turtlebot_navigation amcl_demo.launch map_file:=/home/SaPHaRI/kobuki_ws/src/map/4thmap.yaml`
+	- Terminal 5: 
+		- `sudo -python3 /home/SaPHaRI/kobuki_ws/src/rpi-rf_receive+launch.py`
+		- or
+		- `cd kobuki_ws/src`
+		- `sudo python3 rpi-rf_receive+launch.py` 

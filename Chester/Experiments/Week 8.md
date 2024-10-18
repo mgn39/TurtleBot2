@@ -119,7 +119,7 @@ rfdevice.cleanup()
 	- `sudo python3 rpi-rf_receive.py`
 - Press the doorbell button
 	- receive the signal
-![[Received RF signal.png]]
+
 Including the date and time to record; need to figure it out how to record this!
 
 **Result:** Can received the signal.
