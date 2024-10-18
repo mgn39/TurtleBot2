@@ -253,9 +253,23 @@ Cannot even launch this file, I get the error that no module geometry but I alre
 	- Result should shown as below (Something like this)
 		- `geometry_msgs under /opt/ros/noetic/lib/python3/dist-packages`
 
+Test the system launch just `python3 /home/SaPHaRI/kobui_ws/src/send_goal.py`. But TurtleBot can receive the command but does not move!
+
 **Result:** FAIL!!!!
 
 
 ### October 18th, 2024
 
-**Objective:** 
+**Objective:** Continue from yesterday.
+
+**Experiment:** Yesterday, I tried to test the system by launch the send_goal file first before run the rpi-rf_receive+launch file BUT I my TurtleBot does not move. Before going home I have talked to Rubber Ducks! So, today it solved. TurtleBot moved but the mistake is just I did not launch all necessary file.
+- Testing send_goal file
+	- Terminal 1: `roslaunch turtlebot_bringup minimal.launch`
+	- Terminal 2: `roslaunch freenect_launch freenect.launch depth_registration:=true`
+	- Terminal 3: `roslaunch rtabmap_ros rtabmap.launch rtabmap_args:="--delete_db_on_start" depth_topic:=/camera/depth_registered/image_raw rgb_topic:=/camera/rgb/image_raw camera_info_topic:=/camera/rgb/camera_info`
+	- Terminal 4: `roslaunch turtlebot_navigation amcl_demo.launch map_file:=/home/SaPHaRI/kobuki_ws/src/map/4thmap.yaml`
+	- Terminal 5: 
+		- `python3 /home/SaPHaRI/kobuki_ws/src/send_goal.py`
+		- or
+		- `cd kobuki_ws/src`
+		- `python3 send_goal.py` if cannot launch use this `sudo python3 send_goal.py`
