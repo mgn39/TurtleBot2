@@ -18,3 +18,8 @@ Normally I use `nano` to config the file in the terminal but if you wanna see th
 - Example
 	- `cat file_name`
 	- `cat rpi-rf_receive`
+
+
+### October 21st, 2024
+
+Efficient command to delete/uninstall package `rm -rf package_name`
