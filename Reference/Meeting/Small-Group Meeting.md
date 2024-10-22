@@ -154,5 +154,16 @@ Make a project plan for Fall Semester.
 
 - Path Planning 
 - Test new Devices
+	- Doorbell
+		- Talk to Austin about the server that can store and send the data
+	- RPLIDAR A1
+		- Try to run `rosrun` command individually
 - Miscellaneous
+	- Demo
+		- Will be same demo and oral presentation on everyday
+		- October 29th, 2024
+			- Only me
+		- Test the demo on **October 25th, 2024 at 2pm**
+			- 6 TurtleBots use wireless keyboard to control at once
+			- 1 TurtleBot use controller to control
 
