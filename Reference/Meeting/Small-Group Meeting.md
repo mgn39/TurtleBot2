@@ -147,3 +147,12 @@ Make a project plan for Fall Semester.
 	- Photo make as GIF
 	- Moleskine Pro
 
+
+### 8th | October 22nd, 2024
+
+[8th | Path Planning & Collision Detection & System Testing](https://docs.google.com/presentation/d/15OYwBmGoGKp4OD8sxtKIClH94fj6F-UkvGovnvLdOgM/edit?usp=sharing)
+
+- Path Planning 
+- Test new Devices
+- Miscellaneous
+
