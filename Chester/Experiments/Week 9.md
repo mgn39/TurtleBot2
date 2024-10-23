@@ -33,8 +33,62 @@ I think it all about topic name (Fixed Frame). So, I have no `laser` or `base_la
 
 **Result:** I can use LiDAR and Kinect (rtabmap) simultaneously.
 ![[LiDAR + RTABMAP.png]]
+Adding the area in rviz in the grid `Plane Cell Count` it seem larger but did not test yet.
+
+Get rid off 2 warnings from `roslaunch freenect_launch freenect.launch` by add 2 files
+- Calibration file
+	- `nano /home/SaPHaRI/.ros/camera_info/rgb_B70773100531325B.yaml`
+```
+image_width: 640
+image_height: 480
+camera_name: rgb_B70773100531325B
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [525.0, 0.0, 319.5, 0.0, 525.0, 239.5, 0.0, 0.0, 1.0]
+distortion_model: plumb_bob
+distortion_coefficients:
+  rows: 1
+  cols: 5
+  data: [0.0, 0.0, 0.0, 0.0, 0.0]
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+projection_matrix:
+  rows: 3
+  cols: 4
+  data: [525.0, 0.0, 319.5, 0.0, 0.0, 525.0, 239.5, 0.0, 0.0, 0.0, 1.0, 0.0]
+```
+- Depth Calibration file
+	- `nano /home/SaPHaRI/.ros/camera_info/depth_B70773100531325B.yaml`
+```
+image_width: 640
+image_height: 480
+camera_name: depth_B70773100531325B
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [580.0, 0.0, 319.5, 0.0, 580.0, 239.5, 0.0, 0.0, 0.0, 1.0]
+distortion_model: plumb_bob
+distortion_coefficients:
+  rows: 1
+  cols: 5
+  data: [0.0, 0.0, 0.0, 0.0, 0.0]
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+projection_matrix:
+  rows: 3
+  cols: 4
+  data: [580.0, 0.0, 319.5, 0.0, 0.0, 580.0, 239.5, 0.0, 0.0, 0.0, 1.0, 0.0]
+```
+
 
 
 ### October 24th, 2024
 
 **Objective:** 
+
+**Experiment:** 
