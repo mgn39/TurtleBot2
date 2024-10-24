@@ -89,6 +89,7 @@ projection_matrix:
 
 ### October 24th, 2024
 
-**Objective:** Preparing for demo (tomorrow need to pre demo).
+Preparing the demo for pre demo tomorrow.
 
-**Experiment:** 
+
+### October 25th, 2024
