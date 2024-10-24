@@ -306,7 +306,7 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 - Rasp 1  
 	- In another terminal:	`roslaunch turtlebot_teleop keyboard_teleop.launch`
 
-### Control 2 TurtleBots at the same time:  
+### Control 2+ TurtleBots at the same time:  
 - Assumed Rasp1 is the master (talker) and Rasp 2, 3 are subscribers (listeners). Control TurtleBot (Rasp 2, 3) by using Rasp 1  
 - Rasp 1 (IP Address: 192.168.0.91)
 	- `export ROS_MASTER_URI=http://192.168.0.91:11311`  
@@ -330,6 +330,11 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 		- `rosrun topic_tools relay <original topic name> <new topic name because of namespace change>`  
 		- `/cmd_vel_mux/input/teleop`  
 		- `/turtlename/cmd_vel_mux/input/teleop`
+- Tips
+	- If you don't want to indicate the name of TurtleBot every single time
+		- `nano ~/.bashrc`
+		- `export ROS_NAMESPACE=turtlebotX`
+		- turtlebotX can be change
 
 ### Adding the new user in ubuntu:
 Add a User via Recovery Mode
