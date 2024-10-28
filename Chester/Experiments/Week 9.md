@@ -93,3 +93,5 @@ Preparing the demo for pre demo tomorrow.
 
 
 ### October 25th, 2024
+
+Do the pre demo.

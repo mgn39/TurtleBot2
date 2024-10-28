@@ -41,6 +41,14 @@ Show demo.
 
 How would you feel if a robot greeted you and showed you around the lab? Would your opinion change if it was one robot to show you around compared to six or seven?
 
+What about space orientation in front you, around you in semi circle.
+
+Would you prefer TurtleBot to turn back and checking on you while navigate you?
+
+Would you like the TurtleBot to play music?
+
+How do you want to give the command to the TurtleBot? Speak or Type on the screen.
+
 Would you like to control one?
 
 

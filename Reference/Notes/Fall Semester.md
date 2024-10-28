@@ -23,3 +23,9 @@ Normally I use `nano` to config the file in the terminal but if you wanna see th
 ### October 21st, 2024
 
 Efficient command to delete/uninstall package `rm -rf package_name`
+
+
+### October 28th, 2024
+
+Remote host identification has changed fix by `ssh-keygen -R IP Address` 
+For example: `ssh-keygen -R 192.168.0.190`
