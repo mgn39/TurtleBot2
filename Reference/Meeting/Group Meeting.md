@@ -164,7 +164,7 @@ We went in *decreasing* order of number of items in your Halloween costume.
 Next lab meeting, meet two weeks from today, at **1:30 p.m.** on **October 29th, 2024**
 
 **Discussion Items:**
-We are having a **Halloween party at Dr. Block’s house**. It will be Saturday evening, 26 October from 6-9 p.m. **Costumes are “semi-mandatory”** meaning not required, but highly encouraged. You may also bring your significant other, please just let Dr. Block so she prepares enough food!
+We are having a **Halloween
 
 **Individual Updates:**
 We went in *decreasing* order of number of items in your Halloween costume.
