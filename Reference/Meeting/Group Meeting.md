@@ -164,6 +164,10 @@ We went in *decreasing* order of number of items in your Halloween costume.
 Next lab meeting, meet two weeks from today, at **1:30 p.m.** on **October 29th, 2024**
 
 **Discussion Items:**
+How we divide the demo (40 students).
+Wanna join the meeting or not? CFHS!
+Wed next week for presentation.
+
 We are having a **Halloween
 
 **Individual Updates:**
@@ -175,7 +179,7 @@ We went in *decreasing* order of number of items in your Halloween costume.
 - **Goals:** 
 - **Lesson:** 
 
-**Chester** - 
+**Chester** - 1.15 mins
 - **Introduction:** I'm Chesturinat, I'm an undergrads internship student from Thailand. I'm working on a research project focusing on TurtleBot.
 - **Accomplishments:** I can map the larger area (almost to the Dr. Block room) but it is not as efficient as we want. Integrate the doorbell and RF receiver to the Raspberry Pi so whenever I press the doorbell RF receiver will receive the signal after that will enable TurtleBot to move autonomously. And also can use RPLIDAR Sensor once.
 - **Challenges:** Finding new device to help mapping in order to save time (I have talked to Austin). For the doorbell need to find the maxim range and with obstacle (wall, glass) to see the maximum range to know that we need to use antenna or not. For the LiDAR Sensor it just sudden error still figure out! Because last week I still can use it. And I did not test on the non-stationary object detection avoidance that I found on Github yet.
