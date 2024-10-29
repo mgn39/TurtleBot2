@@ -24,14 +24,7 @@ Would you like to control one? Show demo.
 
 ### October 29th, 2024 at 11am | Innovation Week Tour
 
-**Show:** 
-
-**Oral Presentation:** 
-
-
-### October 29th, 2024 at 12.30pm | Visit from Michael Dolsak (Moved from October 8th, 2024)
-
-**Show:** Controlling 6-7 TurtleBots at once.
+**Show:** Controlling 6-7 TurtleBots at once and Control TurtleBot with controller.
 
 **Oral Presentation:** Hi, my name is Chester. I am a fourth-year undergraduate student studying robotic engineering at KMTIL in Thailand. I have been working with SaPHaRl lab as an internship student since this summer. My project focuses on using the TurtleBots. Our goal is to see how humans respond to different numbers of robots greeting them and showing them around the Human Fusions Institute. We are interested in exploring how the robot behavior should change depending on how many robots meet a person.
   
