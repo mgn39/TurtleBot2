@@ -41,6 +41,7 @@ Install Ubuntu 20.04 (64-bit) and all necessary packages:
 - `git clone https://github.com/turtlebot/turtlebot_simulator.git`
 - `git clone https://github.com/OpenKinect/libfreenect.git`
 - `git clone https://github.com/ros-drivers/freenect_stack.git`
+- `git clone https://github.com/Slamtec/rplidar_ros.git`
 - `sudo apt install ros-noetic-rtabmap-ros -y`
 - `sudo apt-get install ros-noetic-pointcloud-to-laserscan -y`
 
@@ -648,3 +649,25 @@ rfdevice.cleanup()
 		- or
 		- `cd kobuki_ws/src`
 		- `sudo python3 rpi-rf_receive+launch.py` 
+
+
+### RPLIDAR Sensor (Integrate with mapping path)
+- Install the package
+	- `cd kobuki_ws/src`
+	- `git clone https://github.com/Slamtec/rplidar_ros.git`
+	- `cd ..`
+	- `catkin_make`
+- Config the `rplidar_a1.launch`
+	- `cd kobuki_ws/src/rplidar_ros/launch`
+	- `nano rplidar_a1.launch`
+```
+  <node name="rplidarNode"          pkg="rplidar_ros"  type="rplidarNode" output="screen">
+  <param name="serial_port"         type="string" value="/dev/ttyUSB0"/>
+  <param name="serial_baudrate"     type="int"    value="115200"/>
+  <param name="frame_id"            type="string" value="map"/>
+  <param name="inverted"            type="bool"   value="false"/>
+  <param name="angle_compensate"    type="bool"   value="true"/>
+  </node>
+</launch>
+```
+- `roslaunch turtlebot_bringup minimal.launch`

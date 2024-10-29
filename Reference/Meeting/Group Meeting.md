@@ -166,7 +166,7 @@ Next lab meeting, meet two weeks from today, at **1:30 p.m.** on **October 29th,
 **Discussion Items:**
 How we divide the demo (40 students).
 Wanna join the meeting or not? CFHS!
-Wed next week for presentation.
+Wed next week for presentation. (I go)
 
 We are having a **Halloween
 
