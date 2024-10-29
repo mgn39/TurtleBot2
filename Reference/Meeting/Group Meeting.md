@@ -158,4 +158,26 @@ We went in *decreasing* order of number of items in your Halloween costume.
 - **Lesson:** Fix the errors one by one. No rush!
 
 
-### 5th | 
+### 5th | October 29th, 2024
+
+**Lab Meeting:**
+Next lab meeting, meet two weeks from today, at **1:30 p.m.** on **October 29th, 2024**
+
+**Discussion Items:**
+We are having a **Halloween party at Dr. Block’s house**. It will be Saturday evening, 26 October from 6-9 p.m. **Costumes are “semi-mandatory”** meaning not required, but highly encouraged. You may also bring your significant other, please just let Dr. Block so she prepares enough food!
+
+**Individual Updates:**
+We went in *decreasing* order of number of items in your Halloween costume.
+
+**Kaleb** - 
+- **Introduction:** Kaleb is a second-year studying CS who works on the TurtleBots with Chester.
+- **Accomplishments:** 
+- **Goals:** 
+- **Lesson:** 
+
+**Chester** - 
+- **Introduction:** I'm Chesturinat, I'm an undergrads internship student from Thailand. I'm working on a research project focusing on TurtleBot.
+- **Accomplishments:** I can map the larger area (almost to the Dr. Block room) but it is not as efficient as we want. Integrate the doorbell and RF receiver to the Raspberry Pi so whenever I press the doorbell RF receiver will receive the signal after that will enable TurtleBot to move autonomously. And also can use RPLIDAR Sensor once.
+- **Challenges:** Finding new device to help mapping in order to save time. For the doorbell need to find the maxim range and with obstacle (wall, glass) to see the maximum range to know that we need to use antenna or not. For the LiDAR Sensor it just sudden error still figure out! Because last week I still can use it. And I did not test on the non-stationary object detection avoidance that I found on Github yet.
+- **Goals:** Map larger area more efficient, Find out the maximum range of RF receiver, Fix the LiDAR Sensor, and test on non-stationary object detection avoidance on Github.
+- **Lesson:** Talk to pink rubber duck, its HELP!
