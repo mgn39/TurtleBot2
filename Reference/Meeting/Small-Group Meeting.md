@@ -167,3 +167,14 @@ Make a project plan for Fall Semester.
 			- 6 TurtleBots use wireless keyboard to control at once
 			- 1 TurtleBot use controller to control
 
+
+### 9th | October 29th, 2024
+
+[9th | Path Planning & Collision Detection & System Testing](https://docs.google.com/presentation/d/1YTZn-J0urZD0LpOfPe0I4AiR5rIFaNdfggdNiYcV6wc/edit?usp=sharing)
+
+- Collision Detection (Non-stationary object detection avoidance)
+	- For avoid TurtleBot when do swarm
+		- Each TurtleBot known their own initial pose, sent the initial pose to other TurtleBots
+	- Same as mobile robot in Thailand in restaurant
+		- White dot on the ceiling
+
