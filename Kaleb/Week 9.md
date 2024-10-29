@@ -24,7 +24,13 @@
 
 ## <u>10/29/24</u>
 
+### Flipper Zero Side Quest (Day 2)
+- [Unleashed firmware](https://github.com/DarkFlippers/unleashed-firmware) by DarkFlippers bypasses region restriction
+- Tested on various university doors, none transmit a signal the Flipper Zero cannot detect
+	- **Turns out, the doors on campus are hard-wired to prevent faculty from messing with them.**
+	- :(
 ### Moving Object Detection
 - Static object detection is fine after loading a map in, thanks Chester!
-- **GOAL:** Use Kinect Camera + maps + Python vision algorithms to identify a moving obstacle with spatial awareness. Would the LiDAR sensor help? Need to ask Chester.
+- **GOAL:** Use Kinect Camera + LiDAR + Python scripts to implement DATMO.
+	- Object identification is easy with YOLOv8, check [src/obj-identification]
 	- 
