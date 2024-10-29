@@ -29,7 +29,7 @@
 - Tested on various university doors, none transmit a signal the Flipper Zero cannot detect
 	- **Turns out, the doors on campus are hard-wired to prevent faculty from messing with them.**
 	- :(
-### Moving Object Detection
+### Moving Object Detection (Day 1)
 - Static object detection is fine after loading a map in, thanks Chester!
 	- LiDAR sensor is broken though
 - **GOAL:** Use Kinect Camera + LiDAR + Python scripts to implement DATMO.
