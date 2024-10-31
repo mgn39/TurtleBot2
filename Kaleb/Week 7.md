@@ -42,7 +42,10 @@
 		- `trust <MAC address>` – should work
 	- To verify the controller input config, `sudo apt-get install jstest-gtk` and run the program
 		- Run `sudo apt-get install evtest && sudo evtest`, then select the controller from the list to test inputs
-- Turtlebot2 testing
-	- After running `minimal.launch`, 
+		- Pay attention to the event IDs when pressing the buttons, these are the mappings 
+- Turtlebot2
+	- Similar process to keyboard_teleop
+	- After launch `minimal.launch`, in another terminal launch `roslaunch turtlebot_teleop xbox360_teleop`
+	- Hold the "Y" button and move the leftmost joystick to move the Turtlebot. Woohoo!
 ### Web Server Setup
 - Setup with Apache and launch 

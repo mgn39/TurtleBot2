@@ -160,6 +160,30 @@ Install Ubuntu 20.04 (64-bit) and all necessary packages:
 	- `echo "source your_ws/devel/setup.bash" >> ~/.bashrc`
 	- `source ~/.bashrc`
 
+
+
+### Control with Xbox One Controller:
+- Getting the MAC address of the pink [Xbox One S controller](https://www.amazon.com/Xbox-Core-Wireless-Controller-Deep-Controllers/dp/B09VV5LJS1/ref=sr_1_3?crid=WRHIS5YGVSQJ&dib=eyJ2IjoiMSJ9.esGG7pafXCEk_c9mSITHVcBlrZYuOm3xS4oFy_YYwoGmMOfyrE4rAzS9ZDX1dwrBgxneSjdiEvMoHCTkugBokpJbbrazNr7NgUStsEDX5OJZdLL83LrRADo4327KV-TBLhTweCbSpkpB_2SFOnkOgUGIrIbLQR7ozhDolmtQAWO6LyOpOrUsCpLlW79fBA4A0u8L53py4xlT4YrD4Ycj6bOefVGDzH04NlYc6l7-dP4.QCs3oWDtY4wYO0JLsHYXcujmf8vWqxxl57cJtEEkgTs&dib_tag=se&keywords=xbox%2Bone%2Bcontroller&qid=1728407453&s=videogames&sprefix=xbox%2Bone%2Bcontroller%2Cvideogames%2C89&sr=1-3&th=1)
+	- **If pairing via GUI, skip this segment.** The MAC address is not needed.
+	- On a separate device (I used a Mac), connect the controller via the Bluetooth menu
+	- In a terminal, run `system_profiler SPBluetoothDataType` to grab the MAC address of the controller
+	- Unpair and forget the controller so we can connect it to the desktop
+- To pair on the ROS master machine (in this case, our desktop with Ubuntu 20.04)
+	- Since the Xbox One S is a newer controller, run `sudo apt remove xboxdrv` which removes the legacy driver
+	- On the desktop, after running `bluetoothctl`, use:
+		- `scan on` – ensure the same MAC address pops up
+		- `pair <MAC address>` – might not work, which is fine
+		- `connect <MAC address` – should work
+		- `trust <MAC address>` – should work
+	- To verify the controller input config, `sudo apt-get install jstest-gtk` and run the program
+		- Run `sudo apt-get install evtest && sudo evtest`, then select the controller from the list to test inputs
+		- Pay attention to the event IDs when pressing the buttons, these are the mappings 
+- Piloting the Turtlebot2
+	- Similar process to launching the `keyboard_teleop` above
+	- After launch `minimal.launch`, in another terminal launch `roslaunch turtlebot_teleop xbox360_teleop`
+	- Hold the "Y" button and move the leftmost joystick to move the Turtlebot.
+	- Woohoo!
+
 ### Turn on the camera:  
 - Open the terminal
 	- `sudo apt update && sudo apt upgrade -y` (Recommended)  
