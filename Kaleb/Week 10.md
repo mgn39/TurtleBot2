@@ -4,7 +4,7 @@
 Goal: Avoid collisions by detecting moving objects, testing [kostaskonkk/datmo on GitHub](https://github.com/kostaskonkk/datmo) on Pi 6
 
 - Configure LiDAR sensor
-	- ``
+	- Rosrun not found so `sudo apt install ros-noetic-rosbash`
 - Following the README on the repo
 	- Navigated to `~/kobuki_ws/src`
 	- `git clone https://github.com/kostaskonkk/datmo`
