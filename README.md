@@ -671,3 +671,4 @@ rfdevice.cleanup()
 </launch>
 ```
 - `roslaunch turtlebot_bringup minimal.launch`
+- `roslaunch rplidar_ros rplidar_a1.launch`
