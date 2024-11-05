@@ -179,5 +179,8 @@ Make a project plan for Fall Semester.
 		- White dot on the ceiling
 
 
-### 10th | November 6th, 2024
+### 10th | November 6th, 2024 (Email)
+
+[10th | Path Planning & Collision Detection & System Testing](https://docs.google.com/presentation/d/1Hwn-ka7Q229t4awgWL5dn2Gz32J45gFCfVTrl0x1f_g/edit?usp=sharing)
+
 
