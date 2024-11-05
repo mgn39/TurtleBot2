@@ -161,23 +161,25 @@ We went in *decreasing* order of number of items in your Halloween costume.
 ### 5th | October 29th, 2024
 
 **Lab Meeting:**
-Next lab meeting, meet two weeks from today, at **1:30 p.m.** on **October 29th, 2024**
+Next lab meeting, meet two weeks from today, at **12:30 p.m.** on **November 14th, 2024**
+
+**Talks:**
+Dr. Mayumi Mohan’s guest lecture at 10 am on November 12 on Zoom using this link, for Dr. Block’s HRI course, please come: [Zoom]([https://cwru.zoom.us/j/99008826103?pwd=soISpDigMkhtGqWSbpbpGgDiGrtYwv.1](https://cwru.zoom.us/j/99008826103?pwd=soISpDigMkhtGqWSbpbpGgDiGrtYwv.1))
+
+Dr. Shaanan Cohney’s guest lecture at 10 am on November 19 on Zoom using this link, for Dr. Block’s HRI course, please come: [Zoom]([https://cwru.zoom.us/j/92820007595?pwd=cNATLaW7U5q1pOr9a4PUWEuSHNtsS2.1](https://cwru.zoom.us/j/92820007595?pwd=cNATLaW7U5q1pOr9a4PUWEuSHNtsS2.1))
 
 **Discussion Items:**
-How we divide the demo (40 students).
-Wanna join the meeting or not? CFHS!
-Wed next week for presentation. (I go)
+Reminder: Dr. Block is out of town next week in Europe. At the last lab meeting, we voted, and the majority of students decided they preferred to skip individual and small-group meetings with Dr. Block and preferred sending an email update (with a link to weekly slides). Please do your best to send me your updates by **Wednesday** next week. Additionally, if you would like a meeting with me while I am out of town, we can arrange a Zoom call - please send me an email to let me know, and we will find a time!
 
-We are having a **Halloween
+Reports from Halloween party two-slice pizza eating contest: 
+Chester - 1m 15s
+Andrew - 1m 39s
+Kaleb - 1m 45s
+Ashraf - DNF Legend says Ashraf is still eating to this day 
+(thanks for these stats, Noah!)
 
 **Individual Updates:**
-We went in *decreasing* order of number of items in your Halloween costume.
-
-**Kaleb** - 
-- **Introduction:** Kaleb is a second-year studying CS who works on the TurtleBots with Chester.
-- **Accomplishments:** 
-- **Goals:** 
-- **Lesson:** 
+We went in *increasing* order of number of speed you can eat two pieces of pizza (per Halloween party).
 
 **Chester** - 1.15 mins
 - **Introduction:** I'm Chesturinat, I'm an undergrads internship student from Thailand. I'm working on a research project focusing on TurtleBot.
@@ -185,3 +187,10 @@ We went in *decreasing* order of number of items in your Halloween costume.
 - **Challenges:** Finding new device to help mapping in order to save time (I have talked to Austin). For the doorbell need to find the maxim range and with obstacle (wall, glass) to see the maximum range to know that we need to use antenna or not. For the LiDAR Sensor it just sudden error still figure out! Because last week I still can use it. And I did not test on the non-stationary object detection avoidance that I found on Github yet.
 - **Goals:** Map larger area more efficient, Find out the maximum range of RF receiver, Fix the LiDAR Sensor, and test on non-stationary object detection avoidance on Github.
 - **Lesson:** Talk to pink rubber duck, its HELP!
+
+**Kaleb** - 1.45 mins
+- **Introduction:** Kaleb is a second-year studying CS who works on the TurtleBots with Chester.
+- **Accomplishments:** He learned that he can't intercept CWRU doors and that Docker + ROS communication is nearly impossible with MacOS.
+- **Challenges:** He's been researching methods for moving object detection.
+- **Goals:** He plans to implement DATMO (from GitHub) using the LiDAR sensor and experiment with existing prediction research.
+- **Lesson:** Get good sleep!

@@ -178,3 +178,6 @@ Make a project plan for Fall Semester.
 	- Same as mobile robot in Thailand in restaurant
 		- White dot on the ceiling
 
+
+### 10th | November 6th, 2024
+
