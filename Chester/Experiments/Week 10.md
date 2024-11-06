@@ -25,8 +25,3 @@
 If I use LiDAR Sensor with mapping method I have no warning from AMCL file any more. The warning is "no laser scan receive".
 
 **Result:** Did not get the result as I expected.
-
-
-### October 31st, 2024
-
-**Objective:** 
