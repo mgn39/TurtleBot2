@@ -25,3 +25,17 @@ Tech needed:
 - **\[Problem\]** [5000 mAh LiPo Battery x2](https://www.amazon.com/MakerHawk-5000mAh-Rechargeable-Protection-Insulated/dp/B0D3LP9P96?crid=16XYGOS6LIM95&dib=eyJ2IjoiMSJ9.Lm_MdnWDyMsX0a6elXOCQQi3fKHgxzXCULUQ-5jSASHxneZ33gnLFYyNhKV6XIgRw7G6ot_ehNeC4jS_8w8Vy9XW0uFZzCiaLieNMsfgV0KnYq727GCrzhDruX5Hwr0b3f8a8iDjQMC9PFyNkshDfRg-hcQHolQa5xPo0jZxjusP9rqsGM2Povcbf5u0WpJSpRAdpiXTjiLKOou0b8qCAiSNQzwgvP5_i19R9cG8tfdzaXKLPN4TBOmzfxVtXwzkUPnPYRL_MqAZinH1I5Ujter8FgfWjM2vlANtkltSSmk.Sl8baGx8Go7y17C_9VydZ4bEWghp4vvOq9I0eghXaRg)
 	- [Link](https://techexplorations.com/guides/esp32/begin/power/) to powering the ESP32, keeping other circuitry in mind
 - Will use a 3D printed lever with some styrofoam, likely will tape a popsicle stick or something
+
+## <u>11/4/24</u>
+
+### Moving Object Detection (Day 3)
+- To get the LiDAR sensor to work, it must be plugged in before the Pi boots up
+- Attempting to forward window
+	- Enable permissions for X11 forwarding through ssh using `ssh -Y username@password`
+	- Updating OpenGL libraries by running:
+		- `sudo apt-get update`
+		- `sudo apt-get install --reinstall \ libgl1-mesa-dev \ libgl1-mesa-glx \ libglew-dev \ libosmesa6-dev`
+	- Also tried
+		- `export LIBGL_ALWAYS_SOFTWARE=1`
+		- `export OGRE_RTT_MODE=Copy`
+	- Still getting issues...will just try on the desktop
