@@ -29,3 +29,8 @@ Efficient command to delete/uninstall package `rm -rf package_name`
 
 Remote host identification has changed fix by `ssh-keygen -R IP Address` 
 For example: `ssh-keygen -R 192.168.0.190`
+
+
+### November 11th, 2024
+
+When you launch the file then facing usage over 1 GB. Use `rosclean purge`
