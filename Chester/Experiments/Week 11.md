@@ -63,10 +63,3 @@ rfdevice.cleanup()
 ```
 
 **Result:** It worked!
-
-
-### November 7th, 2024
-
-**Objective:**
-
-**Experiment:** 

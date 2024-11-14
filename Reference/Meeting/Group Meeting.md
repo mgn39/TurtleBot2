@@ -194,3 +194,26 @@ We went in *increasing* order of number of speed you can eat two pieces of pizza
 - **Challenges:** He's been researching methods for moving object detection.
 - **Goals:** He plans to implement DATMO (from GitHub) using the LiDAR sensor and experiment with existing prediction research.
 - **Lesson:** Get good sleep!
+
+
+### 6th | November 14th, 2024
+
+**Lab Meeting:**
+Next lab meeting, meet two weeks from today, at **12:30 p.m.** on **November th, 2024**
+
+**Individual Updates:**
+We went in *increasing* order of number of speed you can eat two pieces of pizza (per Halloween party).
+
+**Chester** - 
+- **Introduction:** I'm Chesturinat, I'm an undergrads internship student from Thailand. I'm working on a research project focusing on TurtleBot.
+- **Accomplishments:** RF receivers are too sensitive (so much noise). I made 1 more file to filter the signal and it worked. For LiDAR sensor super suspect on this device because not everyday that I can use it but I can use it. Tips: need to connect LiDAR to Raspberry Pi before turning the Raspberry Pi on.
+- **Challenges:** For path planning the new device that I mentioned last meeting, not work well for me so I will try a new solution. After I filter it to receive the signal with less noise, I might filter it too much because I cannot enable TurtleBot to move autonomously and sometimes the RF receiver does not receive the signal. LiDAR sensor as I mentioned before not everyday I can use it and the day  I can and I cannot use it I did exactly the same. Have no idea what is going on here. It might be from manufacturing.
+- **Goals:** Fix everything.
+- **Lesson:** If your brain like goldfish like me, please take a note don't trust yourself that you cam remember.
+
+**Kaleb** - 1.45 mins
+- **Introduction:** Kaleb is a second-year studying CS who works on the TurtleBots with Chester.
+- **Accomplishments:** 
+- **Challenges:** 
+- **Goals:** 
+- **Lesson:** 

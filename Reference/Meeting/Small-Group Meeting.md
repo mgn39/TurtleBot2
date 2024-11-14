@@ -184,3 +184,15 @@ Make a project plan for Fall Semester.
 [10th | Path Planning & Collision Detection & System Testing](https://docs.google.com/presentation/d/1Hwn-ka7Q229t4awgWL5dn2Gz32J45gFCfVTrl0x1f_g/edit?usp=sharing)
 
 
+### 11th | November 12th, 2024
+
+[11th | Path Planning & Collision Detection & System Testing](https://docs.google.com/presentation/d/1zg3EuHGPExAy_Ijq7kKM2YrEVFIW9Jy8G9YqAMG5sl8/edit?usp=sharing)
+
+- Doorbell
+	- I might limit too much due to I cannot enable TurtleBot to move autonomously
+- LiDAR Sensor
+	- Check on this error
+- Physical Door Actuation
+	- Flip 180 degree
+		- Disable person have to easy and comfort to access the door button
+	- LiPo Charger

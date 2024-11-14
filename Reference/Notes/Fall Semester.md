@@ -36,7 +36,8 @@ For example: `ssh-keygen -R 192.168.0.190`
 When you launch the file then facing usage over 1 GB. Use `rosclean purge`
 
 
-### November 11th, 2024
+### November 12th, 2024
+
 Instead of `ssh`-ing and opening 5 terminals, `ssh` once into the Pi, then place all commands into a file:
 ```bash
 #!/bin/bash
