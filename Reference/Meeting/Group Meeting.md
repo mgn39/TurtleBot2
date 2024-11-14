@@ -199,12 +199,17 @@ We went in *increasing* order of number of speed you can eat two pieces of pizza
 ### 6th | November 14th, 2024
 
 **Lab Meeting:**
-Next lab meeting, meet two weeks from today, at **12:30 p.m.** on **November th, 2024**
+Next lab meeting, meet two weeks from today, at **12:30 p.m.** on **November 12th, 2024**
+
+Quotes: (PhD student) Must be good leader of the lab (Dr. Block).  
+Cross ur fingers cross ur toes cross anything you can | For work shop proposal (Dr. Block).
+goldfish 2 weeks before die that count, hamster and mom told to re turn it, that count (Dr. Block).
+hamster both dead.
 
 **Individual Updates:**
 We went in *increasing* order of number of speed you can eat two pieces of pizza (per Halloween party).
 
-**Chester** - 
+**Chester** - 3 pets (fish)
 - **Introduction:** I'm Chesturinat, I'm an undergrads internship student from Thailand. I'm working on a research project focusing on TurtleBot.
 - **Accomplishments:** RF receivers are too sensitive (so much noise). I made 1 more file to filter the signal and it worked. For LiDAR sensor super suspect on this device because not everyday that I can use it but I can use it. Tips: need to connect LiDAR to Raspberry Pi before turning the Raspberry Pi on.
 - **Challenges:** For path planning the new device that I mentioned last meeting, not work well for me so I will try a new solution. After I filter it to receive the signal with less noise, I might filter it too much because I cannot enable TurtleBot to move autonomously and sometimes the RF receiver does not receive the signal. LiDAR sensor as I mentioned before not everyday I can use it and the day  I can and I cannot use it I did exactly the same. Have no idea what is going on here. It might be from manufacturing.
