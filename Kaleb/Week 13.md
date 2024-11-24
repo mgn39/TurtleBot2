@@ -54,3 +54,59 @@ In rviz:
 - Add `Map`, set to the map topic
 
 The LiDAR sensor builds a limited, initial map but doesn't create a map of the actual space
+
+## <u>11/23/24</u>
+### The System (Day 1)
+Borrowing Austin's board (ESP32-PICO-MINI-02). The LiPo battery connects and I burned myself. Awesome!
+
+For reference: https://learn.adafruit.com/adafruit-esp32-feather-v2/pinouts
+
+**NOTE: DO NOT USE THE LIPO BATTERY JUST YET UNLESS YOU'D LIKE TO FRY YOUR BOARD**
+
+#### ESP32: Blink
+- Install the PlatformIO extension on VSCode
+	- Click on the alien icon in the sidebar and create a new project
+	- Use Arduino, set the board to the Adafruit ESP32 Feather V2
+- In platformio.ini, set `monitor_speed = 115200` $<--$ baud rate
+- In `src/main.cpp`, modify to the following code (Blink LED):
+```cpp
+#include <Arduino.h>
+
+// our board uses GPIO 13
+#define LED 13
+
+void setup() {
+	// put your setup code here, to run once:
+	Serial.begin(115200);
+	pinMode(LED, OUTPUT);
+}
+
+void loop() {
+	// put your main code here, to run repeatedly:
+	digitalWrite(LED, HIGH);
+	Serial.println("LED is on");
+	delay(1000);
+	digitalWrite(LED, LOW);
+	Serial.println("LED is off");
+	delay(1000);
+}
+```
+After building and uploading the code, I'm using the Serial Monitor at the bottom to view the output. The LED onboard blinks, woohoo.
+
+#### Servo Control
+The newly modified code to actuate the motor is in the `src` folder of this repo. Slight muse from [here](https://dronebotworkshop.com/esp32-servo/#Servo_Motors).
+
+Add `lib_deps = madhephaestus/ESP32Servo@^3.0.5` in `platformio.ini` to install the ESP32Servo library. It's ok if there's library errors in the IDE, cause it works on the ESP32. Wire ground (GND), 3.3V power (3V), and output signal connection (A1).
+
+#### LiPo Battery
+Every time I've connected the LiPo battery I've noticed a funny smell coming from the board. I may have cancer by the numerous times I've sniffed the board, but using some tomfoolery I realized the battery's polarity is reversed. (This means that the black wire from the battery is the power and the red wire is ground when we plug it into the ESP32.)
+
+Potential solution: cut the battery wires and resolder to swap...but how then would we charge the battery?
+- Need to consult Austin or Dr. Block or Andrew if he's alive
+
+#### MX-RM-5V Receiver
+The ESP32 only operates with 3.3V logic, yet the MX-RM-5V receiver operates only on 5V (shocker). Likewise, this goes for the FS1000A transmitter, but we won't be using it since we're working with the doorbell here.
+
+Best option without buying a new receiver is to use a voltage divider with a $1k Omega$ and a $2k Omega$ resistor.
+![[Pasted image 20241123212028.png]]
+More info and diagram from [here](https://randomnerdtutorials.com/how-to-level-shift-5v-to-3-3v/)
