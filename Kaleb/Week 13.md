@@ -101,12 +101,28 @@ Add `lib_deps = madhephaestus/ESP32Servo@^3.0.5` in `platformio.ini` to install 
 #### LiPo Battery
 Every time I've connected the LiPo battery I've noticed a funny smell coming from the board. I may have cancer by the numerous times I've sniffed the board, but using some tomfoolery I realized the battery's polarity is reversed. (This means that the black wire from the battery is the power and the red wire is ground when we plug it into the ESP32.)
 
-Potential solution: cut the battery wires and resolder to swap...but how then would we charge the battery?
+~~Potential solution: cut the battery wires and resolder to swap...but how then would we charge the battery?~~
 - Need to consult Austin or Dr. Block or Andrew if he's alive
 
-#### MX-RM-5V Receiver
+#### Radio Receiver
 The ESP32 only operates with 3.3V logic, yet the MX-RM-5V receiver operates only on 5V (shocker). Likewise, this goes for the FS1000A transmitter, but we won't be using it since we're working with the doorbell here.
 
 Best option without buying a new receiver is to use a voltage divider with a $1k Omega$ and a $2k Omega$ resistor.
 ![[Pasted image 20241123212028.png]]
 More info and diagram from [here](https://randomnerdtutorials.com/how-to-level-shift-5v-to-3-3v/)
+
+## <u>11/24/24</u>
+
+### The System (Day 2)
+#### LiPo Battery
+Used a flathead to switch the polarity on the JRT connector itself with the help of Austin. Also learned that the LiPo battery is charged when the ESP32 is charged by the USB-C port...
+#### Radio Receiver
+Trying the voltage divider with this breadboard configuration and moved the servo wiring as well:
+![[Pasted image 20241124212426.png]]
+I needed a refresher on [reading resistors](https://developer.wildernesslabs.co/Hardware/Tutorials/Electronics/Part4/Reading_Resistors/)–the end color of the resistor is almost always gold or silver.
+
+Yeah we'll need to order a 3.3V receiver, the 5V one simply doesn't work since it requires more power.
+### Web Server
+Web server being hosted from the ESP32–will likely change from HTTP to a different protocol/port since we won't need a GUI later). [Here](https://randomnerdtutorials.com/esp32-web-server-arduino-ide/)'s a good resource for some high-level interfacing.
+
+It kinda works, it's buggy. Code w/ comments are in the main.cpp file.
