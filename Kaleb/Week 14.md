@@ -49,9 +49,20 @@ for custom, deployed movement of independant bot swarms...use `os.environ[<env v
 
 ![[Pasted image 20241203101559.png]]
 
+#### ESP32 
 Updated `main.cpp` to subscribe to topic `esp32/motor` and publish to topic `esp32/door`. 
 
 Then, on the Desktop (broker) I subscribed using `mosquitto_sub -h localhost -t esp32/door`. There is a constant stream of beeps every 2 seconds. Success! I tested publishing with `mosquitto_pub -h localhost -t esp32/motor -m "hello"`, and monitored the ESP32's Serial output. Messages are being received. Success!
 
 Cooked `.master.py` to be always run on the broker (Desktop), linked [here](https://github.com/SaPHaRI-Lab/Turtlebot2-kobuki_ws/blob/master/.master.py).
+#### Turtlebots
+Starting on the Pi 6, added `export PI_ID=<2-7>` to `.bashrc`. This will come in handy for Pi identification.
 
+Updated the GitHub `kobuki_ws` with extra files that were on the Pi 6. Used a PAT to sign in instead of using Git Credential Manager.
+
+Updated the file in `src/turtlebot/turtlebot_bringup/scripts`. The file will initialize the node `pi{ID}_roscomms` , and the other custom movement file will do the same...UNLESS this file will just do everything.
+
+**TODO:** Look into how complex adding the custom code-based autonomous movement is, then decide if we need a separate file or we can integrate the entire movement in this same file. However, it is pretty standard to use `rospy` with `Sub` and `Pub`, so most likely we'll be using a separate file to control movement...
+
+## <u>12/6/24</u>
+idk
