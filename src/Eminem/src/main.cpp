@@ -6,9 +6,9 @@
 #include <PubSubClient.h>
 
 // GPIO Pins
-#define LED 13
-#define SERVO 25
-#define RF 34
+#define LED_PIN 13
+#define SERVO_PIN 25
+#define RF_PIN 7
 // Servo Range
 #define SERVOMIN -300
 #define SERVOMAX 1000
@@ -26,7 +26,7 @@ int run_server();
 Servo servo;
 int pos = 0;
 int ADC_MAX = 4096; // default ADC max value; ESP32s have a 12-bit ADC width opposed to Arduinos' 10-bit
-// RCSwitch rfReceiver = RCSwitch(); // RF Receiver
+RCSwitch mySwitch = RCSwitch();
 
 // WiFi and MQTT
 WiFiClient espClient;
@@ -47,11 +47,10 @@ const unsigned int interval = 5000; // in ms
 
 void setup() {
     Serial.begin(115200);
-    pinMode(LED, OUTPUT);
-    servo.attach(SERVO, SERVOMIN, SERVOMAX);
-    pinMode(RF, INPUT);
-    // rfReceiver.enableReceive(digitalPinToInterrupt(RF));
-    digitalWrite(LED, HIGH); // turn on LED
+    pinMode(LED_PIN, OUTPUT);
+    digitalWrite(LED_PIN, HIGH);
+    servo.attach(SERVO_PIN, SERVOMIN, SERVOMAX);
+    mySwitch.enableReceive(RF_PIN);
 
     // WiFi connection
     setup_wifi();
@@ -74,13 +73,31 @@ void loop() {
 
     // Servo
     if (activated) {
-        digitalWrite(LED, HIGH);
+        digitalWrite(LED_PIN, HIGH);
         for (pos = 0; pos <= 180; pos += 1) {
             servo.write(pos);
             delay(10);
         }
-        digitalWrite(LED, LOW);
+        digitalWrite(LED_PIN, LOW);
         activated = false;
+    }
+
+    // RF Receiver
+    if (mySwitch.available()) {
+        Serial.print("zamn");
+        long receivedValue = mySwitch.getReceivedValue();
+        
+        if (receivedValue != 0) {
+            Serial.print("Received Signal: ");
+            Serial.print(receivedValue);
+            Serial.print(" / ");
+            Serial.print(mySwitch.getReceivedBitlength());
+            Serial.print("bit ");
+            Serial.print("Protocol: ");
+            Serial.println(mySwitch.getReceivedProtocol());
+            
+            mySwitch.resetAvailable();
+        }
     }
 }
 

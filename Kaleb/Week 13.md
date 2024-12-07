@@ -60,6 +60,7 @@ The LiDAR sensor builds a limited, initial map but doesn't create a map of the a
 Borrowing Austin's board (ESP32-PICO-MINI-02). The LiPo battery connects and I burned myself. Awesome!
 
 For reference: https://learn.adafruit.com/adafruit-esp32-feather-v2/pinouts
+![[Pasted image 20241207013507.png]]
 
 **NOTE: DO NOT USE THE LIPO BATTERY JUST YET UNLESS YOU'D LIKE TO FRY YOUR BOARD**
 

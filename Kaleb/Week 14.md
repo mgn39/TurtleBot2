@@ -65,4 +65,15 @@ Updated the file in `src/turtlebot/turtlebot_bringup/scripts`. The file will ini
 **TODO:** Look into how complex adding the custom code-based autonomous movement is, then decide if we need a separate file or we can integrate the entire movement in this same file. However, it is pretty standard to use `rospy` with `Sub` and `Pub`, so most likely we'll be using a separate file to control movement...
 
 ## <u>12/6/24</u>
-idk
+
+#### Doorbell Receiver
+RF Receiver (RX6B) arrived. Using this wiring diagram:
+![[Pasted image 20241207012231.png]]
+
+I only have one ground port on the ESP32. So, the ground from the servo is the 2nd VCC into the RF Receiver...
+
+Tried remapping ports, not using the `RCSwitch` library, and rewiring the RX6B. None worked, so I'm suspecting an issue with a frequency mismatch.
+
+## <u>12/7/24</u>
+
+#### Doorbell Receiver (Day 2)
