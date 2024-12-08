@@ -67,7 +67,7 @@ Updated the file in `src/turtlebot/turtlebot_bringup/scripts`. The file will ini
 ## <u>12/6/24</u>
 
 #### Doorbell Receiver
-RF Receiver (RX6B) arrived. Using this wiring diagram:
+RF Receiver (RXB6) arrived, [should work](https://stef-aap.github.io/RFLink-ESP/433%20MHz%20Transceivers.html). Using this wiring diagram:
 ![[Pasted image 20241207012231.png]]
 
 I only have one ground port on the ESP32. So, the ground from the servo is the 2nd VCC into the RF Receiver...
@@ -76,4 +76,13 @@ Tried remapping ports, not using the `RCSwitch` library, and rewiring the RX6B. 
 
 ## <u>12/7/24</u>
 
+### Communication (Day 4)
 #### Doorbell Receiver (Day 2)
+Tested doorbell signal with FlipperZero for a sanity check, and yes it is 433.92 MHz.
+
+Ok, I was a complete idiot and thought that there was a second 3.3V pin on the ESP32. Turns out, there wasn't. Holy crap.
+
+Used a breadboard and wired to pins 5, 7, 8 in the diagram above. Updated `main.cpp`; we should be done now.
+
+#### Connecting all together
+MQTT and doorbell is fully functional.

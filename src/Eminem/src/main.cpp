@@ -8,7 +8,7 @@
 // GPIO Pins
 #define LED_PIN 13
 #define SERVO_PIN 25
-#define RF_PIN 7
+#define RF_PIN 34
 // Servo Range
 #define SERVOMIN -300
 #define SERVOMAX 1000
@@ -26,11 +26,12 @@ int run_server();
 Servo servo;
 int pos = 0;
 int ADC_MAX = 4096; // default ADC max value; ESP32s have a 12-bit ADC width opposed to Arduinos' 10-bit
+// RF
 RCSwitch mySwitch = RCSwitch();
-
+bool blockSignal = false;
 // WiFi and MQTT
-WiFiClient espClient;
-PubSubClient client(espClient);
+WiFiClient wclient;
+PubSubClient client(wclient);
 bool activated = false;
 const char* mqtt_topic_sub = "esp32/door";
 const char* mqtt_topic_pub = "esp32/doorbell";
@@ -42,7 +43,6 @@ void reconnect();
 
 // Misc
 unsigned long startTime = millis();
-unsigned long currTime = startTime;
 const unsigned int interval = 5000; // in ms
 
 void setup() {
@@ -50,54 +50,41 @@ void setup() {
     pinMode(LED_PIN, OUTPUT);
     digitalWrite(LED_PIN, HIGH);
     servo.attach(SERVO_PIN, SERVOMIN, SERVOMAX);
-    mySwitch.enableReceive(RF_PIN);
-
-    // WiFi connection
+    mySwitch.enableReceive(digitalPinToInterrupt(RF_PIN));
     setup_wifi();
     client.setServer(MQTT_BROKER, MQTT_PORT);
     client.setCallback(mqtt_callback);
 }
 
 void loop() {
-    currTime = millis();
+    blockSignal = !(blockSignal && (millis() - startTime >= 5000));
 
-     // MQTT
+    // MQTT
     if (!client.connected()) // ensures MQTT remains connected
         reconnect();
     client.loop();
-    if (currTime - startTime > interval) {  // for testing purposes, send signal every 2s
-        client.publish(mqtt_topic_pub, "beep");
-        Serial.println("beep sent");
-        startTime = currTime;
-    }
 
     // Servo
     if (activated) {
-        digitalWrite(LED_PIN, HIGH);
+        Serial.println("Opening Door...");
+        digitalWrite(LED_PIN, LOW);
         for (pos = 0; pos <= 180; pos += 1) {
             servo.write(pos);
             delay(10);
         }
-        digitalWrite(LED_PIN, LOW);
+        digitalWrite(LED_PIN, HIGH);
         activated = false;
     }
 
     // RF Receiver
-    if (mySwitch.available()) {
-        Serial.print("zamn");
-        long receivedValue = mySwitch.getReceivedValue();
-        
-        if (receivedValue != 0) {
-            Serial.print("Received Signal: ");
-            Serial.print(receivedValue);
-            Serial.print(" / ");
-            Serial.print(mySwitch.getReceivedBitlength());
-            Serial.print("bit ");
-            Serial.print("Protocol: ");
-            Serial.println(mySwitch.getReceivedProtocol());
-            
-            mySwitch.resetAvailable();
-        }
+    if (mySwitch.available() && blockSignal) // Kill queued signals
+        mySwitch.resetAvailable();
+    if (!blockSignal && mySwitch.available() && mySwitch.getReceivedValue() == 15205443) {
+        startTime = millis();
+        blockSignal = true;
+        mySwitch.resetAvailable();
+        Serial.println("Doorbell signal received! Publishing...");
+        client.publish(mqtt_topic_pub, "beep");
     }
 }
 
@@ -115,11 +102,10 @@ void setup_wifi() {
 // Message callback
 void mqtt_callback(char* topic, byte* message, unsigned int length) {
     Serial.print("Message arrived on topic: ");
-    Serial.print(topic);
+    Serial.println(topic);
 
-    // There's only one message that'll ever be received, which is to open the door
-    if (topic == mqtt_topic_sub)
-        activated = true;
+    // Activate motor if the topic matches w/ subscribed topic
+    activated = strcmp(topic, mqtt_topic_sub) == 0;
 }
 
 // Reconnect to MQTT Broker
