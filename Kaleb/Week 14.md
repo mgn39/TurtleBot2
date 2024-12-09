@@ -82,7 +82,28 @@ Tested doorbell signal with FlipperZero for a sanity check, and yes it is 433.92
 
 Ok, I was a complete idiot and thought that there was a second 3.3V pin on the ESP32. Turns out, there wasn't. Holy crap.
 
-Used a breadboard and wired to pins 5, 7, 8 in the diagram above. Updated `main.cpp`; we should be done now.
+Used a breadboard and wired to pins 5, 7, 8 in the diagram above. Updated `main.cpp`; we should be done now!
 
-#### Connecting all together
-MQTT and doorbell is fully functional.
+### Turtlebot Behavior
+#### Sound Effect
+Install pip package `playsound`, then you get this code:
+```python
+from playsound import playsound
+playsound('path/to/audio')
+```
+Yeah it's easy.
+#### Communicating w/ Master
+On Pi 5, updated to install `paho-mqtt` and `playsound` packages, and set `PI_ID=5`.
+
+Launch:
+- `minimal_ext.launch`
+- `rplidar_a1tf.launch` <-- check which USB port the LiDAR is plugged into (use `ls -l /dev | grep ttyUSB`, config in the launch file
+- `amcl_demo.launch map_file:=/...`
+
+Getting laser scan errors though...Turtlebot moved the first time though.
+## <u>12/8/24</u>
+I broke the motor. Anyways, the Turtlebot moves every blue moon.
+
+Many, many issues with the goal planning. It's something with the `move_base` server.
+
+

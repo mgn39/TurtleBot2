@@ -10,8 +10,8 @@
 #define SERVO_PIN 25
 #define RF_PIN 34
 // Servo Range
-#define SERVOMIN -300
-#define SERVOMAX 1000
+#define SERVOMIN 0
+#define SERVOMAX 1500
 // Network Credentials
 #define SSID "G519A"
 #define PASSWORD "Blocklab519a"
@@ -25,6 +25,7 @@ int run_server();
 // Servo
 Servo servo;
 int pos = 0;
+bool activated = false;
 int ADC_MAX = 4096; // default ADC max value; ESP32s have a 12-bit ADC width opposed to Arduinos' 10-bit
 // RF
 RCSwitch mySwitch = RCSwitch();
@@ -32,7 +33,6 @@ bool blockSignal = false;
 // WiFi and MQTT
 WiFiClient wclient;
 PubSubClient client(wclient);
-bool activated = false;
 const char* mqtt_topic_sub = "esp32/door";
 const char* mqtt_topic_pub = "esp32/doorbell";
 
@@ -50,6 +50,7 @@ void setup() {
     pinMode(LED_PIN, OUTPUT);
     digitalWrite(LED_PIN, HIGH);
     servo.attach(SERVO_PIN, SERVOMIN, SERVOMAX);
+    servo.write(pos);
     mySwitch.enableReceive(digitalPinToInterrupt(RF_PIN));
     setup_wifi();
     client.setServer(MQTT_BROKER, MQTT_PORT);
@@ -68,9 +69,15 @@ void loop() {
     if (activated) {
         Serial.println("Opening Door...");
         digitalWrite(LED_PIN, LOW);
-        for (pos = 0; pos <= 180; pos += 1) {
+        delay(1000);
+        servo.write(0);
+        for (pos = 0; pos < 180; pos += 10) {
             servo.write(pos);
-            delay(10);
+            delay(3);
+        }
+        for (pos = 180; pos > 0; pos -= 10) {
+            servo.write(pos);
+            delay(3);
         }
         digitalWrite(LED_PIN, HIGH);
         activated = false;
