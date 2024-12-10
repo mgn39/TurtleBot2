@@ -497,7 +497,7 @@ Add a User via Recovery Mode
 - Tips: Make sure you set the topic in the Rviz same as in the AMCL file
 
 
-### Receive the signal from Doorbell
+### Receive the signal from Doorbell (Raspberry Pi)
 - Connection
 ![[RF Receiver MX-RM-5V Close up.png]]
 - RF Receiver pins (Start from left) | Picture on the above
@@ -685,14 +685,51 @@ rfdevice.cleanup()
 	- `cd kobuki_ws/src/rplidar_ros/launch`
 	- `nano rplidar_a1.launch`
 ```
-  <node name="rplidarNode"          pkg="rplidar_ros"  type="rplidarNode" output="screen">
-  <param name="serial_port"         type="string" value="/dev/ttyUSB0"/>
-  <param name="serial_baudrate"     type="int"    value="115200"/>
-  <param name="frame_id"            type="string" value="map"/>
-  <param name="inverted"            type="bool"   value="false"/>
-  <param name="angle_compensate"    type="bool"   value="true"/>
+<launch>
+  <!-- RPLIDAR Node -->
+  <node name="rplidarNode" pkg="rplidar_ros" type="rplidarNode" output="screen">
+    <param name="serial_port" type="string" value="/dev/ttyUSB0"/>
+    <param name="serial_baudrate" type="int" value="115200"/>
+    <param name="frame_id" type="string" value="base_laser"/>
+    <param name="inverted" type="bool" value="true"/>
+    <param name="angle_compensate" type="bool" value="true"/>
   </node>
+
+  <!-- Static Transform Publisher -->
+  <node name="static_transform_publisher" pkg="tf2_ros" type="static_transform_publisher" output="screen" args="0 0 0.6 0 1 0 0 base_link base_laser"/>
+
 </launch>
 ```
 - `roslaunch turtlebot_bringup minimal.launch`
 - `roslaunch rplidar_ros rplidar_a1.launch`
+- PS. If lidar sensor error with exit code 255, please check the USB port
+
+
+### Configuration GMapping before do mapping
+- `cd kobuki_ws/src/turtlebot_apps/turtlebot_navigation/launch`
+- `nano gmapping_demo.launch`
+```
+<launch>
+  <!-- RPLIDAR node should be launched separately, as you are already doing -->
+
+  <!-- Gmapping -->
+  <include file="$(find turtlebot_navigation)/launch/includes/gmapping/gmapping.launch.xml">
+    <arg name="scan_topic" value="/scan" /> <!-- Use RPLIDAR scan topic -->
+  </include>
+
+  <!-- Move base -->
+  <include file="$(find turtlebot_navigation)/launch/includes/move_base.launch.xml"/>
+```
+
+
+### Mapping the area with LiDAR 
+- Terminal 1 | ssh
+	- `roslaunch turtlebot_bringup minimal.launch`
+- Terminal 2 | ssh
+	- `roslaunch rplidar_ros rplidar_a1.launch`
+- Terminal 3 | ssh
+	- `roslaunch turtlebot_navigation gmapping_demo.launch`
+- Terminal 4
+	- `rviz`
+- After launch all necessary package -> map
+- Then save the map

@@ -229,7 +229,7 @@ We went in *increasing* order of number of speed you can eat two pieces of pizza
 
 **Chester** - 
 - **Introduction:** I'm Chesturinat, I'm an undergrads internship student from Thailand. I'm working on a research project focusing on TurtleBot.
-- **Accomplishments:** I use LiDAR to map the environment instead of Kinect. Thank you to Austin, he set the mesh wifi up yesterday so that i can mapped whole area (my desk to Dr. Block room to front door can then come back to my desk)
-- **Challenges:** Kinect not good for map big unknown environment it suit for map in short depth or have obstacle that why i decided to chose LiDAR instead. But TurtleBot is not made for LiDAR. I got many big error in here e.g., parent node cannot find child node (laser scan) so, which mean I cannot map environment while moving around to fix this need to launch 1 command line and in here i got 1 more error i need to set the orientation of LiDAR too then after I fixed it i can map the environment now.
-- **Goals:** Finish everything up before lunch and learn
-- **Lesson:** Don't forget to rest
+- **Accomplishments:** I use LiDAR to map the environment instead of Kinect. Thank you to Austin, he set the mesh wifi up yesterday so that i can mapped whole area (my desk to Dr. Block room to front door can then come back to my desk). And I order 6 more!
+- **Challenges:** Kinect not good for map big unknown environment it suit for map in short depth or have obstacle that why i decided to chose LiDAR instead. But TurtleBot is not made for LiDAR. I got many big error in here e.g., parent node cannot find child node (base_laser) so, which mean I cannot map environment while moving around to fix this need to launch 1 command line and in here i got 1 more error i need to set the orientation of LiDAR too then after I fixed it i can map the environment now.
+- **Goals:** Finish everything up before lunch and learn.
+- **Lesson:** Please don't forget to rest.
