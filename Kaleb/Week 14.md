@@ -65,4 +65,45 @@ Updated the file in `src/turtlebot/turtlebot_bringup/scripts`. The file will ini
 **TODO:** Look into how complex adding the custom code-based autonomous movement is, then decide if we need a separate file or we can integrate the entire movement in this same file. However, it is pretty standard to use `rospy` with `Sub` and `Pub`, so most likely we'll be using a separate file to control movement...
 
 ## <u>12/6/24</u>
-idk
+
+#### Doorbell Receiver
+RF Receiver (RXB6) arrived, [should work](https://stef-aap.github.io/RFLink-ESP/433%20MHz%20Transceivers.html). Using this wiring diagram:
+![[Pasted image 20241207012231.png]]
+
+I only have one ground port on the ESP32. So, the ground from the servo is the 2nd VCC into the RF Receiver...
+
+Tried remapping ports, not using the `RCSwitch` library, and rewiring the RX6B. None worked, so I'm suspecting an issue with a frequency mismatch.
+
+## <u>12/7/24</u>
+
+### Communication (Day 4)
+#### Doorbell Receiver (Day 2)
+Tested doorbell signal with FlipperZero for a sanity check, and yes it is 433.92 MHz.
+
+Ok, I was a complete idiot and thought that there was a second 3.3V pin on the ESP32. Turns out, there wasn't. Holy crap.
+
+Used a breadboard and wired to pins 5, 7, 8 in the diagram above. Updated `main.cpp`; we should be done now!
+
+### Turtlebot Behavior
+#### Sound Effect
+Install pip package `playsound`, then you get this code:
+```python
+from playsound import playsound
+playsound('path/to/audio')
+```
+Yeah it's easy.
+#### Communicating w/ Master
+On Pi 5, updated to install `paho-mqtt` and `playsound` packages, and set `PI_ID=5`.
+
+Launch:
+- `minimal_ext.launch`
+- `rplidar_a1tf.launch` <-- check which USB port the LiDAR is plugged into (use `ls -l /dev | grep ttyUSB`, config in the launch file
+- `amcl_demo.launch map_file:=/...`
+
+Getting laser scan errors though...Turtlebot moved the first time though.
+## <u>12/8/24</u>
+I broke the motor. Anyways, the Turtlebot moves every blue moon.
+
+Many, many issues with the goal planning. It's something with the `move_base` server.
+
+
