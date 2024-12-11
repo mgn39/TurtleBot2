@@ -199,7 +199,7 @@ We went in *increasing* order of number of speed you can eat two pieces of pizza
 ### 6th | November 14th, 2024
 
 **Lab Meeting:**
-Next lab meeting, meet two weeks from today, at **12:30 p.m.** on **November 12th, 2024**
+Next lab meeting, meet two weeks from today, at **12:30 p.m.** on **December 4th, 2024**
 
 **Individual Updates:**
 We went in *increasing* order of number of speed you can eat two pieces of pizza (per Halloween party).
@@ -224,8 +224,43 @@ We went in *increasing* order of number of speed you can eat two pieces of pizza
 **Lab Meeting:**
 Next lab meeting, meet two weeks from today, at **12:30 p.m.** on **November 12th, 2024**
 
+**Quotes by Andrew:**
+No treats? Sad. - Dr. Block
+We gotta keep going… Because we have to - Dr. Block
+Flying to Australia?  Not sustainable. - Dr. Block
+You will find me; I am tall - Andrew
+The best thing about ETH is the nap room! - Dr. Block
+Do we have any lingering hopes and dreams? *Silence* - Dr. Block
+Just do it and not sourcing it - Kaleb
+Who’s staying in Cleveland!!?? - Dr. Block raises her hand No one else
+Ashraf going rogue letting the Barista choose the milk. Isn’t that crazy?? - Dr. Block
+Come on, I am international student… forgive me - Chester
+Dr.Block said 4 Wooohoooos this meeting :)
+
+**Publications:**
+_Any new decisions?_
+Unfortunately, our HRI workshop proposal was not accepted to the HRI 2025 conference. This is okay. There is only a limited number of proposals they are able to accept, and they mentioned this year, they had a record number of applications. We also learned good feedback about how to improve. They really liked our topic and said they believe it has the potential to become a significant sub-field of HRI; however, they weren’t convinced there was enough interest yet, and we need to do a better job explaining how we will recruit people to the workshop. Additionally, they didn’t think we tied into the conference’s theme enough. This is really good information to have for the next submission! We should be proud of the work we did and encouraged to try again. Failure is a part of life and an important part of science. It’s also incredibly important to normalize failure because no one will succeed at everything on their first attempt. 
+
+_Any new submissions?_
+AstroPsych and the Affect Sensing Wearables project both resubmitted their IRB applications. We’re hoping to get them approved before the end of the semester. 
+
+Chester submitted a Jane Street Graduate Research Fellowship application to support his doctoral research!
+
+_Anything almost ready to submit or waiting for edits?_
+Nothing to report.
+
+*New Policy:*
+I must have a FULL draft of your paper ONE WEEK before the submission date. If I do not receive a first draft in time, I cannot edit it for you at the last minute.
+
+*ChatGPT policy:* 
+Using ChatGPT or Grammarly to check your spelling/grammar/style is okay. However, asking ChatGPT to write a paper for you is not acceptable. There are many things ChatGPT does not do well, and there are many “tells” when ChatGPT writes something. Likewise, you may use ChatGPT to help you debug. However, asking ChatGPT to program your entire project is unacceptable.
+
+Additionally, you may never blindly copy and paste something from ChatGPT into your paper or code. You are expected to understand every aspect of writing and code you submit to Dr. Block, and if she asks you to explain something, you must be able to do so _in your own words._ Many conferences and journals are now running submissions through AI detection. Finally, any assistance you get from ChatGPT must be acknowledged - you must tell Dr. Block what you used it for and how, and it must go in the acknowledgments just like you would recognize assistance from any individual. Otherwise, it is considered plagiarism.
+
+Additionally, I have received many and a good friend of mine told me he received one from a CWRU student email that clearly templates from ChatGPT requesting to work in our labs. The cadence and sentence structure is very obvious. Additionally, if it says "insert research topic" and you do not replace the brackets, this is a really bad reflection of you, us, and CWRU. Please, please, please: you may use ChatGPT as a brainstorming tool, but you must **read it carefully** and put it in your own words.
+
 **Individual Updates:**
-We went in *increasing* order of number of speed you can eat two pieces of pizza (per Halloween party).
+We went in *increasing* order of return date from Winter Break.
 
 **Chester** - 
 - **Introduction:** I'm Chesturinat, I'm an undergrads internship student from Thailand. I'm working on a research project focusing on TurtleBot.
@@ -233,3 +268,10 @@ We went in *increasing* order of number of speed you can eat two pieces of pizza
 - **Challenges:** Kinect not good for map big unknown environment it suit for map in short depth or have obstacle that why i decided to chose LiDAR instead. But TurtleBot is not made for LiDAR. I got many big error in here e.g., parent node cannot find child node (base_laser) so, which mean I cannot map environment while moving around to fix this need to launch 1 command line and in here i got 1 more error i need to set the orientation of LiDAR too then after I fixed it i can map the environment now.
 - **Goals:** Finish everything up before lunch and learn.
 - **Lesson:** Please don't forget to rest.
+
+**Kaleb** - 
+- **Introduction:** Kaleb is a second-year studying CS who works on the TurtleBots with Chester.
+- **Accomplishments:** He set up a physical door opener system, set up communication between devices using MQTT (between ESP32, Raspberry Pis, and Desktop), and started implementing the multibot deployment system.
+- **Challenges:** He's been waiting for an RF receiver that came in today.
+- **Goals:** He hopes to install all the devices and get a Turtlebot to drive, integrating with Chester's mapping autonomously
+- **Lesson:** Just do it (not stolen)

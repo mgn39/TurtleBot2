@@ -186,7 +186,7 @@ Make a project plan for Fall Semester.
 
 ### 11th | November 12th, 2024
 
-[11th | Path Planning & Collision Detection & System Testing](https://docs.google.com/presentation/d/1zg3EuHGPExAy_Ijq7kKM2YrEVFIW9Jy8G9YqAMG5sl8/edit?usp=sharing)
+[11th | Path Planning & System Testing](https://docs.google.com/presentation/d/1zg3EuHGPExAy_Ijq7kKM2YrEVFIW9Jy8G9YqAMG5sl8/edit?usp=sharing)
 
 - Doorbell
 	- I might limit too much due to I cannot enable TurtleBot to move autonomously
@@ -196,3 +196,27 @@ Make a project plan for Fall Semester.
 	- Flip 180 degree
 		- Disable person have to easy and comfort to access the door button
 	- LiPo Charger
+
+
+### 12th |  November 19th, 2024
+
+[12th | Path Planning & System Testing](https://docs.google.com/presentation/d/1m9TKmtNe16a8BYrNXuCiheDOHaHQhR_SoeNswguJoVw/edit?usp=sharing)
+
+
+### 13th |  November 26, 2024
+
+[13th | Path Planning & System Testing](https://docs.google.com/presentation/d/11HNoepOoKaPMRTFi3vQfx6wtwgR_NAfx9lspK03DMNs/edit?usp=sharing)
+
+Lunch and Learn Presentation
+- Motivation
+- Related Work
+- So on
+- Reference from Summer
+
+### 14th | December 3rd, 2024
+
+[14th | Path Planning & System Testing](https://docs.google.com/presentation/d/1vU_2RXcvt2sosAX3L2R4k9IaLqrHKadr_jNiY6uFnBI/edit?usp=sharing)
+
+Lunch and Learn Presentation
+- Related Work
+	- Group it!
