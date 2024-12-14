@@ -7,8 +7,6 @@
 	- Install the Arduino IDE
 	- Following [this guide](https://samueladesola.medium.com/how-to-set-up-esp32-wroom-32-b2100060470c) to set up the ESP32 and its drivers
 	- Really good [WiFi tutorial](https://www.youtube.com/watch?v=aH3sLEQI4_w) (for later)
-	- 
-
 ## <u>11/19/24</u>
 
 ### System Design

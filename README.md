@@ -94,6 +94,9 @@ Install Ubuntu 20.04 (64-bit) and all necessary packages:
   - `sudo apt install ubuntu-desktop -y`  
   - `startx` (To enter Ubuntu desktop)
 
+### SSH:
+- SSH with `ssh <username>@<ip>`
+	- Our case it is `ssh SaPHaRI@192.168.0.___`
 ### Install ROS Noetic:
 - Links “[ROS Noetic](http://wiki.ros.org/noetic/Installation/Ubuntu)”
 - Install ROS Noetic Desktop Full version
