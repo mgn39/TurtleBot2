@@ -4,46 +4,29 @@
 
 ## Background
 
-TurtleBot is a low-cost, personal robot kit with open-source software. With TurtleBot, you’ll be able to build a robot that can drive around your house. This is Kobuki TurtleBot (TurtleBot 2). The TurtleBot has a mobile base that can move in any direction, a Kinect camera, and a sensor to see its surroundings to measure distances and help map its environment. And we have 7 of them.
+A TurtleBot is a low-cost, personal robot kit with open-source software. TurtleBots can move, map, and navigate environments, making them useful for mobile computer vision experiments. This project uses the TurtleBot2 with a Kobuki base. This version has a mobile base, a Kinect camera, and a sensor to see its surroundings to measure distances and help map its environment. And we have 7 of them.
 
 ### Goal
-Be able to communicate with all 7 robots at once and have them communicate with each other, enable them to move simultaneously as a swarm, then have them interact with people and measure human-robot behavior.
+Create an automatically deployed system in which all 7 robots can communicate with one other and move together as a swarm. This system will be used to interact with people and investigate human-robot behavior.
 
 ### Components:
-1. Kinect Camera and Sensor
+1. LiDAR Sensor **(replaces Xbox 360 Kinect)**
 2. Speaker
-3. Raspberry Pi (replaces default Jetson TK1)
-4. Wheels
-5. Body
+3. Raspberry Pi **(replaces Jetson TK1)**
+4. Kobuki Base
+5. Robot Body
 6. Battery
 
-  
-### Kinect Camera
+#### LiDAR Sensor
+The LiDAR (Light Detection and Ranging) is a remote sensing technology that uses laser beams to measure distances and create detailed 3D maps of the environment. On the TurtleBots, the LiDAR sensor is mounted on top of the robot to provide a 360-degree range of measurements. We used a cardboard box to place it above the existing Kinect sensor.
 
-The Kinect provides depth information and forms a 3-dimensional. Have 3 inbuilt cameras, an RGB, an Infrared, and Depth sensor. And have 4 microphones to receive a sound.
+![](https://m.media-amazon.com/images/I/515P0yY+uxL.jpg)
 
-![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXeskm3ebEl5Yl-tMTF7yQx7VJ5V2nBzQb6SV3CYEpYzkWu9CrLgay0EUHtTr3C8g-TcgNBDZvpiNUoQYFrktiGONYxdIWC2FxQk1zEDC86M5TkFA0bh562Q2ldybVhwQ3KvOgbigHGavhhUOBKvD7CQv0G_?key=s6kx8w9aAKgfuro0Mrp5kw)
-
-  
-
-### Raspberry Pi
+#### Raspberry Pi
 
 The brain of the computer/robot, this is where all the calculations and decisions are made. In this research I use Raspberry Pi 4 Model B 8GB with Starter Kit (including case, fan, heat sync, charger, etc.).
 
 Link from Amazon: [Raspberry Pi](https://www.amazon.com/CanaKit-Raspberry-4GB-Starter-Kit/dp/B08956GVXN/ref=sr_1_2_sspa?crid=1G4BEMXOX5NVU&dib=eyJ2IjoiMSJ9.mP4drOfyakW9P2E6ytjWi16gj2s3LrQBGuFeMtbTEh_hMvprgoi-t-zlc_pvFQPcF8E2O6AESj6Om7ZB9CrmRyba7rYttBJ7UUUxLrY5W3aubaUiDeB1AUSutuUgoQoQpqV06pSq0PIWx2_OFJHtnuSn5FbIeruK-kpbvBaTi5gvTZ_BBcB4iG9R8Kykr_gSTNvACwM9L2azfpDbIXxaEcS_7iFzVMzvMllRlt5t2BY.OT51DETFITwREkwJcV8xwrQ18fpsFBqTiz1Cksqw4_w&dib_tag=se&keywords=raspberry%2Bpi%2B4&qid=1720193522&sprefix=rasp%2Caps%2C98&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1) 
-
-Install Ubuntu 20.04 (64-bit) and all necessary packages:
-- `git clone https://github.com/yujinrobot/kobuki.git`
-- `git clone https://github.com/turtlebot/turtlebot.git`
-- `git clone https://github.com/yujinrobot/yujin_ocs.git`
-- `git clone https://github.com/turtlebot/turtlebot_msgs.git`
-- `git clone https://github.com/turtlebot/turtlebot_apps.git`
-- `git clone https://github.com/turtlebot/turtlebot_simulator.git`
-- `git clone https://github.com/OpenKinect/libfreenect.git`
-- `git clone https://github.com/ros-drivers/freenect_stack.git`
-- `git clone https://github.com/Slamtec/rplidar_ros.git`
-- `sudo apt install ros-noetic-rtabmap-ros -y`
-- `sudo apt-get install ros-noetic-pointcloud-to-laserscan -y`
 
 ## Getting Started
 
@@ -118,13 +101,15 @@ Install Ubuntu 20.04 (64-bit) and all necessary packages:
 		- `sudo apt install python3-rosdep`
 		- `sudo rosdep init`
 		- `rosdep update`
-  
-### Control TurtleBot by using the keyboard:
+
+You can skip the next section by cloning the end result of `kobuki_ws` [here](https://github.com/SaPHaRI-Lab/Turtlebot2-kobuki_ws). Else, follow the next section to do it manually.
+
+### Setting up the workspace
 - Open your terminal
 	- Make your workspace with `mkdir kobuki_ws`
 	- `cd kobuki_ws/`
 	- `mkdir src` 
-	- `catkin_make`
+	- `catkin_make` (builds the workspace)
 - Run `cd src/` then clone these repositories in the src:
 	- `git clone https://github.com/yujinrobot/kobuki.git`
 	- `git clone https://github.com/turtlebot/turtlebot.git`
@@ -132,42 +117,45 @@ Install Ubuntu 20.04 (64-bit) and all necessary packages:
 	- `git clone https://github.com/turtlebot/turtlebot_msgs.git`
 	- `git clone https://github.com/turtlebot/turtlebot_apps.git`
 	- `git clone https://github.com/turtlebot/turtlebot_simulator.git`
+	- `git clone https://github.com/OpenKinect/libfreenect.git`
+	- `git clone https://github.com/ros-drivers/freenect_stack.git`
+	- `git clone https://github.com/Slamtec/rplidar_ros.git`
+- Install:
+	- `sudo apt install ros-noetic-rtabmap-ros -y`
+	- `sudo apt-get install ros-noetic-pointcloud-to-laserscan -y`
+	- `sudo apt install liborocos-kdl-dev`
 - Configuration 
 	- Head to `kobuki_ws/src/yujin_ocs` then delete the all files except for
 		- `yocs_cmd_vel_mux`
 		- `yocs_controllers`
 		- `yocs_velocity_smoother`
-- Further installation	
-	- `cd`
-	- `sudo apt install liborocos-kdl-dev`
-- Run rosdep command  
+- Run rosdep (for ROS dependencies) command  
 	- `cd kobuki_ws/`
 	- `rosdep install --from-paths src --ignore-src -r -y`
 	- `rosdep update`
 	- `catkin_make`
-- Source the workspace
-	- `source devel/setup.bash`
-- Run the command to connect to the TurtleBot  
+- Source the workspace with `source devel/setup.bash`
+- Test connection to the TurtleBot  
 	- `lsusb` (to check if the TurtleBot is connected or not)  
 	- `roslaunch turtlebot_bringup minimal.launch`
-- Open another terminal to run the command to control  
-	- `roslaunch turtlebot_teleop keyboard_teleop.launch`
-- If in connect part or control part has an error  
-	- `python3 --version`  
+- If there is an error related to python, try:
+	- `python3 --version`
 	- `sudo ln -s /usr/bin/python3 /usr/bin/python`
 - After turning on the Raspberry Pi again might have an error  
-	- `catkin_make`  
+	- `catkin_make`
 	- `source devel/setup.bash`
-- Run the desired command again  
+- Run the desired command again
 	- Use this command to avoid running `source devel/setup.bash` every time after `catkin_make`  
 	- `echo "source your_ws/devel/setup.bash" >> ~/.bashrc`
 	- `source ~/.bashrc`
 
+### Piloting the TurtleBot: Keyboard
+In one terminal, run `roslaunch turtlebot_bringup minimal.launch`. In another, run `roslaunch turtlebot_teleop keyboard_teleop.launch` and follow the instructions of the file.
 
-
-### Control with Xbox One Controller:
-- Getting the MAC address of the pink [Xbox One S controller](https://www.amazon.com/Xbox-Core-Wireless-Controller-Deep-Controllers/dp/B09VV5LJS1/ref=sr_1_3?crid=WRHIS5YGVSQJ&dib=eyJ2IjoiMSJ9.esGG7pafXCEk_c9mSITHVcBlrZYuOm3xS4oFy_YYwoGmMOfyrE4rAzS9ZDX1dwrBgxneSjdiEvMoHCTkugBokpJbbrazNr7NgUStsEDX5OJZdLL83LrRADo4327KV-TBLhTweCbSpkpB_2SFOnkOgUGIrIbLQR7ozhDolmtQAWO6LyOpOrUsCpLlW79fBA4A0u8L53py4xlT4YrD4Ycj6bOefVGDzH04NlYc6l7-dP4.QCs3oWDtY4wYO0JLsHYXcujmf8vWqxxl57cJtEEkgTs&dib_tag=se&keywords=xbox%2Bone%2Bcontroller&qid=1728407453&s=videogames&sprefix=xbox%2Bone%2Bcontroller%2Cvideogames%2C89&sr=1-3&th=1)
-	- **If pairing via GUI, skip this segment.** The MAC address is not needed.
+### Piloting the TurtleBot: Controller
+- Pairing via CLI. **If pairing with GUI, skip this segment.** 
+	- Get the MAC address of your controller. We used this pink [Xbox One S controller](https://www.amazon.com/Xbox-Core-Wireless-Controller-Deep-Controllers/dp/B09VV5LJS1/ref=sr_1_3?crid=WRHIS5YGVSQJ&dib=eyJ2IjoiMSJ9.esGG7pafXCEk_c9mSITHVcBlrZYuOm3xS4oFy_YYwoGmMOfyrE4rAzS9ZDX1dwrBgxneSjdiEvMoHCTkugBokpJbbrazNr7NgUStsEDX5OJZdLL83LrRADo4327KV-TBLhTweCbSpkpB_2SFOnkOgUGIrIbLQR7ozhDolmtQAWO6LyOpOrUsCpLlW79fBA4A0u8L53py4xlT4YrD4Ycj6bOefVGDzH04NlYc6l7-dP4.QCs3oWDtY4wYO0JLsHYXcujmf8vWqxxl57cJtEEkgTs&dib_tag=se&keywords=xbox%2Bone%2Bcontroller&qid=1728407453&s=videogames&sprefix=xbox%2Bone%2Bcontroller%2Cvideogames%2C89&sr=1-3&th=1)
+	- The MAC address is not needed.
 	- On a separate device (I used a Mac), connect the controller via the Bluetooth menu
 	- In a terminal, run `system_profiler SPBluetoothDataType` to grab the MAC address of the controller
 	- Unpair and forget the controller so we can connect it to the desktop
@@ -187,7 +175,7 @@ Install Ubuntu 20.04 (64-bit) and all necessary packages:
 	- Hold the "Y" button and move the leftmost joystick to move the Turtlebot.
 	- Woohoo!
 
-### Turn on the camera:  
+### Using the Kinect camera  
 - Open the terminal
 	- `sudo apt update && sudo apt upgrade -y` (Recommended)  
 - Install the dependencies in your workspace
@@ -234,7 +222,7 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 	- `freenect-glview` (Open the camera)
 	- `freenect-camtest` (To test camera)
 
-### Turn on the camera on Rviz:
+### Toggling the Camera with RViz
 - `cd kobuki_ws/src`
 - `git clone https://github.com/ros-drivers/freenect_stack.git`
 - Get back to workspace
@@ -253,7 +241,7 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 - Set the topic -> /camera/depth_registered/points
 ![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXdsWZlzsUEnnLTaYFQ15p6EzN10owXgu0eOxB7GGbcdLU8TPaTNxYsUPr_A9eScc_nHrKBH4fOxCdBuyopa-SLmkIZ0Hdzk_owakUd99b5Jmv2S9Mp7tGhu20OZw1UMB1YLYS2o8w245_ufA-GZp3oIuRsE?key=s6kx8w9aAKgfuro0Mrp5kw)
 
-### Mapping (Turn on camera on RTAB-MAP and Rviz):
+### Mapping (Toggle camera with RTAB-MAP and RViz)
 - Open the terminal  
 - Connect to the TurtleBot  
 	- `roslaunch turtlebot_bringup minimal.launch`  
@@ -278,11 +266,7 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 	- Odometry -> Topic -> `/rtabmap/odom`
 	- Path -> Topic -> `/rtabmap/mapPath`
 	- Add PointCloud2 -> Set topic -> `/rtabmap/cloud_map`
-
-### Save the Map
-- After you can mapping
-- Mapping the lab area
-- Save the map
+- Saving the map
 	- Need to ensure correct topic: If map_saver doesn’t automatically save from the correct topic, need to specific the topic manually
 		- Global Options: /map
 		- Map: `/rtabmap/grid_prob_map`
@@ -292,7 +276,7 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 		- `/home/SaPHaRI/kobuki_ws/src/1stmap` is the path of the map
 		- `1stmap` is name of the map
 
-### Communicate between 2 terminals:  
+### Communication: 2 Terminals
 - First terminal  
 	- `roscore`  
 - Second terminal  
@@ -300,7 +284,7 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 - Third terminal  
 	- `rostopic echo /test`
 
-### Communication between 2 Raspberry Pi:
+### Communication: 2 Raspberry Pis
 - First Raspberry Pi  
 	- First Terminal
 		- `roscore`  
@@ -314,15 +298,15 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 		- `export ROS_IP=<IP of Machine>`  
 		- `rosrun beginner_tutorials listener.py`
 
-### Communication between 2 + Raspberry Pis:
-- Do the same as 2 Raspberry Pi  
+### Communication: 2+ Raspberry Pis
+- Repeat the same procedure as the above
 - Add more devices  
 	- `export ROS_MASTER_URI=http://<Hostname or IP Address>:11311`  
 	- `export ROS_IP=<IP of Machine>`  
 	- `rosrun beginner_tutorials listener.py`
 
-### Control TurtleBot across Raspberry Pi:  
-- Assumed Rasp1 is the master (talker) and Rasp 2 is a subscriber (listener). Control TurtleBot (Rasp 2) by using Rasp 1  
+### Remote Control: 1 TurtleBot 
+- Assume Rasp 1 is the master (talker) and Rasp 2 is a subscriber (listener). We'll control TurtleBot (Rasp 2) through Rasp 1  
 - Rasp 1 (IP Address: 192.168.0.91)  
 	- `export ROS_MASTER_URI=http://192.168.0.91:11311`  
 	- `export ROS_IP=192.168.0.91`  
@@ -334,7 +318,7 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 - Rasp 1  
 	- In another terminal:	`roslaunch turtlebot_teleop keyboard_teleop.launch`
 
-### Control 2+ TurtleBots at the same time:  
+### Remote Control: 2+ TurtleBots (simultaneous)
 - Assumed Rasp1 is the master (talker) and Rasp 2, 3 are subscribers (listeners). Control TurtleBot (Rasp 2, 3) by using Rasp 1  
 - Rasp 1 (IP Address: 192.168.0.91)
 	- `export ROS_MASTER_URI=http://192.168.0.91:11311`  
@@ -364,7 +348,7 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02bf", MODE="0666"
 		- `export ROS_NAMESPACE=turtlebotX`
 		- turtlebotX can be change
 
-### Adding the new user in ubuntu:
+### When you're given a computer with Ubuntu but you don't know the login to the only existing user so you need to add a new one instead to move forward
 Add a User via Recovery Mode
 - Reboot the System
 	- Reboot the system, and as it boots up, hold the **Shift** key to access the **GRUB** boot menu
@@ -388,7 +372,6 @@ Add a User via Recovery Mode
 	- Boots up in log in with the new user
 **Username: SaPHaRI** 
 **Password: 7TurtleBots!**
-
 
 ### Path Planning via SSH
 - If you care for do the path planning on Raspberry Pi itself
@@ -501,6 +484,7 @@ Add a User via Recovery Mode
 
 
 ### Receive the signal from Doorbell (Raspberry Pi)
+- **Note: This is outdated. For the system we integrate with a mechanical doorbell opening system, see /Kaleb/Week 13.**
 - Connection
 ![[RF Receiver MX-RM-5V Close up.png]]
 - RF Receiver pins (Start from left) | Picture on the above
