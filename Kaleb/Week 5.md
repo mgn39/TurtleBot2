@@ -31,7 +31,7 @@
 		- Then as usual, run `source $CONDA_PREFIX/setup.bash`
 		- To test, just ping each other's IPs
 	- Rebuild all Turtlebot2 packages...
-		- Follow [README](./../README.md) instructions, then use the following script for all the required packages in `/kobuki_ws/src:
+		- Follow [README](README.md) instructions, then use the following script for all the required packages in `/kobuki_ws/src:
        ```
 		# standard Turtlebot packages with some pizza
 		conda install python-orocos-kdl
