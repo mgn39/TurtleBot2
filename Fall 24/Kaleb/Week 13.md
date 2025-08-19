@@ -1,7 +1,7 @@
 ## <u>11/20/24</u>
 
 ### The LiDAR Sensor
-Created `gmapping_demo2.launch` in `kobuki_ws/src/turtlebot_apps/turtlebot_navigation/launch/`: same process from [[Chester/Experiments/Week 12|Chester]]
+Created `gmapping_demo2.launch` in `kobuki_ws/src/turtlebot_apps/turtlebot_navigation/launch/`: same process from [[Fall 24/Chester/Experiments/Week 12|Chester]]
 ```roslaunch
 <launch>
   <!-- RPLIDAR node should be launched separately, as you are already doing -->
