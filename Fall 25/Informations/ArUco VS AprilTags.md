@@ -5,9 +5,17 @@
 
 ![[ArUco Markers.jpg]]
 
-N/A
+**Pros**
+- Easy to Setup:
+
+**Cons**
+- Rotational:
 
 ### AprilTags
 
 ![[AprilTags Markers.png]]
-N/A
+**Pros**:
+- N/A
+
+**Cons:**
+- N/A
